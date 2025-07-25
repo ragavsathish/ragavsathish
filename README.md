@@ -1,93 +1,85 @@
-# Hi, I'm Sathish Narayanan
+# Hi, I'm Sathish 👋
 
-## 🚀 About Me
-
-I'm a solutions architect and senior developer passionate about building cloud-native and edge-ready software for regulated and high-impact domains such as medical devices and digital health. I drive DevOps, RegOps, and modern CI/CD practices, blending full-stack engineering with infrastructure automation and compliance.
+Experienced software engineer and architect specializing in secure, hybrid cloud platforms for regulated medical devices. Passionate about building scalable solutions, streamlining operations, and accelerating feature delivery in compliance-driven environments.
 
 ---
 
-## 🏢 Experience
 
-### **MEGIN** (Espoo, Finland)
-**Architect** (Feb 2024 – Present)  
-- Lead GitOps and RegOps in medical software product development.
-- Architect edge-friendly, cloud-native solutions for data acquisition and analysis.
-- Manage AWS infrastructure for medical device diagnostics.
-- Translate IEC 62304 & IEC 60601 standards into software development procedures.
 
-**Senior Software Developer** (Sep 2021 – Feb 2024)  
-- Full-stack development: Node.js, TypeScript, React, Zustand.
-- Integrations: PACS, Microsoft Entra ID/ADFS/AD, NFS.
-- Edge infrastructure automation with Ansible.
-- CI/CD: GitLab, Jenkins, SonarCloud.
-- Test automation: Playwright with requirement traceability.
+## 🚀 Skills
+
+- 🖥️ **Languages:** TypeScript, Java, PostgreSQL, Terraform, Ansible
+- ⚙️ **DevOps:** GitLab, Jenkins, Docker, Kubernetes, ArgoCD, Flux
+- 🎨 **Frontend:** React, Zustand, Redux, Material-UI
+- ☁️ **Cloud/Infra:** AWS, OpenShift, k3s
+- 🔗 **Integrations:** ADFS, Entra ID, PACS
 
 ---
 
-### **Signant Health** (Helsinki Metropolitan Area)
-**Senior Software Designer** (Jan 2020 – Sep 2021)  
-- Mobile app development: Flutter.
-- AWS IaC: Terraform.
-- Migrated OpenShift microservices to AWS EKS.
-- Observability & traffic shaping: AWS App Mesh.
-- GitOps deployment: ArgoCD.
 
-**Software Designer** (Sep 2018 – Jan 2020)  
-- RESTful microservices: Java, Node.js, TypeScript.
-- Frontend: React/Redux.
-- Jenkins shared libraries and DSL pipelines.
+
+## 💼 Experience
+
+**MEGIN** 🏥
+_Senior Software Developer / Architect (2021–Present, Espoo, Finland)_
+- 🏗️ Architected hybrid cloud/on-prem diagnostics platform for medical devices
+- 🛡️ Led FDA-compliant workflows and automated testing
+- 🔒 Designed secure APIs/databases for patient data
+- 🏥 Integrated hospital IT systems (Azure AD, LDAP, ADFS, VPN)
+- ☁️ Engineered scalable AWS infrastructure with Terraform
+- 🚀 Overhauled CI/CD pipelines for air-gapped environments
+- 🤖 Adopted AI tools (GitLab Duo, GitHub Copilot Chat) to boost productivity
+
+**Signant Health** 💊
+_Senior Software Designer (2020–2021, Helsinki)_
+- ☁️ Developed AWS infrastructure as code (Terraform)
+- 🔄 Migrated OpenShift microservices to AWS EKS
+- 👁️ Implemented AWS App Mesh and ArgoCD GitOps
+
+_Software Designer (2018–2020, Helsinki)_
+- 🛠️ Built RESTful microservices (Java/Node.js), React/Redux frontends
+- ⚙️ Developed Jenkins shared libraries for CI/CD
+
+**Seppo.io** 🎮
+_Software Developer (2017–2018, Helsinki)_
+- 🔄 Refactored legacy Rails views into a responsive SPA (React, Material-UI)
+
+**Infosys** 🌏
+_Member - Education and Research (2014–2014, India)_
+- 👨‍💻 Led team to develop automated grading solutions (Java, TDD)
+- 🛠️ Built JSF parser and Java grading engine (JAX-WS)
+- 🎓 Delivered seminars and mentored internships
+
+_Senior System Engineer (2013–2014, India)_
+- 🔄 Migrated Ruby on Rails apps to JEE Spring MVC
+- ⚙️ Optimized inventory systems and builds (Maven, EJB, WebSphere)
+
+_Systems Engineer (2010–2012, India)_
+- 🛠️ Developed enterprise apps (Spring MVC, JUnit, EasyMock)
+- 🔄 Migrated monolithic architecture to SOA
 
 ---
 
-### **Seppo.io** (Helsinki)
-**Software Developer** (Dec 2017 – Jul 2018)  
-- Refactored Rails views to SPA: Material-UI, React, Redux.
+
+
+## 🎓 Education
+
+**Aalto University** 🇫🇮
+_MSc., Life Science Technologies (Bioinformatics), 2014–2017, Espoo, Finland_
+
+**Anna University** 🇮🇳
+_BEng., Computer Science and Engineering (Distinction), 2006–2010, Chennai, India_
 
 ---
 
-### **Infosys** (India)
-**Member – Education and Research** (Apr 2014 – Aug 2014)  
-- Led automated grading for Java assignments (TDD, TESTNG, DB-Unit, JSF-Unit).
-- Built JSF parser and grading engine (JAX-WS).
-- Mentored interns; delivered seminars on XML, JEE, Agile, code mining.
 
-**Senior System Engineer** (Jan 2013 – Mar 2014)  
-- Migrated Rails apps to JEE Spring MVC, optimized with EJB/WebSphere clustering.
-- Remote data sync (EhCache), Cucumber JVM for UAT.
-- Maven builds with custom profiles.
-
-**Systems Engineer** (May 2010 – Dec 2012)  
-- Enterprise apps: Spring MVC, EasyMock/JUnit.
-- SOA migration; Incident Management System (JPA, JSF, Tomcat, MySQL).
-
----
 
 ## 🔬 Research
 
-### **Aalto University – Ala Laurila Lab** (Espoo, Finland)
-**Graduate Researcher** (2015 – 2018)  
-- Built MATLAB-based multi-electrode data analysis suite for retinal neural circuits.
-- Integrated DLP stimulation, HDF5-based ORM, and MVP-style experiment interface.
+**Aalto University, Ala Laurila Lab** 🧠
+_Graduate Researcher (2015–2018, Espoo, Finland)_
+- 🧪 Developed MATLAB-based multi-electrode data analysis suite for retinal neural circuit research
+- 🛠️ Integrated DLP stimulation, HDF5 ORM, and MVP-style experiment interface
 
 ---
 
-## 🛠️ Skills & Tools
-
-- **Languages:** TypeScript, JavaScript, Java, Ruby, Python, Dart, MATLAB
-- **Frameworks:** React, Node.js, Spring MVC, Rails, Flutter
-- **DevOps:** GitLab CI/CD, Jenkins, SonarCloud, Ansible, Terraform, ArgoCD
-- **Cloud:** AWS (EKS, App Mesh, EC2, S3), OpenShift
-- **Compliance:** IEC 62304, IEC 60601
-- **Testing:** Playwright, TESTNG, EasyMock, JUnit, Cucumber JVM
-- **Other:** PACS, Microsoft Entra ID, ADFS, NFS, HDF5, DLP stimulation
-
----
-
-## 📫 Contact
-
-- [LinkedIn](https://www.linkedin.com/in/ragavsathish)
-- [GitHub](https://github.com/ragavsathish)
-
----
-
-_Always learning. Always building._
