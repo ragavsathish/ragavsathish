@@ -1,0 +1,33 @@
+name: Build PDF
+
+on:
+  push:
+    paths:
+      - 'cv/**.tex'
+  pull_request:
+    paths:
+      - 'cv/**.tex'
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive  # Or use blang/latex if you prefer
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        woking-directory: cv
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex
+          mv main.pdf sathish-narayanan-cv.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdf
+          path: cv/sathish-narayanan-cv.pdf
