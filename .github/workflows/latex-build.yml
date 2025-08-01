@@ -2,6 +2,8 @@ name: Build PDF
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'cv/**/*.tex'
   pull_request:
@@ -31,3 +33,12 @@ jobs:
         with:
           name: compiled-pdf
           path: cv/sathish-narayanan-cv.pdf
+
+      - name: Publish PDF as GitHub Release artifact
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: cv/sathish-narayanan-cv.pdf
+          tag_name: latest-cv
+          name: Sathish Narayanan CV PDF
+          body: "Latest CV PDF automatically published on merge to master."
