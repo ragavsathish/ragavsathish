@@ -10,7 +10,7 @@ const NS = {
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
 };
 
-const modelId = "Qwen2.5-0.5B-Instruct-q4f16_1-MLC";
+const modelId = "SmolLM2-1.7B-Instruct-q4f16_1-MLC";
 let store;
 let engine;
 let rdfFacts;
@@ -230,10 +230,22 @@ async function assess(question) {
 
   try {
     const llmText = await summarizeWithLlm(question, result);
+    if (!isGroundedLlmText(llmText, result)) {
+      renderAssessment(result, "", "The local LLM draft was rejected because it did not preserve the RDF-grounded facts exactly.");
+      return;
+    }
     renderAssessment(result, llmText);
   } catch {
     renderAssessment(result);
   }
+}
+
+function isGroundedLlmText(text, result) {
+  if (!text) return false;
+  if (!text.includes(`${result.fit} fit`)) return false;
+  if (!result.gaps.every((gap) => text.includes(gap))) return false;
+  if (!text.includes(result.positioning)) return false;
+  return true;
 }
 
 function assessFit(question) {
@@ -337,7 +349,8 @@ function shorten(value) {
 
 async function summarizeWithLlm(question, result) {
   const facts = [
-    `Fit: ${result.fit} (${result.score}/100)`,
+    `Fit label: ${result.fit} fit`,
+    `Score: ${result.score}/100`,
     `Target: ${result.target}`,
     `Evidence: ${result.evidence.join("; ")}`,
     `Gaps: ${result.gaps.join("; ")}`,
@@ -348,11 +361,20 @@ async function summarizeWithLlm(question, result) {
     messages: [
       {
         role: "system",
-        content: "You write concise career-fit assessments. Use only the provided RDF-derived facts. Say when evidence is missing. Do not invent roles, companies, dates, or credentials."
+        content: "You write concise career-fit assessments. Use only the provided RDF-derived facts. Do not invent roles, companies, dates, credentials, recommendations, training needs, or new gaps. Preserve the exact fit label, gaps, and positioning. If evidence is missing, say the RDF does not show it."
       },
       {
         role: "user",
-        content: `Question: ${question}\n\nRDF-derived facts:\n${facts}\n\nWrite a short answer with Fit, Why, Gaps, and Positioning.`
+        content: `Question: ${question}
+
+RDF-derived facts:
+${facts}
+
+Write this exact structure:
+Fit: ${result.fit} fit
+Why: one sentence using only the listed evidence.
+Gaps: copy these gaps exactly: ${result.gaps.join(" | ")}
+Positioning: copy this positioning exactly: ${result.positioning}`
       }
     ],
     temperature: 0.2
@@ -361,7 +383,7 @@ async function summarizeWithLlm(question, result) {
   return completion.choices?.[0]?.message?.content || "";
 }
 
-function renderAssessment(result, llmText = "") {
+function renderAssessment(result, llmText = "", llmNotice = "") {
   const fitClass = result.fit.toLowerCase();
   answer.innerHTML = `
     <article class="answer-card">
@@ -374,6 +396,7 @@ function renderAssessment(result, llmText = "") {
       </header>
       <div class="answer-body">
         ${llmText ? section("Local LLM answer", `<div class="llm-answer">${escapeHtml(llmText)}</div>`, true) : ""}
+        ${llmNotice ? section("Local LLM guard", `<p>${escapeHtml(llmNotice)}</p>`, true) : ""}
         ${section("Grounded evidence", list(result.evidence))}
         ${section("Gaps", list(result.gaps))}
         ${section("Positioning", `<p>${escapeHtml(result.positioning)}</p>`)}
