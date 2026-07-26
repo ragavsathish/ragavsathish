@@ -2,11 +2,15 @@
   "scripts": {
     "generate:rdf-graph": "node scripts/generate-rdf-graph.mjs",
     "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
-    "dry": "npm run generate:rdf-graph && npm run check:app && git diff --check"
+    "test:e2e": "playwright test",
+    "dry": "npm run generate:rdf-graph && npm run check:app && npm run test:e2e && git diff --check"
   },
   "dependencies": {
     "@hpcc-js/wasm": "^2.35.0",
     "n3": "^2.1.1",
     "ts-graphviz": "^3.0.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.0"
   }
 }
