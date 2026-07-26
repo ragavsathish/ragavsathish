@@ -702,11 +702,24 @@ project:MEGMapsPlatform
 project:HallaHealth
     a :Project ;
     schema:name "Halla Health" ;
+    rdfs:seeAlso <https://scopeimpact.fi/halla-health-a-new-decentralized-health-service-and-diverse-data-broker> ;
+    :learnedFrom <https://scopeimpact.fi/halla-health-a-new-decentralized-health-service-and-diverse-data-broker> ;
     :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare, domain:AccessibleHealthcare ;
     :builtWith skill:AWS, skill:PayloadCMS, skill:WebMCP, skill:OAuth, skill:Flutter, skill:OTAUpdates, skill:GoogleVertexAI, skill:VoiceAI, skill:Promptfoo, skill:ToolCalling, skill:SQLite, skill:OnDeviceRAG ;
-    :accelerates :ContentProduction ;
-    :contributesTo value:ImproveHumanWellBeing, :HumanInTheLoopValidation, :OfflineFirstCareAccess, :HealthChatbotGuardrails, :OnDeviceRetrieval ;
-    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Integrated Google Vertex AI voice AI with Promptfoo evaluations to add guardrails for a health chatbot. Implemented on-device RAG through tool calls that query SQLite content on the device. Included offline-first OTA delivery through a Flutter mobile app." .
+    :accelerates :ContentProduction, :HomeBasedCareTasks ;
+    :contributesTo
+        value:ImproveHumanWellBeing,
+        :HumanInTheLoopValidation,
+        :OfflineFirstCareAccess,
+        :HealthChatbotGuardrails,
+        :OnDeviceRetrieval,
+        :LifeSavingHealthcareAccess,
+        :CommunitySelfCare,
+        :HealthDataDiversity,
+        :SecureHealthWallet,
+        :ClimateHealthRiskManagement,
+        :PublicHealthSystemEfficiency ;
+    rdfs:comment "AI-driven decentralized self-care and diverse health data brokerage service for communities across Europe, Asia, and Africa. The public mission includes personalised location-specific health information, WHO-recommended home-based care tasks, a secure health wallet for records, climate-related health risk support, access to life-saving care, government resource savings, and bridging the health data diversity gap across health R&D. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Integrated Google Vertex AI voice AI with Promptfoo evaluations to add guardrails for a health chatbot. Implemented on-device RAG through tool calls that query SQLite content on the device. Included offline-first OTA delivery through a Flutter mobile app." .
 
 project:AlaLaurilaDataAcquisition
     a :Project ;
@@ -766,6 +779,48 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Content Production" ;
     :contributesTo domain:DigitalHealth ;
     rdfs:comment "Producing and maintaining trustworthy product, care, or education content with tooling support and explicit review loops." .
+
+:LifeSavingHealthcareAccess
+    a skos:Concept ;
+    skos:prefLabel "Life-saving Healthcare Access" ;
+    :contributesTo domain:AccessibleHealthcare, value:ImproveHumanWellBeing ;
+    rdfs:comment "Helping communities access critical health information, self-care support, and healthcare pathways that can protect life and well-being." .
+
+:CommunitySelfCare
+    a skos:Concept ;
+    skos:prefLabel "Community Self-care" ;
+    :contributesTo domain:AccessibleHealthcare, domain:DigitalHealth ;
+    rdfs:comment "Supporting communities with personalised and location-specific health information so people can carry out recommended self-care tasks." .
+
+:HomeBasedCareTasks
+    a skos:Concept ;
+    skos:prefLabel "WHO-recommended Home-based Care Tasks" ;
+    :contributesTo :CommunitySelfCare ;
+    rdfs:comment "Care tasks recommended for home execution, including maternal, newborn, reproductive, nutrition, mental health, and climate-triggered health contexts." .
+
+:SecureHealthWallet
+    a skos:Concept ;
+    skos:prefLabel "Secure Health Wallet" ;
+    :contributesTo domain:DigitalHealth, value:Accountability ;
+    rdfs:comment "A secure place for people to store health data and records as part of a digital self-care service." .
+
+:HealthDataDiversity
+    a skos:Concept ;
+    skos:prefLabel "Health Data Diversity" ;
+    :contributesTo domain:AIEnabledHealthcare, value:Evidence ;
+    rdfs:comment "Bridging the data diversity gap across the health research and development continuum." .
+
+:ClimateHealthRiskManagement
+    a skos:Concept ;
+    skos:prefLabel "Climate Health Risk Management" ;
+    :contributesTo domain:ClimateHealth, domain:AccessibleHealthcare ;
+    rdfs:comment "Helping people understand and manage health risks triggered or intensified by climate change." .
+
+:PublicHealthSystemEfficiency
+    a skos:Concept ;
+    skos:prefLabel "Public Health System Efficiency" ;
+    :contributesTo domain:AccessibleHealthcare ;
+    rdfs:comment "Saving government and public health system resources by helping communities access information and perform appropriate home-based care tasks." .
 
 :OfflineFirstCareAccess
     a skos:Concept ;

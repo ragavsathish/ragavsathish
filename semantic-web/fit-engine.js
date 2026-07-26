@@ -26,13 +26,28 @@ export const fitProfiles = [
   {
     id: "health-ai-product",
     label: "Health AI product / technology lead",
-    keywords: ["health ai", "ai health", "digital health", "product lead", "technology lead", "healthcare ai", "self-care"],
+    keywords: ["health ai", "ai health", "digital health", "product lead", "technology lead", "healthcare ai", "self-care", "halla", "mission", "community", "home-based care", "health data", "voice ai", "guardrails", "sqlite", "rag"],
     positives: [
       ["domain:AIEnabledHealthcare", 18],
       ["domain:DigitalHealth", 16],
       ["domain:ClimateHealth", 9],
+      ["domain:AccessibleHealthcare", 10],
       ["project:HallaHealth", 18],
       ["role:ScopeImpactTechnologyLead", 18],
+      [":LifeSavingHealthcareAccess", 12],
+      [":CommunitySelfCare", 10],
+      [":HomeBasedCareTasks", 9],
+      [":SecureHealthWallet", 8],
+      [":HealthDataDiversity", 10],
+      [":ClimateHealthRiskManagement", 8],
+      [":HealthChatbotGuardrails", 10],
+      [":OnDeviceRetrieval", 10],
+      ["skill:GoogleVertexAI", 8],
+      ["skill:VoiceAI", 6],
+      ["skill:Promptfoo", 6],
+      ["skill:ToolCalling", 7],
+      ["skill:SQLite", 7],
+      ["skill:OnDeviceRAG", 8],
       ["practice:ProductDiscovery", 10],
       ["value:HumanWellBeing", 8],
       ["value:SystemsEmpathy", 8],
@@ -42,7 +57,7 @@ export const fitProfiles = [
       "Show measurable product outcomes and adoption signals.",
       "Separate AI product judgment from infrastructure delivery."
     ],
-    positioning: "Digital health technical lead who can connect AI-enabled product direction with privacy-aware architecture and healthcare purpose."
+    positioning: "Digital health technical lead who can connect AI-enabled self-care, guardrailed chatbot evaluation, offline-first retrieval, and healthcare access mission."
   },
   {
     id: "cloud-platform",
@@ -141,7 +156,7 @@ export function assessFit(question, rdfFacts) {
     fit,
     score: top.score,
     target: top.label,
-    evidence: top.evidence.slice(0, 8),
+    evidence: top.evidence.slice(0, 20),
     gaps: top.gaps,
     positioning: top.positioning,
     related: scored.slice(1, 4).map((item) => `${item.label}: ${item.score}/100`)

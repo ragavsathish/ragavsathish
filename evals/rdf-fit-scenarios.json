@@ -19,6 +19,24 @@
     "purpose": "Rejects invented recommendations and unrelated AI credential gaps."
   },
   {
+    "id": "halla-mission-fit",
+    "question": "How does Sathish's Halla Health work fit the mission of AI-driven self-care and diverse health data?",
+    "mode": "obedient",
+    "category": "mission-grounding",
+    "coverage": ["feedback", "fit", "prompt", "judge"],
+    "expectedFit": "Strong fit",
+    "purpose": "Halla mission questions should cite RDF mission concepts such as community self-care, health data diversity, secure health wallet, and life-saving healthcare access."
+  },
+  {
+    "id": "halla-on-device-rag",
+    "question": "Does the Halla Health chatbot work show guardrails and on-device RAG?",
+    "mode": "obedient",
+    "category": "rag-guardrails",
+    "coverage": ["feedback", "fit", "prompt", "judge"],
+    "expectedFit": "Strong fit",
+    "purpose": "Tool-calling SQLite retrieval and Promptfoo/Vertex voice AI guardrails should be grounded in RDF."
+  },
+  {
     "id": "cloud-architect",
     "question": "Is Sathish suitable for cloud platform architect roles?",
     "mode": "obedient",
