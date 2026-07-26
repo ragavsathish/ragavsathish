@@ -474,6 +474,11 @@ skill:WebGPU a :Technology ; skos:prefLabel "WebGPU" .
 skill:WebLLM a :Technology ; skos:prefLabel "WebLLM" .
 skill:Ollama a :Technology ; skos:prefLabel "Ollama" .
 skill:SmolLM2 a :Technology ; skos:prefLabel "SmolLM2" .
+skill:PayloadCMS a :Technology ; skos:prefLabel "Payload CMS" .
+skill:WebMCP a :Technology ; skos:prefLabel "Web MCP" .
+skill:OAuth a :Technology ; skos:prefLabel "OAuth" .
+skill:Flutter a :Technology ; skos:prefLabel "Flutter" .
+skill:OTAUpdates a :Technology ; skos:prefLabel "OTA Updates" .
 
 #################################################################
 # Organizations
@@ -693,9 +698,10 @@ project:HallaHealth
     a :Project ;
     schema:name "Halla Health" ;
     :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare, domain:AccessibleHealthcare ;
-    :builtWith skill:AWS ;
-    :contributesTo value:ImproveHumanWellBeing ;
-    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities." .
+    :builtWith skill:AWS, skill:PayloadCMS, skill:WebMCP, skill:OAuth, skill:Flutter, skill:OTAUpdates ;
+    :accelerates :ContentProduction ;
+    :contributesTo value:ImproveHumanWellBeing, :HumanInTheLoopValidation, :OfflineFirstCareAccess ;
+    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Included offline-first OTA delivery through a Flutter mobile app." .
 
 project:AlaLaurilaDataAcquisition
     a :Project ;
@@ -749,6 +755,18 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Human-in-the-loop Validation" ;
     :contributesTo domain:ClinicalValidation ;
     rdfs:comment "Keeping expert users, clinicians, operators, and affected people involved throughout discovery, design, validation, and surveillance." .
+
+:ContentProduction
+    a skos:Concept ;
+    skos:prefLabel "Content Production" ;
+    :contributesTo domain:DigitalHealth ;
+    rdfs:comment "Producing and maintaining trustworthy product, care, or education content with tooling support and explicit review loops." .
+
+:OfflineFirstCareAccess
+    a skos:Concept ;
+    skos:prefLabel "Offline-first Care Access" ;
+    :contributesTo domain:AccessibleHealthcare ;
+    rdfs:comment "Designing mobile health workflows to remain useful with intermittent connectivity, including over-the-air updates when connectivity is available." .
 
 :WorkflowVisualization
     a skos:Concept ;
