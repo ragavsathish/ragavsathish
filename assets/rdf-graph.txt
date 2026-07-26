@@ -1,0 +1,107 @@
+RDF ASCII overview
+Generated from rdf/ragavsathish-ontology.ttl. Do not edit by hand.
+
+Sathish Kumar Narayanan (me:me)
+  title: Healthcare Technology Engineer and Technology Lead
+  purpose: Improve Human Well-being (value:ImproveHumanWellBeing)
+
+  guided by
+    - Accountability (value:Accountability)
+    - Compliant Product Pipeline (:CompliantProductPipeline)
+    - Continuous Learning (value:ContinuousLearning)
+    - Craftsmanship (value:Craftsmanship)
+    - Evidence (value:Evidence)
+    - Human Dignity (value:HumanDignity)
+    - Human Well-being (value:HumanWellBeing)
+    - Human-in-the-loop Validation (:HumanInTheLoopValidation)
+    - Humility (value:Humility)
+    - Layered User Model for Medtech (:UserLayerModel)
+    - Systems Empathy (value:SystemsEmpathy)
+    - Workflow Visualization (:WorkflowVisualization)
+
+  practices
+    - Customer Closeness (practice:CustomerCloseness)
+    - Engineering (practice:Engineering)
+    - Meditation (practice:Meditation)
+    - Product Discovery (practice:ProductDiscovery)
+    - Retrospection (practice:Retrospection)
+    - Scientific Research (practice:ScientificResearch)
+    - Swing Dance (practice:SwingDance)
+    - Teaching and Mentoring (practice:TeachingAndMentoring)
+
+  develops through
+    - Clinical Observation (practice:ClinicalObservation)
+    - Conflict to Harmony (practice:ConflictToHarmony)
+    - Hands-on Building (practice:HandsOnBuilding)
+    - Transfer Learning (practice:TransferLearning)
+
+  seeks to reduce
+    - Bureaucratic Release Cycles (domain:BureaucraticReleaseCycles)
+    - Delayed Clinical Feedback (domain:DelayedClinicalFeedback)
+    - Disconnected Healthcare IT (domain:DisconnectedHealthcareIT)
+    - Lost Empathy in Translation (domain:LostEmpathyInTranslation)
+
+  career roles
+    - Graduate Researcher (role:AaltoGraduateResearcher) [2015 -> 2018]
+    org: Aalto University (org:AaltoUniversity), Ala-Laurila Lab (org:AlaLaurilaLab)
+    domains: Bioinformatics (domain:Bioinformatics), Computational Neuroscience (domain:ComputationalNeuroscience)
+    built with: HDF5 (skill:HDF5), MATLAB (skill:MATLAB)
+    - Member - Education and Research (role:InfosysEducationResearch) [2014-04 -> 2014-08]
+    org: Infosys (org:Infosys)
+    - Senior Software Designer (role:SignantSeniorSoftwareDesigner) [2020-01 -> 2021-09]
+    org: Signant Health (org:SignantHealth)
+    domains: Regulated Healthcare (domain:RegulatedHealthcare)
+    built with: Argo CD (skill:ArgoCD), AWS (skill:AWS), Kubernetes (skill:Kubernetes), OpenShift (skill:OpenShift), Terraform (skill:Terraform)
+    - Senior Software Developer / Architect (role:MeginSeniorSoftwareDeveloperArchitect) [2021-09 -> 2025-10]
+    org: MEGIN (org:MEGIN)
+    domains: Medical Device Software (domain:MedicalDeviceSoftware), Regulated Healthcare (domain:RegulatedHealthcare)
+    built with: ADFS (skill:ADFS), AWS (skill:AWS), Docker (skill:Docker), GitLab (skill:GitLab), Kairos (skill:Kairos), Kubernetes (skill:Kubernetes), LDAP (skill:LDAP), Microsoft Entra ID (skill:EntraID), PACS (skill:PACS), PostgreSQL (skill:PostgreSQL), Terraform (skill:Terraform), TypeScript (skill:TypeScript)
+    - Senior Systems Engineer (role:InfosysSeniorSystemsEngineer) [2013-01 -> 2014-03]
+    org: Infosys (org:Infosys)
+    - Software Designer (role:SignantSoftwareDesigner) [2018-09 -> 2020-01]
+    org: Signant Health (org:SignantHealth)
+    built with: Java (skill:Java), Jenkins (skill:Jenkins), React (skill:React), Redux (skill:Redux)
+    - Software Developer (role:SeppoSoftwareDeveloper) [2017-12 -> 2018-07]
+    org: Seppo.io (org:Seppo)
+    built with: Material UI (skill:MaterialUI), React (skill:React), Redux (skill:Redux)
+    - Systems Engineer (role:InfosysSystemsEngineer) [2010-05 -> 2012-12]
+    org: Infosys (org:Infosys)
+    - Technology Lead (role:ScopeImpactTechnologyLead) [2025-11 -> present]
+    org: Scope Impact (org:ScopeImpact)
+    domains: AI-enabled Healthcare (domain:AIEnabledHealthcare), Climate and Health (domain:ClimateHealth), Digital Health (domain:DigitalHealth)
+
+  worked on
+    - Ala-Laurila Lab Data Acquisition (project:AlaLaurilaDataAcquisition)
+    domains: Bioinformatics (domain:Bioinformatics), Computational Neuroscience (domain:ComputationalNeuroscience)
+    built with: HDF5 (skill:HDF5), MATLAB (skill:MATLAB)
+    - Browser-based RDF Fit Assistant (project:RdfFitAssistant)
+    domains: Local-first AI (domain:LocalFirstAI), Semantic Web (domain:SemanticWeb)
+    built with: RDF (skill:RDF), SmolLM2 (skill:SmolLM2), TypeScript (skill:TypeScript), WebGPU (skill:WebGPU), WebLLM (skill:WebLLM)
+    contributes to: Accountability (value:Accountability), Evidence (value:Evidence)
+    - Halla Health (project:HallaHealth)
+    domains: Accessible Healthcare (domain:AccessibleHealthcare), AI-enabled Healthcare (domain:AIEnabledHealthcare), Climate and Health (domain:ClimateHealth), Digital Health (domain:DigitalHealth)
+    built with: AWS (skill:AWS)
+    contributes to: Improve Human Well-being (value:ImproveHumanWellBeing)
+    - Infosys Automated Grading Solution (project:InfosysAutomatedGrading)
+    built with: Java (skill:Java)
+    - MEG Maps Platform and Medical Device Software Infrastructure (project:MEGMapsPlatform)
+    domains: Medical Device Software (domain:MedicalDeviceSoftware), Regulated Healthcare (domain:RegulatedHealthcare)
+    built with: AWS (skill:AWS), Docker (skill:Docker), GitLab (skill:GitLab), Kubernetes (skill:Kubernetes), PostgreSQL (skill:PostgreSQL), Terraform (skill:Terraform)
+    - Personal Semantic Web Profile (project:PersonalSemanticWebProfile)
+    domains: Semantic Web (domain:SemanticWeb)
+    built with: Graphviz (skill:Graphviz), Mermaid (skill:Mermaid), N3 (skill:N3), RDF (skill:RDF), RDFS (skill:RDFS), Turtle (skill:Turtle)
+    contributes to: Accountability (value:Accountability), Evidence (value:Evidence)
+    - Promptfoo RDF Evaluation Harness (project:PromptfooRdfEvalHarness)
+    domains: LLM Evaluation (domain:LLMEvaluation), Local-first AI (domain:LocalFirstAI), Semantic Web (domain:SemanticWeb)
+    built with: Ollama (skill:Ollama), Playwright (skill:Playwright), Promptfoo (skill:Promptfoo), RDF (skill:RDF), TypeScript (skill:TypeScript)
+    contributes to: Accountability (value:Accountability), Evidence (value:Evidence)
+    - Retinal Neural Circuit Analysis (project:RetinalCircuitAnalysis)
+    domains: Computational Neuroscience (domain:ComputationalNeuroscience)
+    built with: HDF5 (skill:HDF5), MATLAB (skill:MATLAB)
+    - Seppo.io Single Page Application Refactor (project:SeppoSinglePageApplication)
+    built with: Material UI (skill:MaterialUI), React (skill:React), Redux (skill:Redux)
+    - Signant Health Cloud Migration and GitOps (project:SignantCloudMigration)
+    domains: Regulated Healthcare (domain:RegulatedHealthcare)
+    built with: Argo CD (skill:ArgoCD), AWS (skill:AWS), Kubernetes (skill:Kubernetes), OpenShift (skill:OpenShift), Terraform (skill:Terraform)
+
+Graph focus: 160 nodes, 359 edges

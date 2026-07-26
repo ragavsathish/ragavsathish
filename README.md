@@ -25,6 +25,7 @@ The diagram below is generated from the Turtle file.
 
 - [Generated Graphviz DOT](assets/rdf-graph.dot)
 - [Generated Mermaid source](assets/rdf-graph.mmd)
+- [Generated ASCII overview](assets/rdf-graph.txt)
 - Generate again with `npm run generate:rdf-graph`
 
 ## Fit Assistant

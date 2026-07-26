@@ -10,6 +10,7 @@ const assetsDir = path.join(root, "assets");
 const dotPath = path.join(assetsDir, "rdf-graph.dot");
 const mmdPath = path.join(assetsDir, "rdf-graph.mmd");
 const svgPath = path.join(assetsDir, "rdf-graph.svg");
+const asciiPath = path.join(assetsDir, "rdf-graph.txt");
 
 const ttl = fs.readFileSync(ttlPath, "utf8");
 const quads = new Parser({ format: "text/turtle" }).parse(ttl);
@@ -151,6 +152,10 @@ function nodeLabel(iri) {
   return `${nodeKind(iri)}\\n${label}\\n${shorten(iri)}`;
 }
 
+function displayLabel(iri) {
+  return `${labels.get(iri) || localName(iri)} (${shorten(iri)})`;
+}
+
 const selectedEdges = [];
 const selectedNodes = new Set();
 
@@ -218,6 +223,93 @@ function makeDot() {
   return toDot(graph);
 }
 
+function objectsFor(subject, predicate) {
+  return quads
+    .filter((q) => q.subject.value === subject && q.predicate.value === predicate && q.object.termType === "NamedNode")
+    .map((q) => q.object.value)
+    .sort((a, b) => displayLabel(a).localeCompare(displayLabel(b)));
+}
+
+function literalFor(subject, predicate) {
+  const quad = quads.find((q) => q.subject.value === subject && q.predicate.value === predicate && q.object.termType === "Literal");
+  return quad?.object.value;
+}
+
+function indentedList(items, indent = "  ") {
+  return items.map((item) => `${indent}- ${item}`);
+}
+
+function relationLine(subject, predicate, label, indent = "    ") {
+  const objects = objectsFor(subject, predicate);
+  if (objects.length === 0) return [];
+  return [`${indent}${label}: ${objects.map(displayLabel).join(", ")}`];
+}
+
+function makeAscii() {
+  const person = "https://ragavsathish.github.io/#me";
+  const name = literalFor(person, "https://schema.org/name") || "Sathish Kumar Narayanan";
+  const title = literalFor(person, "https://schema.org/jobTitle") || "Healthcare Technology Engineer and Technology Lead";
+  const roleName = "https://schema.org/roleName";
+  const startDate = "https://schema.org/startDate";
+  const endDate = "https://schema.org/endDate";
+
+  const predicates = {
+    purpose: "https://ragavsathish.github.io/ontology#hasPurpose",
+    guidedBy: "https://ragavsathish.github.io/ontology#guidedBy",
+    practices: "https://ragavsathish.github.io/ontology#practices",
+    developsThrough: "https://ragavsathish.github.io/ontology#developsThrough",
+    seeksToReduce: "https://ragavsathish.github.io/ontology#seeksToReduce",
+    careerRole: "https://ragavsathish.github.io/ontology#hasCareerRole",
+    workedOn: "https://ragavsathish.github.io/ontology#workedOn",
+    atOrganization: "https://ragavsathish.github.io/ontology#atOrganization",
+    inDomain: "https://ragavsathish.github.io/ontology#inDomain",
+    builtWith: "https://ragavsathish.github.io/ontology#builtWith",
+    contributesTo: "https://ragavsathish.github.io/ontology#contributesTo"
+  };
+
+  const lines = [
+    "RDF ASCII overview",
+    "Generated from rdf/ragavsathish-ontology.ttl. Do not edit by hand.",
+    "",
+    `${name} (me:me)`,
+    `  title: ${title}`,
+    ...relationLine(person, predicates.purpose, "purpose", "  "),
+    "",
+    "  guided by",
+    ...indentedList(objectsFor(person, predicates.guidedBy).map(displayLabel), "    "),
+    "",
+    "  practices",
+    ...indentedList(objectsFor(person, predicates.practices).map(displayLabel), "    "),
+    "",
+    "  develops through",
+    ...indentedList(objectsFor(person, predicates.developsThrough).map(displayLabel), "    "),
+    "",
+    "  seeks to reduce",
+    ...indentedList(objectsFor(person, predicates.seeksToReduce).map(displayLabel), "    "),
+    "",
+    "  career roles"
+  ];
+
+  for (const role of objectsFor(person, predicates.careerRole)) {
+    const dates = [literalFor(role, startDate), literalFor(role, endDate) || "present"].filter(Boolean).join(" -> ");
+    lines.push(`    - ${literalFor(role, roleName) || displayLabel(role)} (${shorten(role)})${dates ? ` [${dates}]` : ""}`);
+    lines.push(...relationLine(role, predicates.atOrganization, "org"));
+    lines.push(...relationLine(role, predicates.inDomain, "domains"));
+    lines.push(...relationLine(role, predicates.builtWith, "built with"));
+  }
+
+  lines.push("", "  worked on");
+  for (const project of objectsFor(person, predicates.workedOn)) {
+    lines.push(`    - ${displayLabel(project)}`);
+    lines.push(...relationLine(project, predicates.inDomain, "domains"));
+    lines.push(...relationLine(project, predicates.builtWith, "built with"));
+    lines.push(...relationLine(project, predicates.contributesTo, "contributes to"));
+  }
+
+  lines.push("", `Graph focus: ${nodes.length} nodes, ${selectedEdges.length} edges`);
+  return `${lines.join("\n")}\n`;
+}
+
 fs.mkdirSync(assetsDir, { recursive: true });
 
 const dot = makeDot();
@@ -227,8 +319,10 @@ const svg = graphviz.dot(dot);
 fs.writeFileSync(mmdPath, makeMermaid());
 fs.writeFileSync(dotPath, dot);
 fs.writeFileSync(svgPath, svg);
+fs.writeFileSync(asciiPath, makeAscii());
 
 console.log(`Wrote ${path.relative(root, mmdPath)}`);
 console.log(`Wrote ${path.relative(root, dotPath)}`);
 console.log(`Wrote ${path.relative(root, svgPath)}`);
+console.log(`Wrote ${path.relative(root, asciiPath)}`);
 console.log(`Nodes ${nodes.length}, edges ${selectedEdges.length}`);
