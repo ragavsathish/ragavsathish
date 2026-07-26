@@ -1,4 +1,5 @@
 description: RDF answer quality judged by an LLM rubric
+# Scenario catalog: evals/rdf-fit-scenarios.json
 
 prompts:
   - "{{question}}"
@@ -18,6 +19,7 @@ assertions:
 
         Pass only if:
         - the draft answers the question directly;
+        - for expected.kind="fact", the draft answers the RDF fact directly and cites expected evidence;
         - the draft uses the expected RDF-derived fit label, gaps, and positioning;
         - the draft cites concrete expected RDF evidence when evidence exists;
         - the draft says RDF evidence is insufficient when expected.evidence is empty;

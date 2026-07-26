@@ -138,7 +138,29 @@ function collectFacts() {
     });
   }
 
-  return { byShort };
+  return { byShort, roles: collectRoles(resources) };
+}
+
+function collectRoles(resources) {
+  return [...resources]
+    .map((resource) => {
+      const endDate = literal(resource, p.endDate);
+      if (!endDate) return null;
+      const organization = store.getQuads(namedNode(resource), namedNode(p.atOrganization), null, null)
+        .find((item) => item.object.termType === "NamedNode")?.object.value;
+
+      return {
+        id: shorten(resource),
+        label: labelFor(resource),
+        startDate: literal(resource, p.startDate),
+        endDate,
+        organization: organization ? {
+          id: shorten(organization),
+          label: labelFor(organization)
+        } : null
+      };
+    })
+    .filter(Boolean);
 }
 
 function labelFor(resource) {
@@ -194,6 +216,11 @@ async function summarizeWithLlm(question, result) {
 }
 
 function renderAssessment(result, llmText = "", llmNotice = "") {
+  if (result.kind === "fact") {
+    renderFactAnswer(result, llmText, llmNotice);
+    return;
+  }
+
   const fitClass = result.fit.toLowerCase();
   answer.innerHTML = `
     <article class="answer-card">
@@ -211,6 +238,27 @@ function renderAssessment(result, llmText = "", llmNotice = "") {
         ${section("Gaps", list(result.gaps))}
         ${section("Positioning", `<p>${escapeHtml(result.positioning)}</p>`)}
         ${section("Related fits", list(result.related))}
+        ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. The LLM, when loaded, only rewrites RDF-derived results.</p>`, true)}
+      </div>
+    </article>
+  `;
+}
+
+function renderFactAnswer(result, llmText = "", llmNotice = "") {
+  answer.innerHTML = `
+    <article class="answer-card">
+      <header class="answer-header">
+        <div>
+          <h2>${escapeHtml(result.target)}</h2>
+          <div class="score">Score: ${result.score}/100</div>
+        </div>
+        <span class="fit strong">RDF fact</span>
+      </header>
+      <div class="answer-body">
+        ${llmText ? section("Local LLM answer", `<div class="llm-answer">${escapeHtml(llmText)}</div>`, true) : ""}
+        ${llmNotice ? section("Local LLM guard", `<p>${escapeHtml(llmNotice)}</p>`, true) : ""}
+        ${section("Answer", `<p>${escapeHtml(result.answer)}</p>`, true)}
+        ${section("Grounded evidence", list(result.evidence))}
         ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. The LLM, when loaded, only rewrites RDF-derived results.</p>`, true)}
       </div>
     </article>

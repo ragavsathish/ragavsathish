@@ -40,10 +40,12 @@ Add a scenario when it protects one of these behaviors:
 - Hallucination traps that ask for unsupported credentials, approvals, employers, or recommendations.
 - Comparison prompts that should still stay grounded in a single RDF-derived result.
 
-Update both:
+Track the scenario first in `evals/rdf-fit-scenarios.json`. It is the human-readable catalog for reviewed questions, expected behavior, coverage layers, and intent.
 
-- `scripts/prompt-feedback-loop.mjs`
-- `promptfoo-llm-prompt.config.yaml`
+Then update assertion coverage where needed:
+
+- `promptfoo-llm-prompt.config.yaml` for exact deterministic prompt assertions.
+- `tests/semantic-web.spec.mjs` for browser-visible regressions.
 
 Add judge coverage in `promptfoo-llm-judge.config.yaml` only for representative cases. Keep that suite small because local judge runs are slower than deterministic evals.
 

@@ -25,7 +25,9 @@ export default class LlmPromptProvider {
         grounded,
         draft,
         expected: {
+          kind: result.kind || "fit",
           fit: `${result.fit} fit`,
+          answer: result.answer || "",
           gaps: result.gaps,
           positioning: result.positioning,
           evidence: result.evidence
@@ -43,6 +45,13 @@ function draftForMode(mode, result) {
 }
 
 function obedientDraft(result) {
+  if (result.kind === "fact") {
+    return [
+      `Answer: ${result.answer}`,
+      `Evidence: ${result.evidence.join(" | ")}`
+    ].join("\n");
+  }
+
   const why = result.evidence.length
     ? result.evidence.slice(0, 3).join("; ")
     : "The RDF does not show target-specific evidence";

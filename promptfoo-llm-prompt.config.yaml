@@ -1,4 +1,5 @@
 description: RDF-grounded LLM prompt feedback evals
+# Scenario catalog: evals/rdf-fit-scenarios.json
 
 prompts:
   - "{{question}}"
@@ -89,9 +90,9 @@ tests:
       - type: javascript
         value: JSON.parse(output).grounded === true
       - type: contains
-        value: "Fit: Weak fit"
+        value: "Answer:"
       - type: contains
-        value: The RDF does not show enough target-specific evidence for this question.
+        value: Senior Software Developer / Architect at MEGIN ended in July 2026.
 
   - vars:
       question: Give me proof from RDF only that he fits medtech founder roles.

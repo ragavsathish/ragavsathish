@@ -121,6 +121,9 @@ export const fitProfiles = [
 
 export function assessFit(question, rdfFacts) {
   const normalized = question.toLowerCase();
+  const dateFact = answerDateFact(normalized, rdfFacts);
+  if (dateFact) return { question, ...dateFact };
+
   const matched = fitProfiles
     .map((profile) => ({
       ...profile,
@@ -142,6 +145,49 @@ export function assessFit(question, rdfFacts) {
     gaps: top.gaps,
     positioning: top.positioning,
     related: scored.slice(1, 4).map((item) => `${item.label}: ${item.score}/100`)
+  };
+}
+
+function answerDateFact(normalized, rdfFacts) {
+  const month = normalized.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{4})\b/);
+  if (!month || !/\b(end|ended|ends|ending)\b/.test(normalized)) return null;
+
+  const monthNumber = {
+    january: "01",
+    february: "02",
+    march: "03",
+    april: "04",
+    may: "05",
+    june: "06",
+    july: "07",
+    august: "08",
+    september: "09",
+    october: "10",
+    november: "11",
+    december: "12"
+  }[month[1]];
+  const targetDate = `${month[2]}-${monthNumber}`;
+  const matches = (rdfFacts.roles || []).filter((role) => role.endDate === targetDate);
+  if (!matches.length) return null;
+  const monthLabel = `${month[1][0].toUpperCase()}${month[1].slice(1)}`;
+
+  const evidence = matches.map((role) => {
+    const org = role.organization ? ` at ${role.organization.label} (${role.organization.id})` : "";
+    return `${role.label} (${role.id}) ended ${role.endDate}${org}`;
+  });
+  const first = matches[0];
+  const org = first.organization ? ` at ${first.organization.label}` : "";
+
+  return {
+    kind: "fact",
+    fit: "Answered",
+    score: 100,
+    target: "RDF date fact",
+    answer: `${first.label}${org} ended in ${monthLabel} ${month[2]}.`,
+    evidence,
+    gaps: ["This is a date fact from RDF, not a suitability assessment."],
+    positioning: "Use RDF date facts for timeline questions; use fit scoring for suitability questions.",
+    related: matches.slice(1).map((role) => `${role.label}: ended ${role.endDate}`)
   };
 }
 

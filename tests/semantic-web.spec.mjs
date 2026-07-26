@@ -69,6 +69,21 @@ test.describe("semantic web fit assistant", () => {
     await expect(answer).not.toContainText("Strong fit");
   });
 
+  test("answers RDF date fact questions from role end dates", async ({ page }) => {
+    await page.goto("/semantic-web/");
+
+    await page
+      .getByLabel("Role, program, opportunity, or concern")
+      .fill("What ended in July 2026?");
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("RDF date fact");
+    await expect(answer).toContainText("Senior Software Developer / Architect at MEGIN ended in July 2026.");
+    await expect(answer).toContainText("role:MeginSeniorSoftwareDeveloperArchitect");
+    await expect(answer).toContainText("org:MEGIN");
+  });
+
   test("example chips update and assess the question", async ({ page }) => {
     await page.goto("/semantic-web/");
 

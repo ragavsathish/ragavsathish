@@ -10,6 +10,18 @@ export const llmSystemPrompt = [
 ].join(" ");
 
 export function buildLlmUserPrompt(question, result) {
+  if (result.kind === "fact") {
+    return `Question: ${question}
+
+RDF-derived facts:
+Answer: ${result.answer}
+Evidence: ${result.evidence.join("; ")}
+
+Return exactly this structure:
+Answer: ${result.answer}
+Evidence: ${result.evidence.join(" | ")}`;
+  }
+
   return `Question: ${question}
 
 RDF-derived facts:
@@ -29,6 +41,11 @@ Positioning: ${result.positioning}`;
 
 export function isGroundedLlmText(text, result) {
   if (!text) return false;
+  if (result.kind === "fact") {
+    if (!text.includes(result.answer)) return false;
+    if (!result.evidence.every((item) => text.includes(item))) return false;
+    return !hasInventedClaim(text);
+  }
   if (!text.includes(`${result.fit} fit`)) return false;
   if (!result.gaps.every((gap) => text.includes(gap))) return false;
   if (!text.includes(result.positioning)) return false;

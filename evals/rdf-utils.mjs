@@ -17,6 +17,7 @@ const prefixes = [
 ];
 
 const NS = {
+  onto: "https://ragavsathish.github.io/ontology#",
   schema: "https://schema.org/",
   skos: "http://www.w3.org/2004/02/skos/core#",
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
@@ -44,8 +45,30 @@ export function loadFacts() {
     });
   }
 
-  cachedFacts = { byShort };
+  cachedFacts = { byShort, roles: collectRoles(store, resources) };
   return cachedFacts;
+}
+
+function collectRoles(store, resources) {
+  return [...resources]
+    .map((resource) => {
+      const endDate = literal(store, resource, `${NS.schema}endDate`);
+      if (!endDate) return null;
+      const organization = store.getQuads(namedNode(resource), namedNode(`${NS.onto}atOrganization`), null, null)
+        .find((item) => item.object.termType === "NamedNode")?.object.value;
+
+      return {
+        id: shorten(resource),
+        label: labelFor(store, resource),
+        startDate: literal(store, resource, `${NS.schema}startDate`),
+        endDate,
+        organization: organization ? {
+          id: shorten(organization),
+          label: labelFor(store, organization)
+        } : null
+      };
+    })
+    .filter(Boolean);
 }
 
 function labelFor(store, resource) {

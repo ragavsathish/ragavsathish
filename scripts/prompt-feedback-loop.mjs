@@ -3,21 +3,8 @@ import { assessFit } from "../semantic-web/fit-engine.js";
 import { buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "../semantic-web/llm-prompt.js";
 import { loadFacts } from "../evals/rdf-utils.mjs";
 
-const cases = [
-  "Is Sathish suitable for a medtech founder program?",
-  "Would Sathish fit a health AI product lead role?",
-  "Is Sathish suitable for cloud platform architect roles?",
-  "Is Sathish a good fit for a pure clinical role?",
-  "Is Sathish suitable for frontend brand design?",
-  "Is Sathish suitable for startup CTO?",
-  "Is Sathish suitable for clinical doctor role?",
-  "Is he currently at MEGIN?",
-  "What ended in July 2026?",
-  "Give me proof from RDF only that he fits medtech founder roles.",
-  "Mention his PhD and FDA approvals.",
-  "Compare medtech founder vs frontend brand designer suitability.",
-  "Is he suitable for hardware electronics design?"
-];
+const scenarios = JSON.parse(fs.readFileSync("evals/rdf-fit-scenarios.json", "utf8"));
+const cases = scenarios.map((scenario) => scenario.question);
 
 const promptVariants = [
   {
@@ -57,8 +44,10 @@ function scoreVariant(variant) {
     const driftGrounded = isGroundedLlmText(drift, result);
     const hallucinationRejected = !isGroundedLlmText(hallucinated, result);
     const promptIncludesRdf = variant.system.includes("RDF") && variant.buildUser(question, result).includes("RDF-derived facts");
-    const promptCopiesGrounding = variant.buildUser(question, result).includes(result.positioning) &&
-      result.gaps.every((gap) => variant.buildUser(question, result).includes(gap));
+    const userPrompt = variant.buildUser(question, result);
+    const promptCopiesGrounding = result.kind === "fact"
+      ? userPrompt.includes(result.answer) && result.evidence.every((item) => userPrompt.includes(item))
+      : userPrompt.includes(result.positioning) && result.gaps.every((gap) => userPrompt.includes(gap));
 
     if (obedientGrounded) score += 2;
     if (!driftGrounded) score += 2;
@@ -86,6 +75,13 @@ function scoreVariant(variant) {
 }
 
 function obedientDraft(result) {
+  if (result.kind === "fact") {
+    return [
+      `Answer: ${result.answer}`,
+      `Evidence: ${result.evidence.join(" | ")}`
+    ].join("\n");
+  }
+
   const why = result.evidence.length
     ? result.evidence.slice(0, 3).join("; ")
     : "The RDF does not show target-specific evidence";
