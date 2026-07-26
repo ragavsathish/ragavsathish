@@ -5,7 +5,7 @@ prompts:
   - "{{question}}"
 
 providers:
-  - id: file://evals/llm-prompt-provider.mjs
+  - id: file://../../evals/llm-prompt-provider.mjs
 
 tests:
-  - path: file://evals/promptfoo-scenario-tests.ts:generatePromptTests
+  - path: file://../../evals/promptfoo-scenario-tests.ts:generatePromptTests

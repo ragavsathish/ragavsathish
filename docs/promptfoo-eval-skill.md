@@ -42,7 +42,7 @@ Add a scenario when it protects one of these behaviors:
 
 Track the scenario first in `evals/rdf-fit-scenarios.json`. It is the human-readable catalog for reviewed questions, expected behavior, coverage layers, and intent.
 
-Promptfoo tests are generated from the catalog by `evals/promptfoo-scenario-tests.ts`. Keep the YAML configs thin; they should only point at the generated test set.
+Promptfoo tests are generated from the catalog by `evals/promptfoo-scenario-tests.ts`. Keep the YAML configs in `evals/promptfoo/` thin; they should only point at the generated test set.
 
 Then update assertion coverage where needed:
 

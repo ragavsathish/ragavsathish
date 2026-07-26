@@ -3,9 +3,9 @@
   "scripts": {
     "generate:rdf-graph": "node scripts/generate-rdf-graph.mjs",
     "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
-    "eval": "promptfoo eval --no-cache",
-    "eval:prompt": "promptfoo eval -c promptfoo-llm-prompt.config.yaml --no-cache",
-    "eval:judge": "promptfoo eval -c promptfoo-llm-judge.config.yaml --no-cache --grader ${JUDGE_PROVIDER:-ollama:chat:qwen3-coder:30b}",
+    "eval": "promptfoo eval -c evals/promptfoo/fit.yaml --no-cache",
+    "eval:prompt": "promptfoo eval -c evals/promptfoo/prompt.yaml --no-cache",
+    "eval:judge": "promptfoo eval -c evals/promptfoo/judge.yaml --no-cache --grader ${JUDGE_PROVIDER:-ollama:chat:qwen3-coder:30b}",
     "prompt:feedback": "node scripts/prompt-feedback-loop.mjs",
     "test:e2e": "playwright test",
     "test:e2e:real": "RUN_REAL_LLM=1 playwright test tests/semantic-web-real-llm.spec.mjs",
