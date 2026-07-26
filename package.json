@@ -5,6 +5,7 @@
     "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
     "eval": "promptfoo eval --no-cache",
     "eval:prompt": "promptfoo eval -c promptfoo-llm-prompt.config.yaml --no-cache",
+    "eval:judge": "promptfoo eval -c promptfoo-llm-judge.config.yaml --no-cache --grader ${JUDGE_PROVIDER:-openai:gpt-4.1-mini}",
     "prompt:feedback": "node scripts/prompt-feedback-loop.mjs",
     "test:e2e": "playwright test",
     "test:e2e:real": "RUN_REAL_LLM=1 playwright test tests/semantic-web-real-llm.spec.mjs",

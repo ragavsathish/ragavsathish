@@ -42,6 +42,7 @@ The fit engine has deterministic Promptfoo evals:
 
 - `npm run eval`
 - `npm run eval:prompt`
+- `JUDGE_PROVIDER=openai:gpt-4.1-mini npm run eval:judge`
 - `npm run prompt:feedback`
 
 ## CV

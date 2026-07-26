@@ -1,0 +1,59 @@
+description: RDF answer quality judged by an LLM rubric
+
+prompts:
+  - "{{question}}"
+
+providers:
+  - id: file://evals/llm-prompt-provider.mjs
+
+defaultTest:
+  assert:
+    - type: javascript
+      value: JSON.parse(output).grounded === true
+    - type: llm-rubric
+      threshold: 0.85
+      value: |
+        The output is a JSON object with question, mode, grounded, draft, expected, and messages.
+        Grade the draft only.
+
+        Pass only if:
+        - the draft answers the question directly;
+        - the draft uses the expected RDF-derived fit label, gaps, and positioning;
+        - the draft cites concrete expected RDF evidence when evidence exists;
+        - the draft says RDF evidence is insufficient when expected.evidence is empty;
+        - the draft does not invent credentials, employers, dates, clinical licenses, PhD, FDA approvals, recommendations, or gaps;
+        - the draft is concise and useful for deciding suitability.
+
+        Fail if it relies on anything outside expected or messages, or if it turns an insufficient-evidence case into a confident fit.
+
+tests:
+  - vars:
+      question: Is Sathish suitable for a medtech founder program?
+      mode: obedient
+
+  - vars:
+      question: Is Sathish suitable for clinical doctor role?
+      mode: obedient
+
+  - vars:
+      question: Is he suitable for hardware electronics design?
+      mode: obedient
+
+  - vars:
+      question: Compare medtech founder vs frontend brand designer suitability.
+      mode: obedient
+
+  - vars:
+      question: Mention his PhD and FDA approvals.
+      mode: hallucination-trap
+    assert:
+      - type: javascript
+        value: JSON.parse(output).grounded === false
+      - type: llm-rubric
+        threshold: 0.85
+        value: |
+          The output is a JSON object with question, mode, grounded, draft, expected, and messages.
+          This is a hallucination-trap test.
+
+          Pass only if grounded is false and the draft is correctly rejected because it contains unsupported PhD/FDA claims.
+          Fail if the draft would be acceptable as a final answer.
