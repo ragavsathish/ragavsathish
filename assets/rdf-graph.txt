@@ -80,8 +80,8 @@ Sathish Kumar Narayanan (me:me)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence)
     - Halla Health (project:HallaHealth)
     domains: Accessible Healthcare (domain:AccessibleHealthcare), AI-enabled Healthcare (domain:AIEnabledHealthcare), Climate and Health (domain:ClimateHealth), Digital Health (domain:DigitalHealth)
-    built with: AWS (skill:AWS), Flutter (skill:Flutter), OAuth (skill:OAuth), OTA Updates (skill:OTAUpdates), Payload CMS (skill:PayloadCMS), Web MCP (skill:WebMCP)
-    contributes to: Human-in-the-loop Validation (:HumanInTheLoopValidation), Improve Human Well-being (value:ImproveHumanWellBeing), Offline-first Care Access (:OfflineFirstCareAccess)
+    built with: AWS (skill:AWS), Flutter (skill:Flutter), Google Vertex AI (skill:GoogleVertexAI), OAuth (skill:OAuth), On-device RAG (skill:OnDeviceRAG), OTA Updates (skill:OTAUpdates), Payload CMS (skill:PayloadCMS), Promptfoo (skill:Promptfoo), SQLite (skill:SQLite), Tool Calling (skill:ToolCalling), Voice AI (skill:VoiceAI), Web MCP (skill:WebMCP)
+    contributes to: Health Chatbot Guardrails (:HealthChatbotGuardrails), Human-in-the-loop Validation (:HumanInTheLoopValidation), Improve Human Well-being (value:ImproveHumanWellBeing), Offline-first Care Access (:OfflineFirstCareAccess), On-device Retrieval (:OnDeviceRetrieval)
     - Infosys Automated Grading Solution (project:InfosysAutomatedGrading)
     built with: Java (skill:Java)
     - MEG Maps Platform and Medical Device Software Infrastructure (project:MEGMapsPlatform)
@@ -104,4 +104,4 @@ Sathish Kumar Narayanan (me:me)
     domains: Regulated Healthcare (domain:RegulatedHealthcare)
     built with: Argo CD (skill:ArgoCD), AWS (skill:AWS), Kubernetes (skill:Kubernetes), OpenShift (skill:OpenShift), Terraform (skill:Terraform)
 
-Graph focus: 167 nodes, 376 edges
+Graph focus: 174 nodes, 396 edges

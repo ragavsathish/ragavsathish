@@ -479,6 +479,11 @@ skill:WebMCP a :Technology ; skos:prefLabel "Web MCP" .
 skill:OAuth a :Technology ; skos:prefLabel "OAuth" .
 skill:Flutter a :Technology ; skos:prefLabel "Flutter" .
 skill:OTAUpdates a :Technology ; skos:prefLabel "OTA Updates" .
+skill:GoogleVertexAI a :Technology ; skos:prefLabel "Google Vertex AI" .
+skill:VoiceAI a :Technology ; skos:prefLabel "Voice AI" .
+skill:SQLite a :Technology ; skos:prefLabel "SQLite" .
+skill:ToolCalling a :Technology ; skos:prefLabel "Tool Calling" .
+skill:OnDeviceRAG a :Technology ; skos:prefLabel "On-device RAG" .
 
 #################################################################
 # Organizations
@@ -698,10 +703,10 @@ project:HallaHealth
     a :Project ;
     schema:name "Halla Health" ;
     :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare, domain:AccessibleHealthcare ;
-    :builtWith skill:AWS, skill:PayloadCMS, skill:WebMCP, skill:OAuth, skill:Flutter, skill:OTAUpdates ;
+    :builtWith skill:AWS, skill:PayloadCMS, skill:WebMCP, skill:OAuth, skill:Flutter, skill:OTAUpdates, skill:GoogleVertexAI, skill:VoiceAI, skill:Promptfoo, skill:ToolCalling, skill:SQLite, skill:OnDeviceRAG ;
     :accelerates :ContentProduction ;
-    :contributesTo value:ImproveHumanWellBeing, :HumanInTheLoopValidation, :OfflineFirstCareAccess ;
-    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Included offline-first OTA delivery through a Flutter mobile app." .
+    :contributesTo value:ImproveHumanWellBeing, :HumanInTheLoopValidation, :OfflineFirstCareAccess, :HealthChatbotGuardrails, :OnDeviceRetrieval ;
+    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Integrated Google Vertex AI voice AI with Promptfoo evaluations to add guardrails for a health chatbot. Used tool calling to query an on-device SQLite database as local RAG. Included offline-first OTA delivery through a Flutter mobile app." .
 
 project:AlaLaurilaDataAcquisition
     a :Project ;
@@ -767,6 +772,18 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Offline-first Care Access" ;
     :contributesTo domain:AccessibleHealthcare ;
     rdfs:comment "Designing mobile health workflows to remain useful with intermittent connectivity, including over-the-air updates when connectivity is available." .
+
+:HealthChatbotGuardrails
+    a skos:Concept ;
+    skos:prefLabel "Health Chatbot Guardrails" ;
+    :contributesTo domain:AIEnabledHealthcare, value:Evidence, value:Accountability ;
+    rdfs:comment "Evaluation and control patterns for keeping health chatbot responses grounded, reviewed, and within intended safety boundaries." .
+
+:OnDeviceRetrieval
+    a skos:Concept ;
+    skos:prefLabel "On-device Retrieval" ;
+    :contributesTo :OfflineFirstCareAccess, domain:AccessibleHealthcare ;
+    rdfs:comment "Retrieving locally stored facts from an on-device database so assistant behavior can remain useful without relying only on remote services." .
 
 :WorkflowVisualization
     a skos:Concept ;
