@@ -44,6 +44,7 @@ The fit engine has deterministic Promptfoo evals:
 - `npm run eval:prompt`
 - `npm run eval:judge` with Ollama serving `qwen3-coder:30b` on `localhost:11434`
 - `npm run prompt:feedback`
+- [Promptfoo RDF eval skill](docs/promptfoo-eval-skill.md)
 
 ## CV
 
