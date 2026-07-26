@@ -1,5 +1,6 @@
 import { DataFactory, Parser, Store } from "https://esm.sh/n3@2.1.1";
 import { assessFit } from "./fit-engine.js";
+import { buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "./llm-prompt.js";
 
 const { namedNode } = DataFactory;
 
@@ -120,14 +121,6 @@ async function assess(question) {
   }
 }
 
-function isGroundedLlmText(text, result) {
-  if (!text) return false;
-  if (!text.includes(`${result.fit} fit`)) return false;
-  if (!result.gaps.every((gap) => text.includes(gap))) return false;
-  if (!text.includes(result.positioning)) return false;
-  return true;
-}
-
 function collectFacts() {
   const byShort = new Map();
   const resources = new Set();
@@ -183,33 +176,15 @@ function shorten(value) {
 }
 
 async function summarizeWithLlm(question, result) {
-  const facts = [
-    `Fit label: ${result.fit} fit`,
-    `Score: ${result.score}/100`,
-    `Target: ${result.target}`,
-    `Evidence: ${result.evidence.join("; ")}`,
-    `Gaps: ${result.gaps.join("; ")}`,
-    `Positioning: ${result.positioning}`
-  ].join("\n");
-
   const completion = await engine.chat.completions.create({
     messages: [
       {
         role: "system",
-        content: "You write concise career-fit assessments. Use only the provided RDF-derived facts. Do not invent roles, companies, dates, credentials, recommendations, training needs, or new gaps. Preserve the exact fit label, gaps, and positioning. If evidence is missing, say the RDF does not show it."
+        content: llmSystemPrompt
       },
       {
         role: "user",
-        content: `Question: ${question}
-
-RDF-derived facts:
-${facts}
-
-Write this exact structure:
-Fit: ${result.fit} fit
-Why: one sentence using only the listed evidence.
-Gaps: copy these gaps exactly: ${result.gaps.join(" | ")}
-Positioning: copy this positioning exactly: ${result.positioning}`
+        content: buildLlmUserPrompt(question, result)
       }
     ],
     temperature: 0.2

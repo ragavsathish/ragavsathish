@@ -1,0 +1,50 @@
+description: RDF-grounded LLM prompt feedback evals
+
+prompts:
+  - "{{question}}"
+
+providers:
+  - id: file://evals/llm-prompt-provider.mjs
+
+tests:
+  - vars:
+      question: Is Sathish suitable for a medtech founder program?
+      mode: obedient
+    assert:
+      - type: javascript
+        value: JSON.parse(output).grounded === true
+      - type: contains
+        value: "Fit: Strong fit"
+      - type: contains
+        value: Make commercial ownership and founder-level accountability explicit.
+      - type: contains
+        value: Research-to-product healthcare technologist with regulated medical software, digital health, and clinical workflow exposure.
+
+  - vars:
+      question: Is Sathish suitable for frontend brand design?
+      mode: obedient
+    assert:
+      - type: javascript
+        value: JSON.parse(output).grounded === true
+      - type: contains
+        value: "Fit: Weak fit"
+      - type: contains
+        value: Better fit for product engineering than pure brand or visual design.
+
+  - vars:
+      question: Would Sathish fit a health AI product lead role?
+      mode: drift
+    assert:
+      - type: javascript
+        value: JSON.parse(output).grounded === false
+      - type: contains
+        value: Add more AI credentials and commercial training.
+
+  - vars:
+      question: Is Sathish a good fit for a pure clinical role?
+      mode: drift
+    assert:
+      - type: javascript
+        value: JSON.parse(output).grounded === false
+      - type: contains
+        value: invented extra qualifications

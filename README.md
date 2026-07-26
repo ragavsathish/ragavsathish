@@ -41,6 +41,8 @@ The default browser model is `SmolLM2-1.7B-Instruct-q4f16_1-MLC`, loaded over th
 The fit engine has deterministic Promptfoo evals:
 
 - `npm run eval`
+- `npm run eval:prompt`
+- `npm run prompt:feedback`
 
 ## CV
 

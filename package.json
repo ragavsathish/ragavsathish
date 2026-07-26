@@ -1,11 +1,14 @@
 {
+  "type": "module",
   "scripts": {
     "generate:rdf-graph": "node scripts/generate-rdf-graph.mjs",
     "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
     "eval": "promptfoo eval --no-cache",
+    "eval:prompt": "promptfoo eval -c promptfoo-llm-prompt.config.yaml --no-cache",
+    "prompt:feedback": "node scripts/prompt-feedback-loop.mjs",
     "test:e2e": "playwright test",
     "test:e2e:real": "RUN_REAL_LLM=1 playwright test tests/semantic-web-real-llm.spec.mjs",
-    "dry": "npm run generate:rdf-graph && npm run check:app && npm run eval && npm run test:e2e && git diff --check"
+    "dry": "npm run generate:rdf-graph && npm run check:app && npm run prompt:feedback && npm run eval && npm run eval:prompt && npm run test:e2e && git diff --check"
   },
   "dependencies": {
     "@hpcc-js/wasm": "^2.35.0",
