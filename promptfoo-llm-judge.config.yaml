@@ -50,7 +50,7 @@ tests:
     assert: *groundedQuality
 
   - vars:
-      question: What ended in July 2026?
+      question: What ended in October 2025?
       mode: obedient
     assert: *groundedQuality
 

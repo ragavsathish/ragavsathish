@@ -72,13 +72,13 @@
     "purpose": "Date/current-status wording must not invent current employment."
   },
   {
-    "id": "ended-july-2026",
-    "question": "What ended in July 2026?",
+    "id": "ended-october-2025",
+    "question": "What ended in October 2025?",
     "mode": "obedient",
     "category": "rdf-date-fact",
     "coverage": ["feedback", "prompt", "judge"],
     "expectedKind": "fact",
-    "expectedAnswer": "Senior Software Developer / Architect at MEGIN ended in July 2026.",
+    "expectedAnswer": "Senior Software Developer / Architect at MEGIN ended in October 2025.",
     "purpose": "Answers role end-date questions from schema:endDate without treating them as suitability."
   },
   {

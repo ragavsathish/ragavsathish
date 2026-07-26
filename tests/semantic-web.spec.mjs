@@ -5,7 +5,7 @@ test.describe("semantic web fit assistant", () => {
     await page.goto("/semantic-web/");
 
     await expect(page.getByRole("heading", { name: "Ask where Sathish fits, and where he does not." })).toBeVisible();
-    await expect(page.locator("#rdfStatus")).toHaveText("574 triples");
+    await expect(page.locator("#rdfStatus")).toHaveText("575 triples");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Load WebGPU LLM" })).toBeVisible();
   });
@@ -74,12 +74,12 @@ test.describe("semantic web fit assistant", () => {
 
     await page
       .getByLabel("Role, program, opportunity, or concern")
-      .fill("What ended in July 2026?");
+      .fill("What ended in October 2025?");
     await page.getByRole("button", { name: "Assess" }).click();
 
     const answer = page.locator("#answer");
     await expect(answer).toContainText("RDF date fact");
-    await expect(answer).toContainText("Senior Software Developer / Architect at MEGIN ended in July 2026.");
+    await expect(answer).toContainText("Senior Software Developer / Architect at MEGIN ended in October 2025.");
     await expect(answer).toContainText("role:MeginSeniorSoftwareDeveloperArchitect");
     await expect(answer).toContainText("org:MEGIN");
   });

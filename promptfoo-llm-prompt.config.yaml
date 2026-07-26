@@ -84,7 +84,7 @@ tests:
         value: The RDF does not show enough target-specific evidence for this question.
 
   - vars:
-      question: What ended in July 2026?
+      question: What ended in October 2025?
       mode: obedient
     assert:
       - type: javascript
@@ -92,7 +92,7 @@ tests:
       - type: contains
         value: "Answer:"
       - type: contains
-        value: Senior Software Developer / Architect at MEGIN ended in July 2026.
+        value: Senior Software Developer / Architect at MEGIN ended in October 2025.
 
   - vars:
       question: Give me proof from RDF only that he fits medtech founder roles.

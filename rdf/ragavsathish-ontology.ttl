@@ -506,7 +506,7 @@ role:MeginSeniorSoftwareDeveloperArchitect
     a :CareerRole ;
     schema:roleName "Senior Software Developer / Architect" ;
     schema:startDate "2021-09" ;
-    schema:endDate "2026-07" ;
+    schema:endDate "2025-10" ;
     :atOrganization org:MEGIN ;
     :inDomain domain:MedicalDeviceSoftware, domain:RegulatedHealthcare ;
     :translates domain:ClinicalValidation, domain:MedicalDeviceSoftware ;
@@ -529,6 +529,7 @@ role:MeginSeniorSoftwareDeveloperArchitect
 role:ScopeImpactTechnologyLead
     a :CareerRole ;
     schema:roleName "Technology Lead" ;
+    schema:startDate "2025-11" ;
     :atOrganization org:ScopeImpact ;
     :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare ;
     :translates domain:AccessibleHealthcare, domain:AIEnabledHealthcare ;
