@@ -706,7 +706,7 @@ project:HallaHealth
     :builtWith skill:AWS, skill:PayloadCMS, skill:WebMCP, skill:OAuth, skill:Flutter, skill:OTAUpdates, skill:GoogleVertexAI, skill:VoiceAI, skill:Promptfoo, skill:ToolCalling, skill:SQLite, skill:OnDeviceRAG ;
     :accelerates :ContentProduction ;
     :contributesTo value:ImproveHumanWellBeing, :HumanInTheLoopValidation, :OfflineFirstCareAccess, :HealthChatbotGuardrails, :OnDeviceRetrieval ;
-    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Integrated Google Vertex AI voice AI with Promptfoo evaluations to add guardrails for a health chatbot. Used tool calling to query an on-device SQLite database as local RAG. Included offline-first OTA delivery through a Flutter mobile app." .
+    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities. Used Payload CMS with Web MCP connected through OAuth to accelerate content production while keeping review human-in-the-loop through Payload review workflows. Integrated Google Vertex AI voice AI with Promptfoo evaluations to add guardrails for a health chatbot. Implemented on-device RAG through tool calls that query SQLite content on the device. Included offline-first OTA delivery through a Flutter mobile app." .
 
 project:AlaLaurilaDataAcquisition
     a :Project ;
@@ -783,7 +783,7 @@ project:InfosysAutomatedGrading
     a skos:Concept ;
     skos:prefLabel "On-device Retrieval" ;
     :contributesTo :OfflineFirstCareAccess, domain:AccessibleHealthcare ;
-    rdfs:comment "Retrieving locally stored facts from an on-device database so assistant behavior can remain useful without relying only on remote services." .
+    rdfs:comment "Retrieving locally stored content through tool calls to an on-device SQLite database, forming the local RAG path for assistant responses." .
 
 :WorkflowVisualization
     a skos:Concept ;
