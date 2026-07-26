@@ -4,7 +4,7 @@
     "question": "Is Sathish suitable for a medtech founder program?",
     "mode": "obedient",
     "category": "strong-fit",
-    "coverage": ["feedback", "prompt", "judge", "browser"],
+    "coverage": ["feedback", "fit", "prompt", "judge", "browser"],
     "expectedFit": "Strong fit",
     "purpose": "Strong-fit medtech founder evidence stays grounded in RDF."
   },
@@ -13,7 +13,8 @@
     "question": "Would Sathish fit a health AI product lead role?",
     "mode": "drift",
     "category": "drift-rejection",
-    "coverage": ["feedback", "prompt"],
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Strong fit",
     "expectedGrounded": false,
     "purpose": "Rejects invented recommendations and unrelated AI credential gaps."
   },
@@ -22,7 +23,7 @@
     "question": "Is Sathish suitable for cloud platform architect roles?",
     "mode": "obedient",
     "category": "strong-fit",
-    "coverage": ["feedback", "browser"],
+    "coverage": ["feedback", "fit", "browser"],
     "expectedFit": "Strong fit",
     "purpose": "Cloud/platform evidence maps to AWS, Terraform, Kubernetes, and regulated infrastructure."
   },
@@ -31,7 +32,8 @@
     "question": "Is Sathish a good fit for a pure clinical role?",
     "mode": "drift",
     "category": "drift-rejection",
-    "coverage": ["feedback", "prompt"],
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Weak fit",
     "expectedGrounded": false,
     "purpose": "Rejects invented clinical suitability and unsupported training recommendations."
   },
@@ -40,7 +42,7 @@
     "question": "Is Sathish suitable for frontend brand design?",
     "mode": "obedient",
     "category": "weak-fit",
-    "coverage": ["feedback", "prompt", "browser"],
+    "coverage": ["feedback", "fit", "prompt", "browser"],
     "expectedFit": "Weak fit",
     "purpose": "Keeps frontend evidence as supporting product engineering evidence, not visual brand ownership."
   },

@@ -42,12 +42,14 @@ Add a scenario when it protects one of these behaviors:
 
 Track the scenario first in `evals/rdf-fit-scenarios.json`. It is the human-readable catalog for reviewed questions, expected behavior, coverage layers, and intent.
 
+Promptfoo tests are generated from the catalog by `evals/promptfoo-scenario-tests.mjs`. Keep the YAML configs thin; they should only point at the generated test set.
+
 Then update assertion coverage where needed:
 
-- `promptfoo-llm-prompt.config.yaml` for exact deterministic prompt assertions.
+- `evals/promptfoo-scenario-tests.mjs` for exact deterministic Promptfoo assertions.
 - `tests/semantic-web.spec.mjs` for browser-visible regressions.
 
-Add judge coverage in `promptfoo-llm-judge.config.yaml` only for representative cases. Keep that suite small because local judge runs are slower than deterministic evals.
+Add judge coverage in the scenario catalog only for representative cases. Keep that suite small because local judge runs are slower than deterministic evals.
 
 ## Rubric Rules
 
