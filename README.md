@@ -6,7 +6,7 @@ My north star is human well-being: building systems that stay close to clinician
 
 ## Source of Truth
 
-This profile is maintained as a semantic web knowledge graph:
+This profile is maintained as a hobby semantic web knowledge graph:
 
 - [RDF/Turtle ontology](rdf/ragavsathish-ontology.ttl)
 - [RDF notes](rdf/README.md)

@@ -54,6 +54,7 @@ const focusPredicates = new Set([
   "https://ragavsathish.github.io/ontology#practices",
   "https://ragavsathish.github.io/ontology#developsThrough",
   "https://ragavsathish.github.io/ontology#seeksToReduce",
+  "https://ragavsathish.github.io/ontology#exploresAsHobby",
   "https://ragavsathish.github.io/ontology#workedOn",
   "https://ragavsathish.github.io/ontology#hasCareerRole",
   "https://ragavsathish.github.io/ontology#atOrganization",
@@ -259,6 +260,7 @@ function makeAscii() {
     practices: "https://ragavsathish.github.io/ontology#practices",
     developsThrough: "https://ragavsathish.github.io/ontology#developsThrough",
     seeksToReduce: "https://ragavsathish.github.io/ontology#seeksToReduce",
+    exploresAsHobby: "https://ragavsathish.github.io/ontology#exploresAsHobby",
     careerRole: "https://ragavsathish.github.io/ontology#hasCareerRole",
     workedOn: "https://ragavsathish.github.io/ontology#workedOn",
     atOrganization: "https://ragavsathish.github.io/ontology#atOrganization",
@@ -300,6 +302,14 @@ function makeAscii() {
 
   lines.push("", "  worked on");
   for (const project of objectsFor(person, predicates.workedOn)) {
+    lines.push(`    - ${displayLabel(project)}`);
+    lines.push(...relationLine(project, predicates.inDomain, "domains"));
+    lines.push(...relationLine(project, predicates.builtWith, "built with"));
+    lines.push(...relationLine(project, predicates.contributesTo, "contributes to"));
+  }
+
+  lines.push("", "  explores as hobby");
+  for (const project of objectsFor(person, predicates.exploresAsHobby)) {
     lines.push(`    - ${displayLabel(project)}`);
     lines.push(...relationLine(project, predicates.inDomain, "domains"));
     lines.push(...relationLine(project, predicates.builtWith, "built with"));

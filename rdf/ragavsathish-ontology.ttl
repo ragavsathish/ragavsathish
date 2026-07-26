@@ -131,6 +131,12 @@
     rdfs:domain schema:Person ;
     rdfs:range :Project .
 
+:exploresAsHobby
+    a rdf:Property ;
+    rdfs:label "explores as hobby" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Project .
+
 :builtWith
     a rdf:Property ;
     rdfs:label "built with" ;
@@ -207,10 +213,11 @@ me:me
         domain:DelayedClinicalFeedback,
         domain:BureaucraticReleaseCycles,
         domain:LostEmpathyInTranslation ;
-    :workedOn
+    :exploresAsHobby
         project:PersonalSemanticWebProfile,
         project:RdfFitAssistant,
-        project:PromptfooRdfEvalHarness,
+        project:PromptfooRdfEvalHarness ;
+    :workedOn
         project:MEGMapsPlatform,
         project:HallaHealth,
         project:AlaLaurilaDataAcquisition,
@@ -667,7 +674,7 @@ project:PersonalSemanticWebProfile
     :inDomain domain:SemanticWeb ;
     :builtWith skill:RDF, skill:RDFS, skill:Turtle, skill:N3, skill:Graphviz, skill:Mermaid ;
     :contributesTo value:Evidence, value:Accountability ;
-    rdfs:comment "Personal ontology and knowledge graph that keeps RDF/Turtle as the source of truth for profile facts, generated visualization artifacts, and linked data publication." .
+    rdfs:comment "Personal hobby and learning project: an ontology and knowledge graph that keeps RDF/Turtle as the source of truth for profile facts, generated visualization artifacts, and linked data publication. This is not modeled as core professional work evidence." .
 
 project:RdfFitAssistant
     a :Project ;
@@ -675,7 +682,7 @@ project:RdfFitAssistant
     :inDomain domain:SemanticWeb, domain:LocalFirstAI ;
     :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:SmolLM2 ;
     :contributesTo value:Evidence, value:Accountability ;
-    rdfs:comment "Browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative." .
+    rdfs:comment "Personal hobby and learning project: a browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative. This is not modeled as core professional work evidence." .
 
 project:PromptfooRdfEvalHarness
     a :Project ;
@@ -683,7 +690,7 @@ project:PromptfooRdfEvalHarness
     :inDomain domain:LLMEvaluation, domain:SemanticWeb, domain:LocalFirstAI ;
     :builtWith skill:Promptfoo, skill:TypeScript, skill:Ollama, skill:Playwright, skill:RDF ;
     :contributesTo value:Evidence, value:Accountability ;
-    rdfs:comment "Promptfoo and Playwright evaluation setup that checks RDF fit scoring, prompt grounding, hallucination rejection, browser behavior, and local LLM judge quality." .
+    rdfs:comment "Personal hobby and learning project: Promptfoo and Playwright evaluation setup that checks RDF fit scoring, prompt grounding, hallucination rejection, browser behavior, and local LLM judge quality. This is not modeled as core professional work evidence." .
 
 product:MEGMaps
     a :Product ;
