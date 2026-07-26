@@ -36,6 +36,12 @@ Ask fit questions against the RDF profile:
 It runs the RDF assessment locally in the browser and can optionally load a small WebGPU LLM for answer wording.
 The default browser model is `SmolLM2-1.7B-Instruct-q4f16_1-MLC`, loaded over the internet by WebLLM and cached by the browser.
 
+## Evaluation
+
+The fit engine has deterministic Promptfoo evals:
+
+- `npm run eval`
+
 ## CV
 
 The human-readable CV lives in LaTeX:
