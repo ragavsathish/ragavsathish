@@ -39,6 +39,36 @@ test.describe("semantic web fit assistant", () => {
     await expect(answer).toContainText("Better fit for product engineering than pure brand or visual design.");
   });
 
+  test("keeps unsupported targets weak instead of borrowing unrelated evidence", async ({ page }) => {
+    await page.goto("/semantic-web/");
+
+    await page
+      .getByLabel("Role, program, opportunity, or concern")
+      .fill("Is he suitable for hardware electronics design?");
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("Unclear target / insufficient RDF match");
+    await expect(answer).toContainText("Weak fit");
+    await expect(answer).toContainText("The RDF does not show enough target-specific evidence for this question.");
+    await expect(answer).not.toContainText("Strong fit");
+  });
+
+  test("does not invent current employment for date-like questions", async ({ page }) => {
+    await page.goto("/semantic-web/");
+
+    await page
+      .getByLabel("Role, program, opportunity, or concern")
+      .fill("Is he currently at MEGIN?");
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("Unclear target / insufficient RDF match");
+    await expect(answer).toContainText("Weak fit");
+    await expect(answer).toContainText("The RDF does not show enough target-specific evidence for this question.");
+    await expect(answer).not.toContainText("Strong fit");
+  });
+
   test("example chips update and assess the question", async ({ page }) => {
     await page.goto("/semantic-web/");
 

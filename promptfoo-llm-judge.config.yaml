@@ -43,6 +43,16 @@ tests:
     assert: *groundedQuality
 
   - vars:
+      question: Is he currently at MEGIN?
+      mode: obedient
+    assert: *groundedQuality
+
+  - vars:
+      question: What ended in July 2026?
+      mode: obedient
+    assert: *groundedQuality
+
+  - vars:
       question: Compare medtech founder vs frontend brand designer suitability.
       mode: obedient
     assert: *groundedQuality
