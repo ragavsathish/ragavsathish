@@ -208,6 +208,9 @@ me:me
         domain:BureaucraticReleaseCycles,
         domain:LostEmpathyInTranslation ;
     :workedOn
+        project:PersonalSemanticWebProfile,
+        project:RdfFitAssistant,
+        project:PromptfooRdfEvalHarness,
         project:MEGMapsPlatform,
         project:HallaHealth,
         project:AlaLaurilaDataAcquisition,
@@ -399,6 +402,18 @@ domain:AIEnabledHealthcare
     a :Domain ;
     skos:prefLabel "AI-enabled Healthcare" .
 
+domain:SemanticWeb
+    a :Domain ;
+    skos:prefLabel "Semantic Web" .
+
+domain:LocalFirstAI
+    a :Domain ;
+    skos:prefLabel "Local-first AI" .
+
+domain:LLMEvaluation
+    a :Domain ;
+    skos:prefLabel "LLM Evaluation" .
+
 domain:DisconnectedHealthcareIT
     a :Domain ;
     skos:prefLabel "Disconnected Healthcare IT" ;
@@ -446,6 +461,19 @@ skill:LDAP a :Technology ; skos:prefLabel "LDAP" .
 skill:ADFS a :Technology ; skos:prefLabel "ADFS" .
 skill:EntraID a :Technology ; skos:prefLabel "Microsoft Entra ID" .
 skill:PACS a :Technology ; skos:prefLabel "PACS" .
+skill:RDF a :Technology ; skos:prefLabel "RDF" .
+skill:RDFS a :Technology ; skos:prefLabel "RDFS" .
+skill:Turtle a :Technology ; skos:prefLabel "Turtle" .
+skill:SPARQL a :Technology ; skos:prefLabel "SPARQL" .
+skill:Mermaid a :Technology ; skos:prefLabel "Mermaid" .
+skill:Graphviz a :Technology ; skos:prefLabel "Graphviz" .
+skill:N3 a :Technology ; skos:prefLabel "N3" .
+skill:Promptfoo a :Technology ; skos:prefLabel "Promptfoo" .
+skill:Playwright a :Technology ; skos:prefLabel "Playwright" .
+skill:WebGPU a :Technology ; skos:prefLabel "WebGPU" .
+skill:WebLLM a :Technology ; skos:prefLabel "WebLLM" .
+skill:Ollama a :Technology ; skos:prefLabel "Ollama" .
+skill:SmolLM2 a :Technology ; skos:prefLabel "SmolLM2" .
 
 #################################################################
 # Organizations
@@ -622,6 +650,30 @@ me:me schema:hasCredential me:MScLifeScienceTechnologies, me:BEngComputerScience
 #################################################################
 # Products and projects
 #################################################################
+
+project:PersonalSemanticWebProfile
+    a :Project ;
+    schema:name "Personal Semantic Web Profile" ;
+    :inDomain domain:SemanticWeb ;
+    :builtWith skill:RDF, skill:RDFS, skill:Turtle, skill:N3, skill:Graphviz, skill:Mermaid ;
+    :contributesTo value:Evidence, value:Accountability ;
+    rdfs:comment "Personal ontology and knowledge graph that keeps RDF/Turtle as the source of truth for profile facts, generated visualization artifacts, and linked data publication." .
+
+project:RdfFitAssistant
+    a :Project ;
+    schema:name "Browser-based RDF Fit Assistant" ;
+    :inDomain domain:SemanticWeb, domain:LocalFirstAI ;
+    :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:SmolLM2 ;
+    :contributesTo value:Evidence, value:Accountability ;
+    rdfs:comment "Browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative." .
+
+project:PromptfooRdfEvalHarness
+    a :Project ;
+    schema:name "Promptfoo RDF Evaluation Harness" ;
+    :inDomain domain:LLMEvaluation, domain:SemanticWeb, domain:LocalFirstAI ;
+    :builtWith skill:Promptfoo, skill:TypeScript, skill:Ollama, skill:Playwright, skill:RDF ;
+    :contributesTo value:Evidence, value:Accountability ;
+    rdfs:comment "Promptfoo and Playwright evaluation setup that checks RDF fit scoring, prompt grounding, hallucination rejection, browser behavior, and local LLM judge quality." .
 
 product:MEGMaps
     a :Product ;
