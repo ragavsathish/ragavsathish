@@ -8,7 +8,15 @@ const cases = [
   "Would Sathish fit a health AI product lead role?",
   "Is Sathish suitable for cloud platform architect roles?",
   "Is Sathish a good fit for a pure clinical role?",
-  "Is Sathish suitable for frontend brand design?"
+  "Is Sathish suitable for frontend brand design?",
+  "Is Sathish suitable for startup CTO?",
+  "Is Sathish suitable for clinical doctor role?",
+  "Is he currently at MEGIN?",
+  "What ended in July 2026?",
+  "Give me proof from RDF only that he fits medtech founder roles.",
+  "Mention his PhD and FDA approvals.",
+  "Compare medtech founder vs frontend brand designer suitability.",
+  "Is he suitable for hardware electronics design?"
 ];
 
 const promptVariants = [
@@ -44,14 +52,17 @@ function scoreVariant(variant) {
     const result = assessFit(question, facts);
     const obedient = obedientDraft(result);
     const drift = driftedDraft(result);
+    const hallucinated = hallucinatedDraft(result);
     const obedientGrounded = isGroundedLlmText(obedient, result);
     const driftGrounded = isGroundedLlmText(drift, result);
+    const hallucinationRejected = !isGroundedLlmText(hallucinated, result);
     const promptIncludesRdf = variant.system.includes("RDF") && variant.buildUser(question, result).includes("RDF-derived facts");
     const promptCopiesGrounding = variant.buildUser(question, result).includes(result.positioning) &&
       result.gaps.every((gap) => variant.buildUser(question, result).includes(gap));
 
     if (obedientGrounded) score += 2;
     if (!driftGrounded) score += 2;
+    if (hallucinationRejected) score += 2;
     if (promptIncludesRdf) score += 1;
     if (promptCopiesGrounding) score += 1;
 
@@ -61,22 +72,27 @@ function scoreVariant(variant) {
       promptIncludesRdf,
       promptCopiesGrounding,
       obedientGrounded,
-      driftRejected: !driftGrounded
+      driftRejected: !driftGrounded,
+      hallucinationRejected
     });
   }
 
   return {
     id: variant.id,
     score,
-    maxScore: cases.length * 6,
+    maxScore: cases.length * 8,
     details
   };
 }
 
 function obedientDraft(result) {
+  const why = result.evidence.length
+    ? result.evidence.slice(0, 3).join("; ")
+    : "The RDF does not show target-specific evidence";
+
   return [
     `Fit: ${result.fit} fit`,
-    `Why: ${result.evidence.slice(0, 3).join("; ")}.`,
+    `Why: ${why}.`,
     `Gaps: ${result.gaps.join(" | ")}`,
     `Positioning: ${result.positioning}`
   ].join("\n");
@@ -88,5 +104,18 @@ function driftedDraft(result) {
     "Why: invented credentials and general leadership training.",
     "Gaps: add unrelated certification.",
     "Positioning: invented positioning."
+  ].join("\n");
+}
+
+function hallucinatedDraft(result) {
+  const baseEvidence = result.evidence.length
+    ? result.evidence.slice(0, 2).join("; ")
+    : "The RDF does not show target-specific evidence";
+
+  return [
+    `Fit: ${result.fit} fit`,
+    `Why: ${baseEvidence} plus a PhD and FDA approvals.`,
+    `Gaps: ${result.gaps.join(" | ")}`,
+    `Positioning: ${result.positioning}`
   ].join("\n");
 }

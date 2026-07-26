@@ -128,7 +128,7 @@ export function assessFit(question, rdfFacts) {
     }))
     .filter((profile) => profile.keywordHits.length > 0);
 
-  const profiles = matched.length ? matched : fitProfiles.slice(0, 4);
+  const profiles = matched.length ? matched : [unknownTargetProfile(question)];
   const scored = profiles.map((profile) => scoreProfile(profile, rdfFacts)).sort((a, b) => b.score - a.score);
   const top = scored[0];
   const fit = top.score >= 72 ? "Strong" : top.score >= 42 ? "Partial" : "Weak";
@@ -161,5 +161,20 @@ function scoreProfile(profile, rdfFacts) {
     ...profile,
     score: Math.max(0, Math.min(100, score)),
     evidence
+  };
+}
+
+function unknownTargetProfile(question) {
+  return {
+    id: "unknown-target",
+    label: "Unclear target / insufficient RDF match",
+    keywordHits: [],
+    positives: [],
+    gaps: [
+      "The RDF does not show enough target-specific evidence for this question.",
+      "Ask about a concrete role or domain so the answer can stay grounded in RDF evidence."
+    ],
+    positioning: "Insufficient RDF match; strongest grounded evidence is in regulated healthcare software, digital health, cloud platforms, and research software.",
+    question
   };
 }

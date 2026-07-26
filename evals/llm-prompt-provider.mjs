@@ -15,7 +15,7 @@ export default class LlmPromptProvider {
       { role: "system", content: llmSystemPrompt },
       { role: "user", content: buildLlmUserPrompt(question, result) }
     ];
-    const draft = mode === "drift" ? driftedDraft(result) : obedientDraft(result);
+    const draft = draftForMode(mode, result);
     const grounded = isGroundedLlmText(draft, result);
 
     return {
@@ -36,10 +36,20 @@ export default class LlmPromptProvider {
   }
 }
 
+function draftForMode(mode, result) {
+  if (mode === "drift") return driftedDraft(result);
+  if (mode === "hallucination-trap") return hallucinatedDraft(result);
+  return obedientDraft(result);
+}
+
 function obedientDraft(result) {
+  const why = result.evidence.length
+    ? result.evidence.slice(0, 3).join("; ")
+    : "The RDF does not show target-specific evidence";
+
   return [
     `Fit: ${result.fit} fit`,
-    `Why: ${result.evidence.slice(0, 3).join("; ")}.`,
+    `Why: ${why}.`,
     `Gaps: ${result.gaps.join(" | ")}`,
     `Positioning: ${result.positioning}`
   ].join("\n");
@@ -51,5 +61,18 @@ function driftedDraft(result) {
     `Why: The candidate should get extra leadership training and pursue new certifications.`,
     `Gaps: Add more AI credentials and commercial training.`,
     `Positioning: Broad technology leader with invented extra qualifications.`
+  ].join("\n");
+}
+
+function hallucinatedDraft(result) {
+  const baseEvidence = result.evidence.length
+    ? result.evidence.slice(0, 2).join("; ")
+    : "The RDF does not show target-specific evidence";
+
+  return [
+    `Fit: ${result.fit} fit`,
+    `Why: ${baseEvidence} plus a PhD and FDA approvals.`,
+    `Gaps: ${result.gaps.join(" | ")}`,
+    `Positioning: ${result.positioning}`
   ].join("\n");
 }

@@ -32,5 +32,16 @@ export function isGroundedLlmText(text, result) {
   if (!text.includes(`${result.fit} fit`)) return false;
   if (!result.gaps.every((gap) => text.includes(gap))) return false;
   if (!text.includes(result.positioning)) return false;
+  if (hasInventedClaim(text)) return false;
   return true;
+}
+
+function hasInventedClaim(text) {
+  const normalized = text.toLowerCase();
+  return [
+    "phd",
+    "doctorate",
+    "fda approval",
+    "fda-approved"
+  ].some((claim) => normalized.includes(claim));
 }
