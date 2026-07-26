@@ -27,6 +27,14 @@ The diagram below is generated from the Turtle file.
 - [Generated Mermaid source](assets/rdf-graph.mmd)
 - Generate again with `npm run generate:rdf-graph`
 
+## Fit Assistant
+
+Ask fit questions against the RDF profile:
+
+- [Browser-based fit assistant](semantic-web/)
+
+It runs the RDF assessment locally in the browser and can optionally load a small WebGPU LLM for answer wording.
+
 ## CV
 
 The human-readable CV lives in LaTeX:

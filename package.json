@@ -1,7 +1,8 @@
 {
   "scripts": {
     "generate:rdf-graph": "node scripts/generate-rdf-graph.mjs",
-    "dry": "npm run generate:rdf-graph && git diff --check"
+    "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
+    "dry": "npm run generate:rdf-graph && npm run check:app && git diff --check"
   },
   "dependencies": {
     "@hpcc-js/wasm": "^2.35.0",
