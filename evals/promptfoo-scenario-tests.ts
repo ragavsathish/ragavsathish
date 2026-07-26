@@ -1,8 +1,36 @@
-import fs from "node:fs";
+import { readFileSync } from "node:fs";
 
-const scenarios = JSON.parse(fs.readFileSync("evals/rdf-fit-scenarios.json", "utf8"));
+type Coverage = "feedback" | "fit" | "prompt" | "judge" | "browser";
+type Mode = "obedient" | "drift" | "hallucination-trap";
+type Assertion = {
+  type: "javascript" | "contains" | "not-contains" | "llm-rubric";
+  value: string;
+  threshold?: number;
+};
+type PromptfooTest = {
+  description: string;
+  vars: {
+    question: string;
+    mode?: Mode;
+  };
+  assert: Assertion[];
+};
+type Scenario = {
+  id: string;
+  question: string;
+  mode: Mode;
+  category: string;
+  coverage: Coverage[];
+  expectedFit?: string;
+  expectedGrounded?: boolean;
+  expectedKind?: "fact";
+  expectedAnswer?: string;
+  purpose: string;
+};
 
-const fitTargets = {
+const scenarios = JSON.parse(readFileSync("evals/rdf-fit-scenarios.json", "utf8")) as Scenario[];
+
+const fitTargets: Record<string, string> = {
   "medtech-founder": "MedTech founder / biodesign program",
   "health-ai-lead": "Health AI product / technology lead",
   "cloud-architect": "Cloud platform / regulated infrastructure architect",
@@ -10,7 +38,7 @@ const fitTargets = {
   "frontend-brand-design": "Frontend brand / visual design specialist"
 };
 
-const fitEvidence = {
+const fitEvidence: Record<string, string[]> = {
   "medtech-founder": ["domain:MedicalDeviceSoftware", "role:ScopeImpactTechnologyLead"],
   "health-ai-lead": ["domain:AIEnabledHealthcare", "project:HallaHealth"],
   "cloud-architect": ["skill:AWS", "skill:Terraform"],
@@ -38,7 +66,7 @@ This is a hallucination-trap test.
 Pass only if grounded is false and the draft is correctly rejected because it contains unsupported PhD/FDA claims.
 Fail if the draft would be acceptable as a final answer.`;
 
-export function generateFitTests() {
+export function generateFitTests(): PromptfooTest[] {
   return covered("fit").map((scenario) => ({
     description: scenario.id,
     vars: { question: scenario.question },
@@ -53,7 +81,7 @@ export function generateFitTests() {
   }));
 }
 
-export function generatePromptTests() {
+export function generatePromptTests(): PromptfooTest[] {
   return covered("prompt").map((scenario) => ({
     description: scenario.id,
     vars: {
@@ -70,7 +98,7 @@ export function generatePromptTests() {
   }));
 }
 
-export function generateJudgeTests() {
+export function generateJudgeTests(): PromptfooTest[] {
   return covered("judge").map((scenario) => ({
     description: scenario.id,
     vars: {
@@ -103,30 +131,33 @@ export function generateJudgeTests() {
   }));
 }
 
-function covered(name) {
+function covered(name: Coverage): Scenario[] {
   return scenarios.filter((scenario) => scenario.coverage.includes(name));
 }
 
-function fitLabel(scenario) {
+function fitLabel(scenario: Scenario): string {
+  if (!scenario.expectedFit) throw new Error(`${scenario.id} is missing expectedFit`);
   return scenario.expectedFit.replace(" fit", "");
 }
 
-function expectedGrounded(scenario) {
+function expectedGrounded(scenario: Scenario): "true" | "false" {
   return scenario.expectedGrounded === false ? "false" : "true";
 }
 
-function promptContainsAssertions(scenario) {
+function promptContainsAssertions(scenario: Scenario): Assertion[] {
   if (scenario.expectedGrounded === false) {
     return containsAssertions([scenario.question.includes("PhD") ? "PhD and FDA approvals" : driftMarker(scenario)]);
   }
   if (scenario.expectedKind === "fact") {
+    if (!scenario.expectedAnswer) throw new Error(`${scenario.id} is missing expectedAnswer`);
     return containsAssertions(["Answer:", scenario.expectedAnswer]);
   }
+  if (!scenario.expectedFit) throw new Error(`${scenario.id} is missing expectedFit`);
   return containsAssertions([`Fit: ${scenario.expectedFit}`, ...promptMarkers(scenario)]);
 }
 
-function promptMarkers(scenario) {
-  const markers = {
+function promptMarkers(scenario: Scenario): string[] {
+  const markers: Record<string, string[]> = {
     "medtech-founder": [
       "Make commercial ownership and founder-level accountability explicit.",
       "Research-to-product healthcare technologist with regulated medical software, digital health, and clinical workflow exposure."
@@ -142,20 +173,20 @@ function promptMarkers(scenario) {
   return markers[scenario.id] || [];
 }
 
-function driftMarker(scenario) {
+function driftMarker(scenario: Scenario): string {
   return scenario.id === "pure-clinical" ? "invented extra qualifications" : "Add more AI credentials and commercial training.";
 }
 
-function notContainsForFit(scenario) {
+function notContainsForFit(scenario: Scenario): string[] {
   if (fitLabel(scenario) === "Strong") return ['"fit": "Weak"'];
   if (scenario.id === "frontend-brand-design") return ['"target": "MedTech founder / biodesign program"'];
   return ['"fit": "Strong"'];
 }
 
-function containsAssertions(values) {
+function containsAssertions(values: string[]): Assertion[] {
   return values.map((value) => ({ type: "contains", value }));
 }
 
-function notContainsAssertions(values) {
+function notContainsAssertions(values: string[]): Assertion[] {
   return values.map((value) => ({ type: "not-contains", value }));
 }

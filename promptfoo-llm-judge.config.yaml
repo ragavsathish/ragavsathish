@@ -8,4 +8,4 @@ providers:
   - id: file://evals/llm-prompt-provider.mjs
 
 tests:
-  - path: file://evals/promptfoo-scenario-tests.mjs:generateJudgeTests
+  - path: file://evals/promptfoo-scenario-tests.ts:generateJudgeTests

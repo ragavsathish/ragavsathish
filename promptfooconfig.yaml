@@ -7,4 +7,4 @@ providers:
   - id: file://evals/rdf-fit-provider.mjs
 
 tests:
-  - path: file://evals/promptfoo-scenario-tests.mjs:generateFitTests
+  - path: file://evals/promptfoo-scenario-tests.ts:generateFitTests
