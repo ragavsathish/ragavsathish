@@ -1,0 +1,757 @@
+@prefix : <https://ragavsathish.github.io/ontology#> .
+@prefix me: <https://ragavsathish.github.io/#> .
+@prefix org: <https://ragavsathish.github.io/org/> .
+@prefix project: <https://ragavsathish.github.io/project/> .
+@prefix role: <https://ragavsathish.github.io/role/> .
+@prefix value: <https://ragavsathish.github.io/value/> .
+@prefix practice: <https://ragavsathish.github.io/practice/> .
+@prefix skill: <https://ragavsathish.github.io/skill/> .
+@prefix domain: <https://ragavsathish.github.io/domain/> .
+@prefix product: <https://ragavsathish.github.io/product/> .
+@prefix schema: <https://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+# Ontology metadata
+#################################################################
+
+:RagavSathishOntology
+    a owl:Ontology ;
+    dcterms:title "Sathish Kumar Narayanan Personal Ontology" ;
+    dcterms:description "An RDFS/Turtle ontology and knowledge graph describing Sathish Kumar Narayanan's career, philosophy, medtech work, research background, and practices for human well-being." ;
+    dcterms:creator me:me ;
+    dcterms:created "2026-07-26"^^xsd:date ;
+    dcterms:format "text/turtle" ;
+    rdfs:seeAlso <https://ragavsathish.github.io/> .
+
+#################################################################
+# RDFS vocabulary
+#################################################################
+
+:Purpose
+    a rdfs:Class ;
+    rdfs:label "Purpose" ;
+    rdfs:comment "A long-lived motivating direction that gives meaning to work and practice." .
+
+:Value
+    a rdfs:Class ;
+    rdfs:label "Value" ;
+    rdfs:comment "An ethical or personal principle that guides decisions." .
+
+:Practice
+    a rdfs:Class ;
+    rdfs:label "Practice" ;
+    rdfs:comment "A repeated embodied, reflective, technical, or relational activity." .
+
+:CareerRole
+    a rdfs:Class ;
+    rdfs:label "Career role" ;
+    rdfs:subClassOf schema:Role ;
+    rdfs:comment "A professional role held by a person in an organization." .
+
+:Project
+    a rdfs:Class ;
+    rdfs:label "Project" ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:comment "A product, platform, research system, or technical initiative." .
+
+:Technology
+    a rdfs:Class ;
+    rdfs:label "Technology" ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:comment "A technical method, platform, language, or tool." .
+
+:Domain
+    a rdfs:Class ;
+    rdfs:label "Domain" ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:comment "A field of practice or knowledge." .
+
+:Product
+    a rdfs:Class ;
+    rdfs:label "Product" ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:comment "A product or product family connected to Sathish's work." .
+
+:hasPurpose
+    a rdf:Property ;
+    rdfs:label "has purpose" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Purpose .
+
+:guidedBy
+    a rdf:Property ;
+    rdfs:label "guided by" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Value .
+
+:practices
+    a rdf:Property ;
+    rdfs:label "practices" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Practice .
+
+:developsThrough
+    a rdf:Property ;
+    rdfs:label "develops through" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Practice .
+
+:contributesTo
+    a rdf:Property ;
+    rdfs:label "contributes to" ;
+    rdfs:range skos:Concept .
+
+:seeksToReduce
+    a rdf:Property ;
+    rdfs:label "seeks to reduce" ;
+    rdfs:range skos:Concept .
+
+:hasCareerRole
+    a rdf:Property ;
+    rdfs:label "has career role" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :CareerRole .
+
+:atOrganization
+    a rdf:Property ;
+    rdfs:label "at organization" ;
+    rdfs:domain :CareerRole ;
+    rdfs:range schema:Organization .
+
+:workedOn
+    a rdf:Property ;
+    rdfs:label "worked on" ;
+    rdfs:domain schema:Person ;
+    rdfs:range :Project .
+
+:builtWith
+    a rdf:Property ;
+    rdfs:label "built with" ;
+    rdfs:range :Technology .
+
+:inDomain
+    a rdf:Property ;
+    rdfs:label "in domain" ;
+    rdfs:range :Domain .
+
+:translates
+    a rdf:Property ;
+    rdfs:label "translates" ;
+    rdfs:comment "Connects research, user needs, regulatory constraints, and product systems." .
+
+:accelerates
+    a rdf:Property ;
+    rdfs:label "accelerates" ;
+    rdfs:comment "Describes a role or project that helps move learning, validation, or delivery faster." .
+
+:requires
+    a rdf:Property ;
+    rdfs:label "requires" .
+
+:learnedFrom
+    a rdf:Property ;
+    rdfs:label "learned from" .
+
+:expresses
+    a rdf:Property ;
+    rdfs:label "expresses" .
+
+#################################################################
+# Person
+#################################################################
+
+me:me
+    a schema:Person, foaf:Person ;
+    schema:name "Sathish Kumar Narayanan" ;
+    foaf:name "Sathish Kumar Narayanan" ;
+    schema:url <https://ragavsathish.github.io/> ;
+    schema:sameAs <https://github.com/ragavsathish> ;
+    schema:homeLocation [
+        a schema:Place ;
+        schema:name "Espoo, Finland"
+    ] ;
+    schema:jobTitle "Healthcare Technology Engineer and Technology Lead" ;
+    :hasPurpose value:ImproveHumanWellBeing ;
+    :guidedBy
+        value:HumanWellBeing,
+        value:HumanDignity,
+        value:Craftsmanship,
+        value:Humility,
+        value:ContinuousLearning,
+        value:SystemsEmpathy,
+        value:Evidence,
+        value:Accountability ;
+    :practices
+        practice:Engineering,
+        practice:ScientificResearch,
+        practice:ProductDiscovery,
+        practice:CustomerCloseness,
+        practice:Meditation,
+        practice:SwingDance,
+        practice:Retrospection,
+        practice:TeachingAndMentoring ;
+    :developsThrough
+        practice:TransferLearning,
+        practice:HandsOnBuilding,
+        practice:ClinicalObservation,
+        practice:ConflictToHarmony ;
+    :seeksToReduce
+        domain:DisconnectedHealthcareIT,
+        domain:DelayedClinicalFeedback,
+        domain:BureaucraticReleaseCycles,
+        domain:LostEmpathyInTranslation ;
+    :workedOn
+        project:MEGMapsPlatform,
+        project:HallaHealth,
+        project:AlaLaurilaDataAcquisition,
+        project:RetinalCircuitAnalysis,
+        project:SignantCloudMigration,
+        project:SeppoSinglePageApplication,
+        project:InfosysAutomatedGrading ;
+    :hasCareerRole
+        role:MeginSeniorSoftwareDeveloperArchitect,
+        role:ScopeImpactTechnologyLead,
+        role:SignantSeniorSoftwareDesigner,
+        role:SignantSoftwareDesigner,
+        role:SeppoSoftwareDeveloper,
+        role:AaltoGraduateResearcher,
+        role:InfosysEducationResearch,
+        role:InfosysSeniorSystemsEngineer,
+        role:InfosysSystemsEngineer .
+
+#################################################################
+# Purpose and values
+#################################################################
+
+value:ImproveHumanWellBeing
+    a :Purpose, skos:Concept ;
+    skos:prefLabel "Improve Human Well-being" ;
+    rdfs:comment "The north-star purpose: use technology, science, leadership, and embodied practices to improve access, quality of life, and meaningful human capability." ;
+    :contributesTo
+        value:HumanWellBeing,
+        value:HumanDignity,
+        domain:AccessibleHealthcare,
+        domain:QualityOfLife .
+
+value:HumanWellBeing
+    a :Value, skos:Concept ;
+    skos:prefLabel "Human Well-being" ;
+    skos:altLabel "Human flourishing", "Quality of life" ;
+    rdfs:comment "A practical and ethical framing that includes physical, mental, emotional, social, and economic dimensions of living well." .
+
+value:HumanDignity
+    a :Value, skos:Concept ;
+    skos:prefLabel "Human Dignity" ;
+    rdfs:comment "The belief that people deserve access to education, healthcare, appreciation, and tools that let them live with self-respect." .
+
+value:Craftsmanship
+    a :Value, skos:Concept ;
+    skos:prefLabel "Craftsmanship" ;
+    rdfs:comment "The selfishness-with-gratitude idea: take joy in mastery while using that mastery in service of others." .
+
+value:Humility
+    a :Value, skos:Concept ;
+    skos:prefLabel "Humility" ;
+    rdfs:comment "A readiness to contribute, learn, be vulnerable, and grow into ownership through experience and feedback from others." .
+
+value:ContinuousLearning
+    a :Value, skos:Concept ;
+    skos:prefLabel "Continuous Learning" ;
+    rdfs:comment "Learn quickly from mistakes, transfer learning across domains, and keep improving through reflection." .
+
+value:SystemsEmpathy
+    a :Value, skos:Concept ;
+    skos:prefLabel "Systems Empathy" ;
+    rdfs:comment "The discipline of keeping real users, clinicians, operators, and patients visible inside complex technical and regulatory systems." .
+
+value:Evidence
+    a :Value, skos:Concept ;
+    skos:prefLabel "Evidence" ;
+    rdfs:comment "Respect for scientific, clinical, operational, and post-market evidence when turning research into products." .
+
+value:Accountability
+    a :Value, skos:Concept ;
+    skos:prefLabel "Accountability" ;
+    rdfs:comment "A response to non-accountability: make ownership, traceability, and follow-through visible." .
+
+#################################################################
+# Practices
+#################################################################
+
+practice:Engineering
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Engineering" ;
+    :contributesTo value:ImproveHumanWellBeing ;
+    rdfs:comment "Building reliable software, platforms, infrastructure, and workflows that can survive real-world constraints." .
+
+practice:ScientificResearch
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Scientific Research" ;
+    :contributesTo value:Evidence ;
+    rdfs:comment "Using experimental and analytical methods to understand biological and clinical systems." .
+
+practice:ProductDiscovery
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Product Discovery" ;
+    rdfs:comment "Visualizing workflows, testing assumptions, and learning from actual users before the system hardens." .
+
+practice:CustomerCloseness
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Customer Closeness" ;
+    rdfs:comment "Installing, observing, listening, and using first-hand feedback to keep product development connected to practice." .
+
+practice:Meditation
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Meditation" ;
+    :contributesTo value:HumanWellBeing ;
+    rdfs:comment "A reflective practice of returning attention, cultivating contentment, and sharing value." .
+
+practice:SwingDance
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Swing Dance" ;
+    :contributesTo value:HumanWellBeing ;
+    :expresses value:Craftsmanship, value:HumanDignity ;
+    rdfs:comment "An embodied practice where individuality, communication, rhythm, joy, and coexistence become visible." .
+
+practice:Retrospection
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Retrospection" ;
+    rdfs:comment "Looking back honestly, learning from mistakes, and trying again." .
+
+practice:TeachingAndMentoring
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Teaching and Mentoring" ;
+    rdfs:comment "Sharing knowledge through seminars, internships, and collaborative technical growth." .
+
+practice:TransferLearning
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Transfer Learning" ;
+    rdfs:comment "Moving insight across bioinformatics, neuroscience, healthcare software, cloud systems, AI, and product work." .
+
+practice:HandsOnBuilding
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Hands-on Building" ;
+    rdfs:comment "Learning by making, shipping, breaking assumptions, and improving the system." .
+
+practice:ClinicalObservation
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Clinical Observation" ;
+    rdfs:comment "Learning from hospitals, expert users, deployments, and operational constraints." .
+
+practice:ConflictToHarmony
+    a :Practice, skos:Concept ;
+    skos:prefLabel "Conflict to Harmony" ;
+    rdfs:comment "Planting seeds, surfacing conflict, and working toward better rhythm and alignment." .
+
+#################################################################
+# Domains
+#################################################################
+
+domain:MedicalDeviceSoftware
+    a :Domain ;
+    skos:prefLabel "Medical Device Software" .
+
+domain:RegulatedHealthcare
+    a :Domain ;
+    skos:prefLabel "Regulated Healthcare" .
+
+domain:DigitalHealth
+    a :Domain ;
+    skos:prefLabel "Digital Health" .
+
+domain:ClinicalValidation
+    a :Domain ;
+    skos:prefLabel "Clinical Validation" .
+
+domain:PostMarketSurveillance
+    a :Domain ;
+    skos:prefLabel "Post-market Surveillance" ;
+    rdfs:comment "A key feedback mechanism after product release, especially for regulated health technology." .
+
+domain:AccessibleHealthcare
+    a :Domain ;
+    skos:prefLabel "Accessible Healthcare" .
+
+domain:QualityOfLife
+    a :Domain ;
+    skos:prefLabel "Quality of Life" .
+
+domain:ComputationalNeuroscience
+    a :Domain ;
+    skos:prefLabel "Computational Neuroscience" .
+
+domain:Bioinformatics
+    a :Domain ;
+    skos:prefLabel "Bioinformatics" .
+
+domain:ClimateHealth
+    a :Domain ;
+    skos:prefLabel "Climate and Health" .
+
+domain:AIEnabledHealthcare
+    a :Domain ;
+    skos:prefLabel "AI-enabled Healthcare" .
+
+domain:DisconnectedHealthcareIT
+    a :Domain ;
+    skos:prefLabel "Disconnected Healthcare IT" ;
+    rdfs:comment "Fragmented systems that make it difficult for healthcare tools, data, workflows, and people to communicate." .
+
+domain:DelayedClinicalFeedback
+    a :Domain ;
+    skos:prefLabel "Delayed Clinical Feedback" ;
+    rdfs:comment "A medtech pattern where products are built compliance-first and user feedback arrives too late." .
+
+domain:BureaucraticReleaseCycles
+    a :Domain ;
+    skos:prefLabel "Bureaucratic Release Cycles" ;
+    rdfs:comment "Slow bug fixes and releases that frustrate users and block workflow continuity." .
+
+domain:LostEmpathyInTranslation
+    a :Domain ;
+    skos:prefLabel "Lost Empathy in Translation" ;
+    rdfs:comment "The loss that happens when business, compliance, and engineering translate user needs without staying close to people." .
+
+#################################################################
+# Skills and technologies
+#################################################################
+
+skill:TypeScript a :Technology ; skos:prefLabel "TypeScript" .
+skill:Java a :Technology ; skos:prefLabel "Java" .
+skill:PostgreSQL a :Technology ; skos:prefLabel "PostgreSQL" .
+skill:Terraform a :Technology ; skos:prefLabel "Terraform" .
+skill:Ansible a :Technology ; skos:prefLabel "Ansible" .
+skill:React a :Technology ; skos:prefLabel "React" .
+skill:Redux a :Technology ; skos:prefLabel "Redux" .
+skill:MaterialUI a :Technology ; skos:prefLabel "Material UI" .
+skill:AWS a :Technology ; skos:prefLabel "AWS" .
+skill:Docker a :Technology ; skos:prefLabel "Docker" .
+skill:Kubernetes a :Technology ; skos:prefLabel "Kubernetes" .
+skill:GitLab a :Technology ; skos:prefLabel "GitLab" .
+skill:Jenkins a :Technology ; skos:prefLabel "Jenkins" .
+skill:ArgoCD a :Technology ; skos:prefLabel "Argo CD" .
+skill:Flux a :Technology ; skos:prefLabel "Flux" .
+skill:OpenShift a :Technology ; skos:prefLabel "OpenShift" .
+skill:Kairos a :Technology ; skos:prefLabel "Kairos" .
+skill:MATLAB a :Technology ; skos:prefLabel "MATLAB" .
+skill:HDF5 a :Technology ; skos:prefLabel "HDF5" .
+skill:LDAP a :Technology ; skos:prefLabel "LDAP" .
+skill:ADFS a :Technology ; skos:prefLabel "ADFS" .
+skill:EntraID a :Technology ; skos:prefLabel "Microsoft Entra ID" .
+skill:PACS a :Technology ; skos:prefLabel "PACS" .
+
+#################################################################
+# Organizations
+#################################################################
+
+org:MEGIN
+    a schema:Organization ;
+    schema:name "MEGIN" ;
+    schema:url <https://www.megin.fi/> .
+
+org:ScopeImpact
+    a schema:Organization ;
+    schema:name "Scope Impact" ;
+    schema:url <https://scopeimpact.fi/> .
+
+org:HallaHealth
+    a schema:Organization ;
+    schema:name "Halla Health" ;
+    schema:url <https://hallahealth.com/> .
+
+org:SignantHealth
+    a schema:Organization ;
+    schema:name "Signant Health" ;
+    schema:url <https://www.signanthealth.com/> .
+
+org:Seppo
+    a schema:Organization ;
+    schema:name "Seppo.io" ;
+    schema:url <https://seppo.io/> .
+
+org:Infosys
+    a schema:Organization ;
+    schema:name "Infosys" ;
+    schema:url <https://www.infosys.com/> .
+
+org:AaltoUniversity
+    a schema:CollegeOrUniversity ;
+    schema:name "Aalto University" ;
+    schema:url <https://www.aalto.fi/> .
+
+org:AnnaUniversity
+    a schema:CollegeOrUniversity ;
+    schema:name "Anna University" .
+
+org:AlaLaurilaLab
+    a schema:Organization ;
+    schema:name "Ala-Laurila Lab" .
+
+org:AWSSEA
+    a schema:Organization ;
+    schema:name "AWS Southeast Asia Social Entrepreneurs Accelerator" .
+
+#################################################################
+# Career roles
+#################################################################
+
+role:MeginSeniorSoftwareDeveloperArchitect
+    a :CareerRole ;
+    schema:roleName "Senior Software Developer / Architect" ;
+    schema:startDate "2021-09" ;
+    schema:endDate "2026-07" ;
+    :atOrganization org:MEGIN ;
+    :inDomain domain:MedicalDeviceSoftware, domain:RegulatedHealthcare ;
+    :translates domain:ClinicalValidation, domain:MedicalDeviceSoftware ;
+    :accelerates domain:BureaucraticReleaseCycles ;
+    :builtWith
+        skill:TypeScript,
+        skill:PostgreSQL,
+        skill:AWS,
+        skill:Terraform,
+        skill:Docker,
+        skill:Kubernetes,
+        skill:GitLab,
+        skill:Kairos,
+        skill:LDAP,
+        skill:ADFS,
+        skill:EntraID,
+        skill:PACS ;
+    rdfs:comment "Architected secure hybrid cloud/on-prem software for medical device systems, FDA-compliant workflows, hospital integrations, design transfer, CI/CD, cybersecurity, and AI-assisted engineering adoption." .
+
+role:ScopeImpactTechnologyLead
+    a :CareerRole ;
+    schema:roleName "Technology Lead" ;
+    :atOrganization org:ScopeImpact ;
+    :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare ;
+    :translates domain:AccessibleHealthcare, domain:AIEnabledHealthcare ;
+    :accelerates value:ImproveHumanWellBeing ;
+    rdfs:comment "Led technology thinking for Halla Health and represented Scope Impact in AWS SEA-linked social entrepreneurship contexts." .
+
+role:SignantSeniorSoftwareDesigner
+    a :CareerRole ;
+    schema:roleName "Senior Software Designer" ;
+    schema:startDate "2020-01" ;
+    schema:endDate "2021-09" ;
+    :atOrganization org:SignantHealth ;
+    :inDomain domain:RegulatedHealthcare ;
+    :builtWith skill:AWS, skill:Terraform, skill:OpenShift, skill:Kubernetes, skill:ArgoCD ;
+    rdfs:comment "Developed AWS infrastructure as code, migrated OpenShift microservices to AWS EKS, and implemented service mesh and GitOps deployment." .
+
+role:SignantSoftwareDesigner
+    a :CareerRole ;
+    schema:roleName "Software Designer" ;
+    schema:startDate "2018-09" ;
+    schema:endDate "2020-01" ;
+    :atOrganization org:SignantHealth ;
+    :builtWith skill:Java, skill:React, skill:Redux, skill:Jenkins ;
+    rdfs:comment "Built RESTful microservices, frontend components, and Jenkins shared libraries for continuous delivery." .
+
+role:SeppoSoftwareDeveloper
+    a :CareerRole ;
+    schema:roleName "Software Developer" ;
+    schema:startDate "2017-12" ;
+    schema:endDate "2018-07" ;
+    :atOrganization org:Seppo ;
+    :builtWith skill:React, skill:Redux, skill:MaterialUI ;
+    rdfs:comment "Refactored legacy Rails views into a responsive single-page application." .
+
+role:AaltoGraduateResearcher
+    a :CareerRole ;
+    schema:roleName "Graduate Researcher" ;
+    schema:startDate "2015" ;
+    schema:endDate "2018" ;
+    :atOrganization org:AaltoUniversity, org:AlaLaurilaLab ;
+    :inDomain domain:ComputationalNeuroscience, domain:Bioinformatics ;
+    :builtWith skill:MATLAB, skill:HDF5 ;
+    rdfs:comment "Developed multi-electrode retinal neural circuit analysis and experiment tooling." .
+
+role:InfosysEducationResearch
+    a :CareerRole ;
+    schema:roleName "Member - Education and Research" ;
+    schema:startDate "2014-04" ;
+    schema:endDate "2014-08" ;
+    :atOrganization org:Infosys ;
+    rdfs:comment "Led automated grading work, taught seminars, and mentored internships." .
+
+role:InfosysSeniorSystemsEngineer
+    a :CareerRole ;
+    schema:roleName "Senior Systems Engineer" ;
+    schema:startDate "2013-01" ;
+    schema:endDate "2014-03" ;
+    :atOrganization org:Infosys ;
+    rdfs:comment "Migrated enterprise systems from Ruby on Rails to JEE Spring MVC and improved build and test workflows." .
+
+role:InfosysSystemsEngineer
+    a :CareerRole ;
+    schema:roleName "Systems Engineer" ;
+    schema:startDate "2010-05" ;
+    schema:endDate "2012-12" ;
+    :atOrganization org:Infosys ;
+    rdfs:comment "Developed enterprise applications and contributed to monolith-to-SOA migration." .
+
+#################################################################
+# Education
+#################################################################
+
+me:MScLifeScienceTechnologies
+    a schema:EducationalOccupationalCredential ;
+    schema:name "MSc Life Science Technologies, Bioinformatics" ;
+    schema:recognizedBy org:AaltoUniversity ;
+    schema:startDate "2014" ;
+    schema:endDate "2017" ;
+    :inDomain domain:Bioinformatics, domain:ComputationalNeuroscience .
+
+me:BEngComputerScience
+    a schema:EducationalOccupationalCredential ;
+    schema:name "BEng Computer Science and Engineering, First Class with Distinction" ;
+    schema:recognizedBy org:AnnaUniversity ;
+    schema:startDate "2006" ;
+    schema:endDate "2010" .
+
+me:me schema:hasCredential me:MScLifeScienceTechnologies, me:BEngComputerScience .
+
+#################################################################
+# Products and projects
+#################################################################
+
+product:MEGMaps
+    a :Product ;
+    schema:name "MEG Maps" ;
+    :inDomain domain:MedicalDeviceSoftware, domain:RegulatedHealthcare ;
+    rdfs:comment "A clinical MEG software/product context connected to FDA-cleared MEGIN systems, modeled here at a high level." .
+
+project:MEGMapsPlatform
+    a :Project ;
+    schema:name "MEG Maps Platform and Medical Device Software Infrastructure" ;
+    :inDomain domain:MedicalDeviceSoftware, domain:RegulatedHealthcare ;
+    :builtWith skill:AWS, skill:Terraform, skill:Docker, skill:Kubernetes, skill:GitLab, skill:PostgreSQL ;
+    :requires domain:ClinicalValidation, domain:PostMarketSurveillance ;
+    rdfs:comment "Hybrid cloud/on-prem platform work for secure patient data, hospital integrations, FDA-compliant workflows, design transfer, and release reliability." .
+
+project:HallaHealth
+    a :Project ;
+    schema:name "Halla Health" ;
+    :inDomain domain:DigitalHealth, domain:ClimateHealth, domain:AIEnabledHealthcare, domain:AccessibleHealthcare ;
+    :builtWith skill:AWS ;
+    :contributesTo value:ImproveHumanWellBeing ;
+    rdfs:comment "AI-driven digital health and climate-health platform work connected to secure health data, self-care, interoperability, and underserved communities." .
+
+project:AlaLaurilaDataAcquisition
+    a :Project ;
+    schema:name "Ala-Laurila Lab Data Acquisition" ;
+    :inDomain domain:ComputationalNeuroscience, domain:Bioinformatics ;
+    :builtWith skill:MATLAB, skill:HDF5 ;
+    rdfs:comment "Symphony/DAS-adjacent experimental and acquisition tooling for retinal neuroscience workflows." .
+
+project:RetinalCircuitAnalysis
+    a :Project ;
+    schema:name "Retinal Neural Circuit Analysis" ;
+    :inDomain domain:ComputationalNeuroscience ;
+    :builtWith skill:MATLAB, skill:HDF5 ;
+    rdfs:comment "MATLAB-based multi-electrode data analysis suite with DLP stimulation, HDF5 ORM, and MVP-style experiment interface." .
+
+project:SignantCloudMigration
+    a :Project ;
+    schema:name "Signant Health Cloud Migration and GitOps" ;
+    :inDomain domain:RegulatedHealthcare ;
+    :builtWith skill:AWS, skill:Terraform, skill:OpenShift, skill:Kubernetes, skill:ArgoCD ;
+    rdfs:comment "Infrastructure-as-code, OpenShift-to-EKS migration, App Mesh, and GitOps deployment." .
+
+project:SeppoSinglePageApplication
+    a :Project ;
+    schema:name "Seppo.io Single Page Application Refactor" ;
+    :builtWith skill:React, skill:Redux, skill:MaterialUI ;
+    rdfs:comment "Responsive SPA refactor from legacy Rails views." .
+
+project:InfosysAutomatedGrading
+    a :Project ;
+    schema:name "Infosys Automated Grading Solution" ;
+    :builtWith skill:Java ;
+    rdfs:comment "Automated grading, parser framework, and web-service-backed assessment tooling for enterprise Java training." .
+
+#################################################################
+# Medtech problem model from the conversation
+#################################################################
+
+:ResearchToProductTranslation
+    a skos:Concept ;
+    skos:prefLabel "Research to Product Translation" ;
+    :requires
+        domain:ClinicalValidation,
+        domain:MedicalDeviceSoftware,
+        domain:RegulatedHealthcare,
+        domain:PostMarketSurveillance ;
+    rdfs:comment "The path from promising research software and clinical insight to compliant, traceable, usable healthcare products." .
+
+:HumanInTheLoopValidation
+    a skos:Concept ;
+    skos:prefLabel "Human-in-the-loop Validation" ;
+    :contributesTo domain:ClinicalValidation ;
+    rdfs:comment "Keeping expert users, clinicians, operators, and affected people involved throughout discovery, design, validation, and surveillance." .
+
+:WorkflowVisualization
+    a skos:Concept ;
+    skos:prefLabel "Workflow Visualization" ;
+    :accelerates :ResearchToProductTranslation ;
+    rdfs:comment "Making clinical and operational workflows visible so research-grade ideas can become traceable products without losing empathy." .
+
+:CompliantProductPipeline
+    a skos:Concept ;
+    skos:prefLabel "Compliant Product Pipeline" ;
+    :accelerates :ResearchToProductTranslation ;
+    :requires value:Accountability, value:Evidence ;
+    rdfs:comment "A disciplined path for requirements, testing, traceability, release, validation, and post-market learning." .
+
+:UserLayerModel
+    a skos:Concept ;
+    skos:prefLabel "Layered User Model for Medtech" ;
+    skos:narrower
+        :Patient,
+        :Clinician,
+        :ExpertUser,
+        :HospitalIT,
+        :RegulatoryStakeholder,
+        :Manufacturer,
+        :SupportEngineer,
+        :Caregiver,
+        :PayerOrPolicyActor ;
+    rdfs:comment "A model recognizing that medtech products have many users and beneficiaries, each with different needs and constraints." .
+
+:Patient a skos:Concept ; skos:prefLabel "Patient" .
+:Clinician a skos:Concept ; skos:prefLabel "Clinician" .
+:ExpertUser a skos:Concept ; skos:prefLabel "Expert User" .
+:HospitalIT a skos:Concept ; skos:prefLabel "Hospital IT" .
+:RegulatoryStakeholder a skos:Concept ; skos:prefLabel "Regulatory Stakeholder" .
+:Manufacturer a skos:Concept ; skos:prefLabel "Manufacturer" .
+:SupportEngineer a skos:Concept ; skos:prefLabel "Support Engineer" .
+:Caregiver a skos:Concept ; skos:prefLabel "Caregiver" .
+:PayerOrPolicyActor a skos:Concept ; skos:prefLabel "Payer or Policy Actor" .
+
+me:me
+    :guidedBy :HumanInTheLoopValidation, :WorkflowVisualization, :CompliantProductPipeline, :UserLayerModel ;
+    :translates :ResearchToProductTranslation .
+
+#################################################################
+# Semantic web publication hints
+#################################################################
+
+<https://ragavsathish.github.io/rdf/ragavsathish-ontology.ttl>
+    a schema:DigitalDocument ;
+    schema:name "Sathish Kumar Narayanan Personal Ontology" ;
+    schema:encodingFormat "text/turtle" ;
+    schema:about me:me ;
+    dcterms:conformsTo <https://www.w3.org/TR/turtle/> .
+
+<https://ragavsathish.github.io/>
+    a schema:ProfilePage ;
+    schema:name "Sathish Kumar Narayanan" ;
+    schema:mainEntity me:me ;
+    rdfs:seeAlso <https://ragavsathish.github.io/rdf/ragavsathish-ontology.ttl> .
