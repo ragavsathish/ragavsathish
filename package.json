@@ -5,7 +5,7 @@
     "check:app": "node --check semantic-web/app.js && test -f semantic-web/index.html && test -f semantic-web/styles.css",
     "eval": "promptfoo eval --no-cache",
     "eval:prompt": "promptfoo eval -c promptfoo-llm-prompt.config.yaml --no-cache",
-    "eval:judge": "OPENAI_API_BASE_URL=${JUDGE_API_BASE_URL:-http://localhost:1234/v1} OPENAI_API_KEY=${JUDGE_API_KEY:-lm-studio} promptfoo eval -c promptfoo-llm-judge.config.yaml --no-cache --grader ${JUDGE_PROVIDER:-openai:chat:meta-llama-3.1-8b-instruct}",
+    "eval:judge": "OPENAI_API_BASE_URL=${JUDGE_API_BASE_URL:-http://localhost:1234/v1} OPENAI_API_KEY=${JUDGE_API_KEY:-lm-studio} promptfoo eval -c promptfoo-llm-judge.config.yaml --no-cache --grader ${JUDGE_PROVIDER:-openai:chat:qwen/qwen2.5-coder-32b}",
     "prompt:feedback": "node scripts/prompt-feedback-loop.mjs",
     "test:e2e": "playwright test",
     "test:e2e:real": "RUN_REAL_LLM=1 playwright test tests/semantic-web-real-llm.spec.mjs",

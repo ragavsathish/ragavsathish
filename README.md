@@ -42,7 +42,7 @@ The fit engine has deterministic Promptfoo evals:
 
 - `npm run eval`
 - `npm run eval:prompt`
-- `npm run eval:judge` with LM Studio serving `meta-llama-3.1-8b-instruct` on `localhost:1234`
+- `npm run eval:judge` with LM Studio serving `qwen/qwen2.5-coder-32b` on `localhost:1234`
 - `npm run prompt:feedback`
 
 ## CV
