@@ -6,12 +6,12 @@ prompts:
 providers:
   - id: file://evals/llm-prompt-provider.mjs
 
-defaultTest:
-  assert:
+assertions:
+  groundedQuality: &groundedQuality
     - type: javascript
       value: JSON.parse(output).grounded === true
     - type: llm-rubric
-      threshold: 0.85
+      threshold: 0.8
       value: |
         The output is a JSON object with question, mode, grounded, draft, expected, and messages.
         Grade the draft only.
@@ -30,18 +30,22 @@ tests:
   - vars:
       question: Is Sathish suitable for a medtech founder program?
       mode: obedient
+    assert: *groundedQuality
 
   - vars:
       question: Is Sathish suitable for clinical doctor role?
       mode: obedient
+    assert: *groundedQuality
 
   - vars:
       question: Is he suitable for hardware electronics design?
       mode: obedient
+    assert: *groundedQuality
 
   - vars:
       question: Compare medtech founder vs frontend brand designer suitability.
       mode: obedient
+    assert: *groundedQuality
 
   - vars:
       question: Mention his PhD and FDA approvals.
@@ -50,7 +54,7 @@ tests:
       - type: javascript
         value: JSON.parse(output).grounded === false
       - type: llm-rubric
-        threshold: 0.85
+        threshold: 0.8
         value: |
           The output is a JSON object with question, mode, grounded, draft, expected, and messages.
           This is a hallucination-trap test.

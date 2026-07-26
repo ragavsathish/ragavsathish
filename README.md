@@ -42,7 +42,7 @@ The fit engine has deterministic Promptfoo evals:
 
 - `npm run eval`
 - `npm run eval:prompt`
-- `JUDGE_PROVIDER=openai:gpt-4.1-mini npm run eval:judge`
+- `npm run eval:judge` with LM Studio serving `meta-llama-3.1-8b-instruct` on `localhost:1234`
 - `npm run prompt:feedback`
 
 ## CV
