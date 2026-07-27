@@ -92,7 +92,7 @@ export const fitProfiles = [
   {
     id: "cloud-platform",
     label: "Cloud platform / regulated infrastructure architect",
-    keywords: ["cloud", "platform", "infrastructure", "devops", "kubernetes", "k3s", "edge kubernetes", "rancher", "aws", "terraform", "architect", "gitops"],
+    keywords: ["cloud", "platform", "infrastructure", "devops", "kubernetes", "k3s", "edge kubernetes", "rancher", "kubernetes networking", "network policy", "iptables", "cni", "aws", "terraform", "architect", "gitops"],
     positives: [
       ["skill:AWS", 16],
       ["skill:Terraform", 15],
@@ -100,6 +100,11 @@ export const fitProfiles = [
       ["skill:K3s", 8],
       ["project:LightweightKubernetesLearning", 8],
       ["resource:K3sInternalsCrazyThings", 8],
+      ["resource:UnderstandingKubernetesNetworking", 8],
+      ["skill:KubernetesNetworking", 8],
+      ["skill:Iptables", 5],
+      ["skill:NetworkPolicy", 5],
+      ["skill:CNINetworking", 5],
       ["skill:Docker", 10],
       ["skill:GitLab", 9],
       ["skill:ArgoCD", 9],
@@ -111,7 +116,7 @@ export const fitProfiles = [
     ],
     gaps: [
       "For pure platform roles, reduce philosophical framing and lead with scale, reliability, and delivery metrics.",
-      "Keep K3s internals framed as active learning unless tied to shipped edge Kubernetes delivery."
+      "Keep K3s and Kubernetes networking internals framed as active learning unless tied to shipped edge Kubernetes delivery."
     ],
     positioning: "Strong regulated cloud/platform architect with hybrid, edge, GitOps, infrastructure-as-code, and active lightweight Kubernetes learning."
   },

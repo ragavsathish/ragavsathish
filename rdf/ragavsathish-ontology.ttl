@@ -486,6 +486,10 @@ skill:K3s a :Technology ; skos:prefLabel "K3s" .
 skill:Rancher a :Technology ; skos:prefLabel "Rancher" .
 skill:Etcd a :Technology ; skos:prefLabel "etcd" .
 skill:CoreDNS a :Technology ; skos:prefLabel "CoreDNS" .
+skill:KubernetesNetworking a :Technology ; skos:prefLabel "Kubernetes Networking" .
+skill:Iptables a :Technology ; skos:prefLabel "iptables" .
+skill:NetworkPolicy a :Technology ; skos:prefLabel "Network Policy" .
+skill:CNINetworking a :Technology ; skos:prefLabel "CNI Networking" .
 skill:GitLab a :Technology ; skos:prefLabel "GitLab" .
 skill:Jenkins a :Technology ; skos:prefLabel "Jenkins" .
 skill:ArgoCD a :Technology ; skos:prefLabel "Argo CD" .
@@ -821,10 +825,10 @@ project:LightweightKubernetesLearning
     a :Project ;
     schema:name "Lightweight Kubernetes Learning" ;
     :inDomain domain:SoftwareArchitecture, domain:EdgeKubernetes ;
-    :builtWith skill:Kubernetes, skill:K3s, skill:Rancher, skill:Etcd, skill:CoreDNS ;
+    :builtWith skill:Kubernetes, skill:K3s, skill:Rancher, skill:Etcd, skill:CoreDNS, skill:KubernetesNetworking, skill:Iptables, skill:NetworkPolicy, skill:CNINetworking ;
     :contributesTo value:SystemsEmpathy, value:Evidence, value:Accountability ;
-    :usesLearningResource resource:K3sInternalsCrazyThings ;
-    rdfs:comment "Personal hobby and learning project: studying lightweight Kubernetes internals for edge and simple cluster operations, including K3s single-binary packaging, agent tunnels, etcd management, client-side load balancing, CoreDNS/node DNS behavior, and Kubernetes patches. This is not modeled as core professional work evidence." .
+    :usesLearningResource resource:K3sInternalsCrazyThings, resource:UnderstandingKubernetesNetworking ;
+    rdfs:comment "Personal hobby and learning project: studying lightweight Kubernetes internals for edge and simple cluster operations, including K3s single-binary packaging, agent tunnels, etcd management, client-side load balancing, CoreDNS/node DNS behavior, Kubernetes networking, iptables, routing, software bridges, network policies, and Kubernetes patches. This is not modeled as core professional work evidence." .
 
 resource:K3sInternalsCrazyThings
     a schema:LearningResource, schema:VideoObject ;
@@ -835,6 +839,16 @@ resource:K3sInternalsCrazyThings
     schema:datePublished "2021-01-14" ;
     schema:about domain:SoftwareArchitecture, domain:EdgeKubernetes ;
     rdfs:comment "Learning resource from a Civo live session with Darren Shepherd, creator of K3s, on K3s internals: single binary design, agent tunneling, etcd management, agents and client-side load balancing, CoreDNS/node DNS, Kubernetes patches, and simplifying Kubernetes for edge-style use cases." .
+
+resource:UnderstandingKubernetesNetworking
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "Communication Is Key - Understanding Kubernetes Networking" ;
+    schema:creator "Jeff Poole" ;
+    schema:publisher "CNCF" ;
+    schema:url <https://youtu.be/InZVNuKY5GY> ;
+    schema:datePublished "2020-09-04" ;
+    schema:about domain:SoftwareArchitecture, domain:EdgeKubernetes ;
+    rdfs:comment "Learning resource from CNCF on Kubernetes networking concepts and debugging labs, including DNS, iptables, routing, software bridges, IP assignment, network policies, networking plugins, SSH/bash/kubectl-based inspection, and understanding how containers and Kubernetes clusters communicate under the hood." .
 
 product:MEGMaps
     a :Product ;

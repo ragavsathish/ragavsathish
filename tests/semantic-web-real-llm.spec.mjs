@@ -14,7 +14,7 @@ test.describe("semantic web fit assistant real LLM path", () => {
   test("downloads a browser LLM and keeps the RDF answer authoritative", async ({ page }) => {
     await page.goto("/semantic-web/");
 
-    await expect(page.locator("#rdfStatus")).toHaveText("970 triples");
+    await expect(page.locator("#rdfStatus")).toHaveText("993 triples");
     await expect(page.locator("#gpuStatus")).toHaveText("Available");
     await expect(page.locator("#wasmStatus")).toHaveText("Available");
 

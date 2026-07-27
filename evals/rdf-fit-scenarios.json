@@ -38,12 +38,12 @@
   },
   {
     "id": "cloud-architect",
-    "question": "Is Sathish suitable for cloud platform architect roles, including Kubernetes and K3s internals?",
+    "question": "Is Sathish suitable for cloud platform architect roles, including Kubernetes, K3s internals, and Kubernetes networking?",
     "mode": "obedient",
     "category": "strong-fit",
     "coverage": ["feedback", "fit", "browser"],
     "expectedFit": "Strong fit",
-    "purpose": "Cloud/platform evidence maps to AWS, Terraform, Kubernetes, regulated infrastructure, and active K3s internals learning."
+    "purpose": "Cloud/platform evidence maps to AWS, Terraform, Kubernetes, regulated infrastructure, active K3s internals learning, and active Kubernetes networking learning."
   },
   {
     "id": "domain-driven-architecture",
