@@ -108,6 +108,11 @@ Sathish Kumar Narayanan (me:me)
     built with: C4 Model (skill:C4Model), Collaborative Domain Discovery (skill:CollaborativeDomainDiscovery), Event Storming (skill:EventStorming), Event-driven Microservices (skill:EventDrivenMicroservices), Exploratory Testing (skill:ExploratoryTesting), Structurizr (skill:Structurizr), Team Upskilling (skill:TeamUpskilling), Test Automation (skill:TestAutomation), Unit Testing (skill:UnitTesting)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Systems Empathy (value:SystemsEmpathy)
     learning resources: Effective Test Automation for Developers (resource:EffectiveTestAutomationForDevelopers), The C4 model: misconceptions, misuses and mistakes (resource:C4ModelMisconceptionsMisusesMistakes), Upskilling your Team in DDD (resource:UpskillingYourTeamInDDD)
+    - Lightweight Kubernetes Learning (project:LightweightKubernetesLearning)
+    domains: Edge Kubernetes (domain:EdgeKubernetes), Software Architecture (domain:SoftwareArchitecture)
+    built with: CoreDNS (skill:CoreDNS), etcd (skill:Etcd), K3s (skill:K3s), Kubernetes (skill:Kubernetes), Rancher (skill:Rancher)
+    contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Systems Empathy (value:SystemsEmpathy)
+    learning resources: K3s Internals: The Crazy Things We Do To Make k8s Simple (resource:K3sInternalsCrazyThings)
     - Local LLM Engineering (project:LocalLLMEngineering)
     domains: LLM Evaluation (domain:LLMEvaluation), Local LLM Engineering (domain:LocalLLMEngineering), Local-first AI (domain:LocalFirstAI)
     built with: LM Studio (skill:LMStudio), Ollama (skill:Ollama), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), TypeScript (skill:TypeScript)
@@ -123,4 +128,4 @@ Sathish Kumar Narayanan (me:me)
     built with: Ollama (skill:Ollama), Playwright (skill:Playwright), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), RDF (skill:RDF), TypeScript (skill:TypeScript)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Local LLM Judge Evaluation (:LocalLLMJudgeEvaluation), Prompt Feedback Loop (:PromptFeedbackLoop)
 
-Graph focus: 216 nodes, 546 edges
+Graph focus: 223 nodes, 568 edges

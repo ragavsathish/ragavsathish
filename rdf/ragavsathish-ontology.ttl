@@ -225,7 +225,8 @@ me:me
         project:PromptfooRdfEvalHarness,
         project:BrowserWebGPULLMEngineering,
         project:LocalLLMEngineering,
-        project:DomainDrivenArchitectureLearning ;
+        project:DomainDrivenArchitectureLearning,
+        project:LightweightKubernetesLearning ;
     :workedOn
         project:MEGMapsPlatform,
         project:HallaHealth,
@@ -442,6 +443,10 @@ domain:DomainDrivenDesign
     a :Domain ;
     skos:prefLabel "Domain-Driven Design" .
 
+domain:EdgeKubernetes
+    a :Domain ;
+    skos:prefLabel "Edge Kubernetes" .
+
 domain:DisconnectedHealthcareIT
     a :Domain ;
     skos:prefLabel "Disconnected Healthcare IT" ;
@@ -477,6 +482,10 @@ skill:MaterialUI a :Technology ; skos:prefLabel "Material UI" .
 skill:AWS a :Technology ; skos:prefLabel "AWS" .
 skill:Docker a :Technology ; skos:prefLabel "Docker" .
 skill:Kubernetes a :Technology ; skos:prefLabel "Kubernetes" .
+skill:K3s a :Technology ; skos:prefLabel "K3s" .
+skill:Rancher a :Technology ; skos:prefLabel "Rancher" .
+skill:Etcd a :Technology ; skos:prefLabel "etcd" .
+skill:CoreDNS a :Technology ; skos:prefLabel "CoreDNS" .
 skill:GitLab a :Technology ; skos:prefLabel "GitLab" .
 skill:Jenkins a :Technology ; skos:prefLabel "Jenkins" .
 skill:ArgoCD a :Technology ; skos:prefLabel "Argo CD" .
@@ -807,6 +816,25 @@ resource:EffectiveTestAutomationForDevelopers
     schema:datePublished "2025-02-03" ;
     schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
     rdfs:comment "Learning resource from DDD Europe 2024 on developer-owned test automation strategy, stable fast independent unit tests, maintainable system-level tests, testing event-driven microservices, and how automation supports contemporary exploratory testing." .
+
+project:LightweightKubernetesLearning
+    a :Project ;
+    schema:name "Lightweight Kubernetes Learning" ;
+    :inDomain domain:SoftwareArchitecture, domain:EdgeKubernetes ;
+    :builtWith skill:Kubernetes, skill:K3s, skill:Rancher, skill:Etcd, skill:CoreDNS ;
+    :contributesTo value:SystemsEmpathy, value:Evidence, value:Accountability ;
+    :usesLearningResource resource:K3sInternalsCrazyThings ;
+    rdfs:comment "Personal hobby and learning project: studying lightweight Kubernetes internals for edge and simple cluster operations, including K3s single-binary packaging, agent tunnels, etcd management, client-side load balancing, CoreDNS/node DNS behavior, and Kubernetes patches. This is not modeled as core professional work evidence." .
+
+resource:K3sInternalsCrazyThings
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "K3s Internals: The Crazy Things We Do To Make k8s Simple" ;
+    schema:creator "Darren Shepherd" ;
+    schema:publisher "Civo" ;
+    schema:url <https://www.youtube.com/live/k58WnbKmjdA> ;
+    schema:datePublished "2021-01-14" ;
+    schema:about domain:SoftwareArchitecture, domain:EdgeKubernetes ;
+    rdfs:comment "Learning resource from a Civo live session with Darren Shepherd, creator of K3s, on K3s internals: single binary design, agent tunneling, etcd management, agents and client-side load balancing, CoreDNS/node DNS, Kubernetes patches, and simplifying Kubernetes for edge-style use cases." .
 
 product:MEGMaps
     a :Product ;

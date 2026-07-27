@@ -46,7 +46,7 @@ const fitEvidence: Record<string, string[]> = {
   "health-ai-lead": ["domain:AIEnabledHealthcare", "project:HallaHealth"],
   "halla-mission-fit": [":LifeSavingHealthcareAccess", ":CommunitySelfCare", ":HealthDataDiversity", ":SecureHealthWallet"],
   "halla-on-device-rag": [":HealthChatbotGuardrails", ":OnDeviceRetrieval", "skill:ToolCalling", "skill:SQLite"],
-  "cloud-architect": ["skill:AWS", "skill:Terraform"],
+  "cloud-architect": ["skill:AWS", "skill:Terraform", "skill:Kubernetes", "resource:K3sInternalsCrazyThings"],
   "domain-driven-architecture": ["domain:SoftwareArchitecture", "domain:DomainDrivenDesign", "project:DomainDrivenArchitectureLearning", "skill:C4Model", "resource:UpskillingYourTeamInDDD", "resource:EffectiveTestAutomationForDevelopers"],
   "pure-clinical": ["The RDF does not show a clinical license or direct care-delivery role."],
   "frontend-brand-design": ["Better fit for product engineering than pure brand or visual design."]
@@ -175,6 +175,7 @@ function promptMarkers(scenario: Scenario): string[] {
     "rdf-proof-medtech": ["Medical Device Software", "Regulated Healthcare"],
     "halla-mission-fit": ["Life-saving Healthcare Access", "Health Data Diversity"],
     "halla-on-device-rag": ["Health Chatbot Guardrails", "On-device Retrieval"],
+    "cloud-architect": ["Strong regulated cloud/platform architect", "K3s Internals"],
     "domain-driven-architecture": ["Keep DDD and C4 framed as active learning", "Healthcare software architect learning to communicate domain boundaries", "Upskilling your Team in DDD", "Effective Test Automation for Developers"],
     "medtech-vs-brand": ["Research-to-product healthcare technologist"],
     "hardware-electronics": ["The RDF does not show enough target-specific evidence for this question."]
