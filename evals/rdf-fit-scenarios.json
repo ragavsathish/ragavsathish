@@ -47,12 +47,12 @@
   },
   {
     "id": "domain-driven-architecture",
-    "question": "Is Sathish interested in domain-driven design, C4 software architecture modeling, and team DDD upskilling?",
+    "question": "Is Sathish interested in domain-driven design, C4 software architecture modeling, team DDD upskilling, and test automation for event-driven microservices?",
     "mode": "obedient",
     "category": "architecture-learning",
     "coverage": ["feedback", "fit", "prompt"],
     "expectedFit": "Strong fit",
-    "purpose": "DDD/C4/team-upskilling architecture interest should cite the hobby learning project and DDD Europe learning resources without treating them as core professional evidence."
+    "purpose": "DDD/C4/team-upskilling/test-automation architecture interest should cite the hobby learning project and DDD Europe learning resources without treating them as core professional evidence."
   },
   {
     "id": "pure-clinical",

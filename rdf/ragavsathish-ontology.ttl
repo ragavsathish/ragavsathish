@@ -520,6 +520,10 @@ skill:Structurizr a :Technology ; skos:prefLabel "Structurizr" .
 skill:EventStorming a :Technology ; skos:prefLabel "Event Storming" .
 skill:TeamUpskilling a :Technology ; skos:prefLabel "Team Upskilling" .
 skill:CollaborativeDomainDiscovery a :Technology ; skos:prefLabel "Collaborative Domain Discovery" .
+skill:TestAutomation a :Technology ; skos:prefLabel "Test Automation" .
+skill:UnitTesting a :Technology ; skos:prefLabel "Unit Testing" .
+skill:ExploratoryTesting a :Technology ; skos:prefLabel "Exploratory Testing" .
+skill:EventDrivenMicroservices a :Technology ; skos:prefLabel "Event-driven Microservices" .
 
 #################################################################
 # Organizations
@@ -745,10 +749,10 @@ project:DomainDrivenArchitectureLearning
     a :Project ;
     schema:name "Domain-Driven Architecture Learning" ;
     :inDomain domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
-    :builtWith skill:C4Model, skill:Structurizr, skill:EventStorming, skill:TeamUpskilling, skill:CollaborativeDomainDiscovery ;
+    :builtWith skill:C4Model, skill:Structurizr, skill:EventStorming, skill:TeamUpskilling, skill:CollaborativeDomainDiscovery, skill:TestAutomation, skill:UnitTesting, skill:ExploratoryTesting, skill:EventDrivenMicroservices ;
     :contributesTo value:SystemsEmpathy, value:Evidence, value:Accountability ;
-    :usesLearningResource resource:C4ModelMisconceptionsMisusesMistakes, resource:UpskillingYourTeamInDDD ;
-    rdfs:comment "Personal hobby and learning project: studying domain-driven design and architecture visualization practices, including C4 model abstraction levels, notation-independent diagrams, team upskilling workshops, event storming, collaborative domain discovery, microservice boundaries, shared libraries, and communication of larger software systems. This is not modeled as core professional work evidence." .
+    :usesLearningResource resource:C4ModelMisconceptionsMisusesMistakes, resource:UpskillingYourTeamInDDD, resource:EffectiveTestAutomationForDevelopers ;
+    rdfs:comment "Personal hobby and learning project: studying domain-driven design and architecture visualization practices, including C4 model abstraction levels, notation-independent diagrams, team upskilling workshops, event storming, collaborative domain discovery, test automation strategy, event-driven microservice testing, microservice boundaries, shared libraries, and communication of larger software systems. This is not modeled as core professional work evidence." .
 
 resource:RdfAndTheFutureOfLlms
     a schema:LearningResource, schema:VideoObject ;
@@ -793,6 +797,16 @@ resource:UpskillingYourTeamInDDD
     schema:datePublished "2025-03-10" ;
     schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
     rdfs:comment "Learning resource from DDD Europe 2025 on building and running an in-house DDD upskilling workshop, including strategic and tactical DDD, event storming to code, practical team exercises, collaborative domain discovery, and making domain modeling accessible for remote teams." .
+
+resource:EffectiveTestAutomationForDevelopers
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "Effective Test Automation for Developers" ;
+    schema:creator "Aki Salmi" ;
+    schema:publisher "Domain-Driven Design Europe" ;
+    schema:url <https://youtu.be/L9sXk0t8Iro> ;
+    schema:datePublished "2025-02-03" ;
+    schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
+    rdfs:comment "Learning resource from DDD Europe 2024 on developer-owned test automation strategy, stable fast independent unit tests, maintainable system-level tests, testing event-driven microservices, and how automation supports contemporary exploratory testing." .
 
 product:MEGMaps
     a :Product ;
