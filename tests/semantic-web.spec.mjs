@@ -4,7 +4,7 @@ test.describe("semantic web fit assistant", () => {
   test("loads the RDF profile and initial UI", async ({ page }) => {
     await page.goto("/semantic-web/");
 
-    await expect(page.getByRole("heading", { name: "Ask where Sathish fits, and where he does not." })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "rdf-fit" })).toBeVisible();
     await expect(page.locator("#rdfStatus")).toHaveText("862 triples");
     await expect(page.locator("#wasmStatus")).toHaveText("Available");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
@@ -89,7 +89,7 @@ test.describe("semantic web fit assistant", () => {
   test("example chips update and assess the question", async ({ page }) => {
     await page.goto("/semantic-web/");
 
-    await page.getByRole("button", { name: "Cloud architect" }).click();
+    await page.getByRole("button", { name: "cloud" }).click();
 
     await expect(page.getByLabel("Role, program, opportunity, or concern")).toHaveValue(
       "Is Sathish suitable for cloud platform architect roles?"
@@ -316,6 +316,6 @@ test.describe("semantic web fit assistant", () => {
     await page.goto("/semantic-web/");
 
     await expect(page.locator("#llmStatus")).toHaveText("Optional");
-    await expect(page.locator("#answer")).toContainText("Grounded fit assessment will appear here.");
+    await expect(page.locator("#answer")).toContainText("awaiting query");
   });
 });
