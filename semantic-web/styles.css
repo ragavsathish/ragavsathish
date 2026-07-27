@@ -1,45 +1,36 @@
 :root {
   color-scheme: dark;
-  --bg: #11130f;
+  --global-font-size: 14px;
+  --global-line-height: 1.35em;
+  --global-space: 10px;
+  --background-color: #11130f;
+  --font-color: #edf3df;
+  --invert-font-color: #10140d;
+  --primary-color: #8bd450;
+  --secondary-color: #a6b098;
+  --error-color: #ef7d72;
+  --code-bg-color: #171a14;
   --pane: #171a14;
   --pane-soft: #1f231b;
-  --ink: #edf3df;
-  --muted: #a6b098;
   --line: #3f4935;
-  --green: #8bd450;
   --cyan: #72d5c8;
   --amber: #e3ba5f;
-  --red: #ef7d72;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 14px;
-}
-
-button,
-input {
-  font: inherit;
+  background: var(--background-color);
 }
 
 button {
   border: 1px solid var(--line);
   background: var(--pane-soft);
-  color: var(--ink);
-  cursor: pointer;
+  color: var(--font-color);
 }
 
 button:hover {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 button:disabled {
@@ -64,19 +55,17 @@ button:disabled {
   background: #0d0f0b;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
-
 h1 {
   padding: 4px 8px;
-  background: var(--green);
+  margin: 0;
+  background: var(--primary-color);
   color: #10140d;
   font-size: 0.95rem;
   font-weight: 900;
+}
+
+h1::after {
+  content: none;
 }
 
 .status-strip {
@@ -84,7 +73,7 @@ h1 {
   flex-wrap: wrap;
   gap: 6px;
   min-width: 0;
-  color: var(--muted);
+  color: var(--secondary-color);
 }
 
 .status-strip span,
@@ -107,7 +96,7 @@ h1 {
 #loadLlm {
   min-height: 30px;
   padding: 4px 10px;
-  color: var(--green);
+  color: var(--primary-color);
   font-weight: 800;
 }
 
@@ -147,16 +136,17 @@ h1 {
 
 .pane-title h2,
 .section h3 {
-  color: var(--green);
+  color: var(--primary-color);
   font-size: 0.88rem;
   font-weight: 900;
   text-transform: uppercase;
+  margin: 0;
 }
 
 #llmDetail {
   min-width: 0;
   overflow: hidden;
-  color: var(--muted);
+  color: var(--secondary-color);
   font-size: 0.78rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -169,7 +159,7 @@ form {
 label {
   display: block;
   margin-bottom: 6px;
-  color: var(--muted);
+  color: var(--secondary-color);
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -185,14 +175,14 @@ input {
   min-width: 0;
   border: 1px solid var(--line);
   padding: 8px 9px;
-  color: var(--ink);
+  color: var(--font-color);
   background: #0d0f0b;
 }
 
 .input-row button {
   min-width: 86px;
   padding: 8px 10px;
-  color: var(--green);
+  color: var(--primary-color);
   font-weight: 900;
 }
 
@@ -206,7 +196,7 @@ input {
 .chips button {
   min-height: 28px;
   padding: 4px 8px;
-  color: var(--muted);
+  color: var(--secondary-color);
   font-size: 0.82rem;
 }
 
@@ -219,7 +209,7 @@ input {
   display: grid;
   place-items: center;
   padding: 24px;
-  color: var(--muted);
+  color: var(--secondary-color);
 }
 
 .answer-card {
@@ -237,6 +227,7 @@ input {
 }
 
 .answer-header h2 {
+  margin: 0;
   overflow-wrap: anywhere;
   font-size: 1rem;
 }
@@ -252,7 +243,7 @@ input {
 }
 
 .fit.strong {
-  color: var(--green);
+  color: var(--primary-color);
 }
 
 .fit.partial {
@@ -260,12 +251,12 @@ input {
 }
 
 .fit.weak {
-  color: var(--red);
+  color: var(--error-color);
 }
 
 .score {
   margin-top: 3px;
-  color: var(--muted);
+  color: var(--secondary-color);
   font-size: 0.82rem;
 }
 
@@ -291,6 +282,11 @@ input {
   margin-bottom: 8px;
 }
 
+.section p,
+.llm-notice {
+  margin: 0;
+}
+
 ul {
   margin: 0;
   padding-left: 18px;
@@ -310,7 +306,7 @@ li {
 }
 
 code {
-  color: var(--green);
+  color: var(--primary-color);
 }
 
 .llm-runtime {
@@ -321,7 +317,7 @@ code {
 }
 
 .llm-runtime span {
-  color: var(--muted);
+  color: var(--secondary-color);
   font-size: 0.78rem;
   font-weight: 800;
 }
@@ -333,7 +329,7 @@ code {
 }
 
 .llm-notice {
-  color: var(--red);
+  color: var(--error-color);
   font-weight: 800;
   line-height: 1.45;
 }
