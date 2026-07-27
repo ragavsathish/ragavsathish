@@ -8,7 +8,8 @@ test.describe("semantic web fit assistant", () => {
     await expect(page.locator("#rdfStatus")).toHaveText("862 triples");
     await expect(page.locator("#wasmStatus")).toHaveText("Available");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Load WebGPU LLM" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Load browser LLM" })).toBeVisible();
+    await expect(page.locator("#llmDetail")).toContainText("Tries WebGPU first");
   });
 
   test("assesses medtech founder fit from RDF evidence", async ({ page }) => {
@@ -131,7 +132,7 @@ test.describe("semantic web fit assistant", () => {
     });
 
     await page.goto("/semantic-web/");
-    await page.getByRole("button", { name: "Load WebGPU LLM" }).click();
+    await page.getByRole("button", { name: "Load browser LLM" }).click();
     await expect(page.locator("#llmStatus")).toHaveText("Ready");
 
     await page.getByRole("button", { name: "Assess" }).click();
@@ -139,9 +140,61 @@ test.describe("semantic web fit assistant", () => {
     const answer = page.locator("#answer");
     await expect(answer).toContainText("Browser-local LLM rendering");
     await expect(answer).toContainText("Guard passed");
+    await expect(answer).toContainText("Backend: WebLLM");
     await expect(answer).toContainText("Model: SmolLM2-1.7B-Instruct-q4f16_1-MLC");
     await expect(answer).toContainText("Runtime: WebGPU + WebAssembly");
     await expect(answer).toContainText("Network: model fetch only");
+    await expect(answer).toContainText("Fit: Strong fit");
+  });
+
+  test("falls back to a WASM edge model when WebGPU shader support is missing", async ({ page }) => {
+    await page.route("https://esm.run/@mlc-ai/web-llm", async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: `
+          export async function CreateMLCEngine() {
+            const error = new Error("This model requires WebGPU extension shader-f16.");
+            error.name = "ShaderF16SupportError";
+            throw error;
+          }
+        `
+      });
+    });
+    await page.route("https://esm.run/@huggingface/transformers", async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: `
+          export async function pipeline(task, modelId, options) {
+            options?.progress_callback?.({ loaded: 1, total: 1 });
+            return async function generate() {
+              return [{
+                generated_text: [
+                  "Fit: Strong fit",
+                  "Why: Medical Device Software (domain:MedicalDeviceSoftware) and Regulated Healthcare (domain:RegulatedHealthcare) support the fit.",
+                  "Gaps: Make commercial ownership and founder-level accountability explicit. | Add concrete clinical discovery stories, not only platform achievements.",
+                  "Positioning: Research-to-product healthcare technologist with regulated medical software, digital health, and clinical workflow exposure."
+                ].join("\\n")
+              }];
+            };
+          }
+        `
+      });
+    });
+
+    await page.goto("/semantic-web/");
+    await page.getByRole("button", { name: "Load browser LLM" }).click();
+    await expect(page.locator("#llmStatus")).toHaveText("Ready");
+    await expect(page.locator("#llmDetail")).toContainText("WebGPU failed: ShaderF16SupportError");
+    await expect(page.locator("#llmDetail")).toContainText("Loaded WASM model onnx-community/SmolLM2-135M-Instruct-ONNX-MHA");
+
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("Browser-local LLM rendering");
+    await expect(answer).toContainText("Guard passed");
+    await expect(answer).toContainText("Backend: Transformers.js");
+    await expect(answer).toContainText("Model: onnx-community/SmolLM2-135M-Instruct-ONNX-MHA");
+    await expect(answer).toContainText("Runtime: WebAssembly CPU");
     await expect(answer).toContainText("Fit: Strong fit");
   });
 

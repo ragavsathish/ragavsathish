@@ -41,6 +41,7 @@ Positioning: ${result.positioning}`;
 
 export function isGroundedLlmText(text, result) {
   if (!text) return false;
+  if (hasPromptEcho(text)) return false;
   if (result.kind === "fact") {
     if (!text.includes(result.answer)) return false;
     if (!result.evidence.every((item) => text.includes(item))) return false;
@@ -60,5 +61,14 @@ function hasInventedClaim(text) {
     "doctorate",
     "fda approval",
     "fda-approved"
+  ].some((claim) => normalized.includes(claim));
+}
+
+function hasPromptEcho(text) {
+  const normalized = text.toLowerCase();
+  return [
+    "rdf-derived facts:",
+    "return exactly this structure",
+    "one sentence using only the evidence list above"
   ].some((claim) => normalized.includes(claim));
 }

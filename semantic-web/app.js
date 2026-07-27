@@ -12,7 +12,8 @@ const NS = {
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
 };
 
-const modelId = "SmolLM2-1.7B-Instruct-q4f16_1-MLC";
+const webGpuModelId = "SmolLM2-1.7B-Instruct-q4f16_1-MLC";
+const wasmModelId = "onnx-community/SmolLM2-135M-Instruct-ONNX-MHA";
 let store;
 let engine;
 let rdfFacts;
@@ -21,6 +22,7 @@ const rdfStatus = document.querySelector("#rdfStatus");
 const gpuStatus = document.querySelector("#gpuStatus");
 const wasmStatus = document.querySelector("#wasmStatus");
 const llmStatus = document.querySelector("#llmStatus");
+const llmDetail = document.querySelector("#llmDetail");
 const loadLlm = document.querySelector("#loadLlm");
 const answer = document.querySelector("#answer");
 const form = document.querySelector("#questionForm");
@@ -55,7 +57,7 @@ init();
 async function init() {
   gpuStatus.textContent = "gpu" in navigator ? "Available" : "Unavailable";
   wasmStatus.textContent = "WebAssembly" in window ? "Available" : "Unavailable";
-  loadLlm.disabled = !("gpu" in navigator);
+  loadLlm.disabled = !("gpu" in navigator) && !("WebAssembly" in window);
 
   try {
     const response = await fetch("../rdf/ragavsathish-ontology.ttl");
@@ -73,18 +75,25 @@ async function init() {
 loadLlm.addEventListener("click", async () => {
   loadLlm.disabled = true;
   llmStatus.textContent = "Loading";
+  llmDetail.textContent = "Trying WebGPU WebLLM first.";
 
   try {
-    const webllm = await import("https://esm.run/@mlc-ai/web-llm");
-    engine = await webllm.CreateMLCEngine(modelId, {
-      initProgressCallback: (progress) => {
-        const percent = Math.round((progress.progress || 0) * 100);
-        llmStatus.textContent = percent ? `${percent}%` : "Loading";
-      }
-    });
+    engine = await loadWebGpuEngine();
     llmStatus.textContent = "Ready";
+    llmDetail.textContent = `Using WebGPU model ${webGpuModelId}.`;
+    return;
+  } catch (error) {
+    const webGpuError = formatError(error);
+    llmDetail.textContent = `WebGPU failed: ${webGpuError}. Trying WASM edge model.`;
+  }
+
+  try {
+    engine = await loadWasmEngine();
+    llmStatus.textContent = "Ready";
+    llmDetail.textContent += ` Loaded WASM model ${wasmModelId}.`;
   } catch (error) {
     llmStatus.textContent = "Unavailable";
+    llmDetail.textContent += ` WASM failed: ${formatError(error)}.`;
     loadLlm.disabled = false;
   }
 });
@@ -210,21 +219,92 @@ function shorten(value) {
 }
 
 async function summarizeWithLlm(question, result) {
-  const completion = await engine.chat.completions.create({
-    messages: [
-      {
-        role: "system",
-        content: llmSystemPrompt
-      },
-      {
-        role: "user",
-        content: buildLlmUserPrompt(question, result)
-      }
-    ],
-    temperature: 0.2
+  return engine.summarize(question, result);
+}
+
+async function loadWebGpuEngine() {
+  const webllm = await import("https://esm.run/@mlc-ai/web-llm");
+  const webGpuEngine = await webllm.CreateMLCEngine(webGpuModelId, {
+    initProgressCallback: (progress) => {
+      const percent = Math.round((progress.progress || 0) * 100);
+      llmStatus.textContent = percent ? `WebGPU ${percent}%` : "Loading WebGPU";
+    }
   });
 
-  return completion.choices?.[0]?.message?.content || "";
+  return {
+    modelId: webGpuModelId,
+    runtime: "WebGPU + WebAssembly",
+    backend: "WebLLM",
+    network: "model fetch only",
+    async summarize(question, result) {
+      const completion = await webGpuEngine.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: llmSystemPrompt
+          },
+          {
+            role: "user",
+            content: buildLlmUserPrompt(question, result)
+          }
+        ],
+        temperature: 0.2
+      });
+
+      return completion.choices?.[0]?.message?.content || "";
+    }
+  };
+}
+
+async function loadWasmEngine() {
+  const transformers = await import("https://esm.run/@huggingface/transformers");
+  const generator = await transformers.pipeline("text-generation", wasmModelId, {
+    dtype: "q4",
+    progress_callback: (progress) => {
+      const loaded = progress?.loaded || 0;
+      const total = progress?.total || 0;
+      if (loaded && total) {
+        llmStatus.textContent = `WASM ${Math.round((loaded / total) * 100)}%`;
+      } else {
+        llmStatus.textContent = "Loading WASM";
+      }
+    }
+  });
+
+  return {
+    modelId: wasmModelId,
+    runtime: "WebAssembly CPU",
+    backend: "Transformers.js",
+    network: "model fetch only",
+    async summarize(question, result) {
+      const prompt = `${llmSystemPrompt}\n\n${buildLlmUserPrompt(question, result)}`;
+      const output = await generator(prompt, {
+        max_new_tokens: 160,
+        do_sample: false,
+        return_full_text: false
+      });
+      return extractGeneratedText(output);
+    }
+  };
+}
+
+function extractGeneratedText(output) {
+  const first = Array.isArray(output) ? output[0] : output;
+  return first?.generated_text || first?.[0]?.generated_text || "";
+}
+
+function formatError(error) {
+  const name = error?.name ? `${error.name}: ` : "";
+  return `${name}${error?.message || String(error)}`.replace(/\s+/g, " ").trim();
+}
+
+function llmRuntime() {
+  return {
+    modelId: engine?.modelId || "Not loaded",
+    runtime: engine?.runtime || "Browser",
+    backend: engine?.backend || "Browser-local",
+    network: engine?.network || "model fetch only"
+  };
 }
 
 function renderAssessment(result, llmRender = {}) {
@@ -284,12 +364,14 @@ function renderLlmSection({ llmText = "", llmNotice = "", llmState = "" } = {}) 
     rejected: "Guard rejected"
   };
   const status = statusByState[llmState] || "Browser-local";
+  const runtime = llmRuntime();
   const body = `
     <div class="llm-runtime">
       <span>${escapeHtml(status)}</span>
-      <span>Model: ${escapeHtml(modelId)}</span>
-      <span>Runtime: WebGPU + WebAssembly</span>
-      <span>Network: model fetch only</span>
+      <span>Backend: ${escapeHtml(runtime.backend)}</span>
+      <span>Model: ${escapeHtml(runtime.modelId)}</span>
+      <span>Runtime: ${escapeHtml(runtime.runtime)}</span>
+      <span>Network: ${escapeHtml(runtime.network)}</span>
     </div>
     ${llmText ? `<div class="llm-answer">${escapeHtml(llmText)}</div>` : ""}
     ${llmNotice ? `<p class="llm-notice">${escapeHtml(llmNotice)}</p>` : ""}

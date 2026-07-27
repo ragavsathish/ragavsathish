@@ -131,6 +131,13 @@ h2 {
   font-weight: 800;
 }
 
+.llm-detail {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
 .ask-panel {
   padding: 18px;
 }
