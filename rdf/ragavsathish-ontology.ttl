@@ -216,7 +216,8 @@ me:me
     :exploresAsHobby
         project:PersonalSemanticWebProfile,
         project:RdfFitAssistant,
-        project:PromptfooRdfEvalHarness ;
+        project:PromptfooRdfEvalHarness,
+        project:LocalLLMEngineering ;
     :workedOn
         project:MEGMapsPlatform,
         project:HallaHealth,
@@ -421,6 +422,10 @@ domain:LLMEvaluation
     a :Domain ;
     skos:prefLabel "LLM Evaluation" .
 
+domain:LocalLLMEngineering
+    a :Domain ;
+    skos:prefLabel "Local LLM Engineering" .
+
 domain:DisconnectedHealthcareIT
     a :Domain ;
     skos:prefLabel "Disconnected Healthcare IT" ;
@@ -480,6 +485,8 @@ skill:Playwright a :Technology ; skos:prefLabel "Playwright" .
 skill:WebGPU a :Technology ; skos:prefLabel "WebGPU" .
 skill:WebLLM a :Technology ; skos:prefLabel "WebLLM" .
 skill:Ollama a :Technology ; skos:prefLabel "Ollama" .
+skill:LMStudio a :Technology ; skos:prefLabel "LM Studio" .
+skill:Qwen3Coder30B a :Technology ; skos:prefLabel "qwen3-coder:30b" .
 skill:SmolLM2 a :Technology ; skos:prefLabel "SmolLM2" .
 skill:PayloadCMS a :Technology ; skos:prefLabel "Payload CMS" .
 skill:WebMCP a :Technology ; skos:prefLabel "Web MCP" .
@@ -687,10 +694,18 @@ project:RdfFitAssistant
 project:PromptfooRdfEvalHarness
     a :Project ;
     schema:name "Promptfoo RDF Evaluation Harness" ;
-    :inDomain domain:LLMEvaluation, domain:SemanticWeb, domain:LocalFirstAI ;
-    :builtWith skill:Promptfoo, skill:TypeScript, skill:Ollama, skill:Playwright, skill:RDF ;
-    :contributesTo value:Evidence, value:Accountability ;
+    :inDomain domain:LLMEvaluation, domain:SemanticWeb, domain:LocalFirstAI, domain:LocalLLMEngineering ;
+    :builtWith skill:Promptfoo, skill:TypeScript, skill:Ollama, skill:Qwen3Coder30B, skill:Playwright, skill:RDF ;
+    :contributesTo value:Evidence, value:Accountability, :LocalLLMJudgeEvaluation, :PromptFeedbackLoop ;
     rdfs:comment "Personal hobby and learning project: Promptfoo and Playwright evaluation setup that checks RDF fit scoring, prompt grounding, hallucination rejection, browser behavior, and local LLM judge quality. This is not modeled as core professional work evidence." .
+
+project:LocalLLMEngineering
+    a :Project ;
+    schema:name "Local LLM Engineering" ;
+    :inDomain domain:LocalLLMEngineering, domain:LLMEvaluation, domain:LocalFirstAI ;
+    :builtWith skill:Ollama, skill:LMStudio, skill:Qwen3Coder30B, skill:Promptfoo, skill:TypeScript ;
+    :contributesTo value:Evidence, value:Accountability, :LocalLLMJudgeEvaluation, :PromptFeedbackLoop, :ModelSelectionForLocalHardware ;
+    rdfs:comment "Personal hobby and learning project: local LLM engineering using Ollama/LM Studio-style local model serving, qwen3-coder:30b as a Promptfoo LLM judge, machine-spec-aware model selection, and a prompt feedback loop that improves prompts while checking that answers stay grounded in RDF. This is not modeled as core professional work evidence." .
 
 product:MEGMaps
     a :Product ;
@@ -840,6 +855,24 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Health Chatbot Guardrails" ;
     :contributesTo domain:AIEnabledHealthcare, value:Evidence, value:Accountability ;
     rdfs:comment "Evaluation and control patterns for keeping health chatbot responses grounded, reviewed, and within intended safety boundaries." .
+
+:LocalLLMJudgeEvaluation
+    a skos:Concept ;
+    skos:prefLabel "Local LLM Judge Evaluation" ;
+    :contributesTo domain:LLMEvaluation, value:Evidence, value:Accountability ;
+    rdfs:comment "Using a locally served LLM as an evaluation judge for prompt quality, grounding, hallucination rejection, and answer usefulness." .
+
+:PromptFeedbackLoop
+    a skos:Concept ;
+    skos:prefLabel "Prompt Feedback Loop" ;
+    :contributesTo domain:LLMEvaluation, value:Evidence ;
+    rdfs:comment "Iterating prompts through automated scenarios, scoring, and failure analysis until grounded behavior improves." .
+
+:ModelSelectionForLocalHardware
+    a skos:Concept ;
+    skos:prefLabel "Model Selection for Local Hardware" ;
+    :contributesTo domain:LocalLLMEngineering ;
+    rdfs:comment "Choosing local models based on the current machine's CPU, memory, GPU availability, and practical eval latency." .
 
 :OnDeviceRetrieval
     a skos:Concept ;
