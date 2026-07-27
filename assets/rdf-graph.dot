@@ -499,935 +499,977 @@ digraph "RagavSathishRdfGraph" {
     fontcolor = "#0f172a";
   ];
   "n69" [
-    label = "Domain\nLLM Evaluation\ndomain:LLMEvaluation";
+    label = "Domain\nDomain-Driven Design\ndomain:DomainDrivenDesign";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n70" [
-    label = "Domain\nLocal-first AI\ndomain:LocalFirstAI";
+    label = "Domain\nLLM Evaluation\ndomain:LLMEvaluation";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n71" [
-    label = "Domain\nLocal LLM Engineering\ndomain:LocalLLMEngineering";
+    label = "Domain\nLocal-first AI\ndomain:LocalFirstAI";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n72" [
-    label = "Domain\nLost Empathy in Translation\ndomain:LostEmpathyInTranslation";
+    label = "Domain\nLocal LLM Engineering\ndomain:LocalLLMEngineering";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n73" [
-    label = "Domain\nMedical Device Software\ndomain:MedicalDeviceSoftware";
+    label = "Domain\nLost Empathy in Translation\ndomain:LostEmpathyInTranslation";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n74" [
-    label = "Domain\nPost-market Surveillance\ndomain:PostMarketSurveillance";
+    label = "Domain\nMedical Device Software\ndomain:MedicalDeviceSoftware";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n75" [
-    label = "Domain\nQuality of Life\ndomain:QualityOfLife";
+    label = "Domain\nPost-market Surveillance\ndomain:PostMarketSurveillance";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n76" [
-    label = "Domain\nRegulated Healthcare\ndomain:RegulatedHealthcare";
+    label = "Domain\nQuality of Life\ndomain:QualityOfLife";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n77" [
-    label = "Domain\nSemantic Web\ndomain:SemanticWeb";
+    label = "Domain\nRegulated Healthcare\ndomain:RegulatedHealthcare";
     fillcolor = "#ffffff";
     color = "#334155";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n78" [
+    label = "Domain\nSemantic Web\ndomain:SemanticWeb";
+    fillcolor = "#ffffff";
+    color = "#334155";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n79" [
+    label = "Domain\nSoftware Architecture\ndomain:SoftwareArchitecture";
+    fillcolor = "#ffffff";
+    color = "#334155";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n80" [
     label = "Resource\nBEng Computer Science and Engineering, First Class with Distinction\nme:BEngComputerScience";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n79" [
+  "n81" [
     label = "Person\nSathish Kumar Narayanan\nme:me";
     fillcolor = "#ffffff";
     color = "#0f766e";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n80" [
+  "n82" [
     label = "Resource\nMSc Life Science Technologies, Bioinformatics\nme:MScLifeScienceTechnologies";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n81" [
+  "n83" [
     label = "Organization\nAalto University\norg:AaltoUniversity";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n82" [
+  "n84" [
     label = "Organization\nAla-Laurila Lab\norg:AlaLaurilaLab";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n83" [
+  "n85" [
     label = "Organization\nAnna University\norg:AnnaUniversity";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n84" [
+  "n86" [
     label = "Organization\nAWS Southeast Asia Social Entrepreneurs Accelerator\norg:AWSSEA";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n85" [
+  "n87" [
     label = "Organization\nHalla Health\norg:HallaHealth";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n86" [
+  "n88" [
     label = "Organization\nInfosys\norg:Infosys";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n87" [
+  "n89" [
     label = "Organization\nMEGIN\norg:MEGIN";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n88" [
+  "n90" [
     label = "Organization\nScope Impact\norg:ScopeImpact";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n89" [
+  "n91" [
     label = "Organization\nSeppo.io\norg:Seppo";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n90" [
+  "n92" [
     label = "Organization\nSignant Health\norg:SignantHealth";
     fillcolor = "#ffffff";
     color = "#0369a1";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n91" [
+  "n93" [
     label = "Resource\nOntology\nowl:Ontology";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n92" [
+  "n94" [
     label = "Practice\nClinical Observation\npractice:ClinicalObservation";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n93" [
+  "n95" [
     label = "Practice\nConflict to Harmony\npractice:ConflictToHarmony";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n94" [
+  "n96" [
     label = "Practice\nCustomer Closeness\npractice:CustomerCloseness";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n95" [
+  "n97" [
     label = "Practice\nEngineering\npractice:Engineering";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n96" [
+  "n98" [
     label = "Practice\nHands-on Building\npractice:HandsOnBuilding";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n97" [
+  "n99" [
     label = "Practice\nMeditation\npractice:Meditation";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n98" [
+  "n100" [
     label = "Practice\nProduct Discovery\npractice:ProductDiscovery";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n99" [
+  "n101" [
     label = "Practice\nRetrospection\npractice:Retrospection";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n100" [
+  "n102" [
     label = "Practice\nScientific Research\npractice:ScientificResearch";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n101" [
+  "n103" [
     label = "Practice\nSwing Dance\npractice:SwingDance";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n102" [
+  "n104" [
     label = "Practice\nTeaching and Mentoring\npractice:TeachingAndMentoring";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n103" [
+  "n105" [
     label = "Practice\nTransfer Learning\npractice:TransferLearning";
     fillcolor = "#ffffff";
     color = "#047857";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n104" [
+  "n106" [
     label = "Product\nMEG Maps\nproduct:MEGMaps";
     fillcolor = "#ffffff";
     color = "#92400e";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n105" [
+  "n107" [
     label = "Project\nAla-Laurila Lab Data Acquisition\nproject:AlaLaurilaDataAcquisition";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n106" [
+  "n108" [
     label = "Project\nBrowser WebGPU LLM Engineering\nproject:BrowserWebGPULLMEngineering";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n107" [
-    label = "Project\nHalla Health\nproject:HallaHealth";
-    fillcolor = "#ffffff";
-    color = "#7c2d12";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
-  "n108" [
-    label = "Project\nInfosys Automated Grading Solution\nproject:InfosysAutomatedGrading";
-    fillcolor = "#ffffff";
-    color = "#7c2d12";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
   "n109" [
-    label = "Project\nLocal LLM Engineering\nproject:LocalLLMEngineering";
+    label = "Project\nDomain-Driven Architecture Learning\nproject:DomainDrivenArchitectureLearning";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n110" [
-    label = "Project\nMEG Maps Platform and Medical Device Software Infrastructure\nproject:MEGMapsPlatform";
+    label = "Project\nHalla Health\nproject:HallaHealth";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n111" [
-    label = "Project\nPersonal Semantic Web Profile\nproject:PersonalSemanticWebProfile";
+    label = "Project\nInfosys Automated Grading Solution\nproject:InfosysAutomatedGrading";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n112" [
-    label = "Project\nPromptfoo RDF Evaluation Harness\nproject:PromptfooRdfEvalHarness";
+    label = "Project\nLocal LLM Engineering\nproject:LocalLLMEngineering";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n113" [
-    label = "Project\nBrowser-based RDF Fit Assistant\nproject:RdfFitAssistant";
+    label = "Project\nMEG Maps Platform and Medical Device Software Infrastructure\nproject:MEGMapsPlatform";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n114" [
-    label = "Project\nRetinal Neural Circuit Analysis\nproject:RetinalCircuitAnalysis";
+    label = "Project\nPersonal Semantic Web Profile\nproject:PersonalSemanticWebProfile";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n115" [
-    label = "Project\nSeppo.io Single Page Application Refactor\nproject:SeppoSinglePageApplication";
+    label = "Project\nPromptfoo RDF Evaluation Harness\nproject:PromptfooRdfEvalHarness";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n116" [
-    label = "Project\nSignant Health Cloud Migration and GitOps\nproject:SignantCloudMigration";
+    label = "Project\nBrowser-based RDF Fit Assistant\nproject:RdfFitAssistant";
     fillcolor = "#ffffff";
     color = "#7c2d12";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n117" [
+    label = "Project\nRetinal Neural Circuit Analysis\nproject:RetinalCircuitAnalysis";
+    fillcolor = "#ffffff";
+    color = "#7c2d12";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n118" [
+    label = "Project\nSeppo.io Single Page Application Refactor\nproject:SeppoSinglePageApplication";
+    fillcolor = "#ffffff";
+    color = "#7c2d12";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n119" [
+    label = "Project\nSignant Health Cloud Migration and GitOps\nproject:SignantCloudMigration";
+    fillcolor = "#ffffff";
+    color = "#7c2d12";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n120" [
     label = "Resource\nProperty\nrdf:Property";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n118" [
+  "n121" [
     label = "Resource\nSathish Kumar Narayanan Personal Ontology\nrdf/ragavsathish-ontology.ttl";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n119" [
+  "n122" [
     label = "Resource\nClass\nrdfs:Class";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n120" [
+  "n123" [
+    label = "LearningResource\nThe C4 model: misconceptions, misuses and mistakes\nresource:C4ModelMisconceptionsMisusesMistakes";
+    fillcolor = "#ffffff";
+    color = "#86198f";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n124" [
     label = "LearningResource\nPrivacy First: Building LLM-Powered Web Apps with client side WASM\nresource:PrivacyFirstClientSideWasmLlms";
     fillcolor = "#ffffff";
     color = "#86198f";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n121" [
+  "n125" [
     label = "LearningResource\nRDF and the future of LLMs\nresource:RdfAndTheFutureOfLlms";
     fillcolor = "#ffffff";
     color = "#86198f";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n122" [
+  "n126" [
     label = "LearningResource\nWhy Agentic Systems Need Ontologies\nresource:WhyAgenticSystemsNeedOntologies";
     fillcolor = "#ffffff";
     color = "#86198f";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n123" [
+  "n127" [
     label = "Role\nGraduate Researcher\nrole:AaltoGraduateResearcher";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n124" [
+  "n128" [
     label = "Role\nMember - Education and Research\nrole:InfosysEducationResearch";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n125" [
+  "n129" [
     label = "Role\nSenior Systems Engineer\nrole:InfosysSeniorSystemsEngineer";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n126" [
+  "n130" [
     label = "Role\nSystems Engineer\nrole:InfosysSystemsEngineer";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n127" [
+  "n131" [
     label = "Role\nSenior Software Developer / Architect\nrole:MeginSeniorSoftwareDeveloperArchitect";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n128" [
+  "n132" [
     label = "Role\nTechnology Lead\nrole:ScopeImpactTechnologyLead";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n129" [
+  "n133" [
     label = "Role\nSoftware Developer\nrole:SeppoSoftwareDeveloper";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n130" [
+  "n134" [
     label = "Role\nSenior Software Designer\nrole:SignantSeniorSoftwareDesigner";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n131" [
+  "n135" [
     label = "Role\nSoftware Designer\nrole:SignantSoftwareDesigner";
     fillcolor = "#ffffff";
     color = "#1d4ed8";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n132" [
+  "n136" [
     label = "Resource\nCollegeOrUniversity\nschema:CollegeOrUniversity";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n133" [
+  "n137" [
     label = "Resource\nDigitalDocument\nschema:DigitalDocument";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n134" [
+  "n138" [
     label = "Resource\nEducationalOccupationalCredential\nschema:EducationalOccupationalCredential";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n135" [
+  "n139" [
     label = "Resource\nLearningResource\nschema:LearningResource";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n136" [
+  "n140" [
     label = "Resource\nOrganization\nschema:Organization";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n137" [
+  "n141" [
     label = "Resource\nPerson\nschema:Person";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n138" [
+  "n142" [
     label = "Resource\nProfilePage\nschema:ProfilePage";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n139" [
+  "n143" [
     label = "Resource\nVideoObject\nschema:VideoObject";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n140" [
+  "n144" [
     label = "Resource\nhalla-health-a-new-decentralized-health-service-and-diverse-data-broker\nscopeimpact.fi/halla-health-a-new-decentralized-health-service-and-diverse-data-broker";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n141" [
+  "n145" [
     label = "Technology\nADFS\nskill:ADFS";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n142" [
+  "n146" [
     label = "Technology\nAnsible\nskill:Ansible";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n143" [
+  "n147" [
     label = "Technology\nArgo CD\nskill:ArgoCD";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n144" [
+  "n148" [
     label = "Technology\nAWS\nskill:AWS";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n145" [
-    label = "Technology\nDocker\nskill:Docker";
-    fillcolor = "#ffffff";
-    color = "#4338ca";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
-  "n146" [
-    label = "Technology\nMicrosoft Entra ID\nskill:EntraID";
-    fillcolor = "#ffffff";
-    color = "#4338ca";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
-  "n147" [
-    label = "Technology\nFlutter\nskill:Flutter";
-    fillcolor = "#ffffff";
-    color = "#4338ca";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
-  "n148" [
-    label = "Technology\nFlux\nskill:Flux";
-    fillcolor = "#ffffff";
-    color = "#4338ca";
-    penwidth = 1.5;
-    fontcolor = "#0f172a";
-  ];
   "n149" [
-    label = "Technology\nGitLab\nskill:GitLab";
+    label = "Technology\nC4 Model\nskill:C4Model";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n150" [
-    label = "Technology\nGoogle Vertex AI\nskill:GoogleVertexAI";
+    label = "Technology\nDocker\nskill:Docker";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n151" [
-    label = "Technology\nGraphviz\nskill:Graphviz";
+    label = "Technology\nMicrosoft Entra ID\nskill:EntraID";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n152" [
-    label = "Technology\nHDF5\nskill:HDF5";
+    label = "Technology\nFlutter\nskill:Flutter";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n153" [
-    label = "Technology\nJava\nskill:Java";
+    label = "Technology\nFlux\nskill:Flux";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n154" [
-    label = "Technology\nJenkins\nskill:Jenkins";
+    label = "Technology\nGitLab\nskill:GitLab";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n155" [
-    label = "Technology\nKairos\nskill:Kairos";
+    label = "Technology\nGoogle Vertex AI\nskill:GoogleVertexAI";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n156" [
-    label = "Technology\nKubernetes\nskill:Kubernetes";
+    label = "Technology\nGraphviz\nskill:Graphviz";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n157" [
-    label = "Technology\nLDAP\nskill:LDAP";
+    label = "Technology\nHDF5\nskill:HDF5";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n158" [
-    label = "Technology\nLM Studio\nskill:LMStudio";
+    label = "Technology\nJava\nskill:Java";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n159" [
-    label = "Technology\nMaterial UI\nskill:MaterialUI";
+    label = "Technology\nJenkins\nskill:Jenkins";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n160" [
-    label = "Technology\nMATLAB\nskill:MATLAB";
+    label = "Technology\nKairos\nskill:Kairos";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n161" [
-    label = "Technology\nMermaid\nskill:Mermaid";
+    label = "Technology\nKubernetes\nskill:Kubernetes";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n162" [
-    label = "Technology\nN3\nskill:N3";
+    label = "Technology\nLDAP\nskill:LDAP";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n163" [
-    label = "Technology\nOAuth\nskill:OAuth";
+    label = "Technology\nLM Studio\nskill:LMStudio";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n164" [
-    label = "Technology\nOllama\nskill:Ollama";
+    label = "Technology\nMaterial UI\nskill:MaterialUI";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n165" [
-    label = "Technology\nOn-device RAG\nskill:OnDeviceRAG";
+    label = "Technology\nMATLAB\nskill:MATLAB";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n166" [
-    label = "Technology\nOpenShift\nskill:OpenShift";
+    label = "Technology\nMermaid\nskill:Mermaid";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n167" [
-    label = "Technology\nOTA Updates\nskill:OTAUpdates";
+    label = "Technology\nN3\nskill:N3";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n168" [
-    label = "Technology\nPACS\nskill:PACS";
+    label = "Technology\nOAuth\nskill:OAuth";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n169" [
-    label = "Technology\nPayload CMS\nskill:PayloadCMS";
+    label = "Technology\nOllama\nskill:Ollama";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n170" [
-    label = "Technology\nPlaywright\nskill:Playwright";
+    label = "Technology\nOn-device RAG\nskill:OnDeviceRAG";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n171" [
-    label = "Technology\nPostgreSQL\nskill:PostgreSQL";
+    label = "Technology\nOpenShift\nskill:OpenShift";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n172" [
-    label = "Technology\nPromptfoo\nskill:Promptfoo";
+    label = "Technology\nOTA Updates\nskill:OTAUpdates";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n173" [
-    label = "Technology\nqwen3-coder:30b\nskill:Qwen3Coder30B";
+    label = "Technology\nPACS\nskill:PACS";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n174" [
-    label = "Technology\nRDF\nskill:RDF";
+    label = "Technology\nPayload CMS\nskill:PayloadCMS";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n175" [
-    label = "Technology\nRDFS\nskill:RDFS";
+    label = "Technology\nPlaywright\nskill:Playwright";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n176" [
-    label = "Technology\nReact\nskill:React";
+    label = "Technology\nPostgreSQL\nskill:PostgreSQL";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n177" [
-    label = "Technology\nRedux\nskill:Redux";
+    label = "Technology\nPromptfoo\nskill:Promptfoo";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n178" [
-    label = "Technology\nSmolLM2\nskill:SmolLM2";
+    label = "Technology\nqwen3-coder:30b\nskill:Qwen3Coder30B";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n179" [
-    label = "Technology\nSPARQL\nskill:SPARQL";
+    label = "Technology\nRDF\nskill:RDF";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n180" [
-    label = "Technology\nSQLite\nskill:SQLite";
+    label = "Technology\nRDFS\nskill:RDFS";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n181" [
-    label = "Technology\nTerraform\nskill:Terraform";
+    label = "Technology\nReact\nskill:React";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n182" [
-    label = "Technology\nTool Calling\nskill:ToolCalling";
+    label = "Technology\nRedux\nskill:Redux";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n183" [
-    label = "Technology\nTurtle\nskill:Turtle";
+    label = "Technology\nSmolLM2\nskill:SmolLM2";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n184" [
-    label = "Technology\nTypeScript\nskill:TypeScript";
+    label = "Technology\nSPARQL\nskill:SPARQL";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n185" [
-    label = "Technology\nVoice AI\nskill:VoiceAI";
+    label = "Technology\nSQLite\nskill:SQLite";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n186" [
-    label = "Technology\nWebAssembly\nskill:WebAssembly";
+    label = "Technology\nStructurizr\nskill:Structurizr";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n187" [
-    label = "Technology\nWebGPU\nskill:WebGPU";
+    label = "Technology\nTerraform\nskill:Terraform";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n188" [
-    label = "Technology\nWebLLM\nskill:WebLLM";
+    label = "Technology\nTool Calling\nskill:ToolCalling";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n189" [
-    label = "Technology\nWeb MCP\nskill:WebMCP";
+    label = "Technology\nTurtle\nskill:Turtle";
     fillcolor = "#ffffff";
     color = "#4338ca";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
   "n190" [
+    label = "Technology\nTypeScript\nskill:TypeScript";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n191" [
+    label = "Technology\nVoice AI\nskill:VoiceAI";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n192" [
+    label = "Technology\nWebAssembly\nskill:WebAssembly";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n193" [
+    label = "Technology\nWebGPU\nskill:WebGPU";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n194" [
+    label = "Technology\nWebLLM\nskill:WebLLM";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n195" [
+    label = "Technology\nWeb MCP\nskill:WebMCP";
+    fillcolor = "#ffffff";
+    color = "#4338ca";
+    penwidth = 1.5;
+    fontcolor = "#0f172a";
+  ];
+  "n196" [
     label = "Resource\nConcept\nskos:Concept";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n191" [
+  "n197" [
     label = "Value\nAccountability\nvalue:Accountability";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n192" [
+  "n198" [
     label = "Value\nContinuous Learning\nvalue:ContinuousLearning";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n193" [
+  "n199" [
     label = "Value\nCraftsmanship\nvalue:Craftsmanship";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n194" [
+  "n200" [
     label = "Value\nEvidence\nvalue:Evidence";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n195" [
+  "n201" [
     label = "Value\nHuman Dignity\nvalue:HumanDignity";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n196" [
+  "n202" [
     label = "Value\nHuman Well-being\nvalue:HumanWellBeing";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n197" [
+  "n203" [
     label = "Value\nHumility\nvalue:Humility";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n198" [
+  "n204" [
     label = "Purpose\nImprove Human Well-being\nvalue:ImproveHumanWellBeing";
     fillcolor = "#ffffff";
     color = "#166534";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n199" [
+  "n205" [
     label = "Value\nSystems Empathy\nvalue:SystemsEmpathy";
     fillcolor = "#ffffff";
     color = "#15803d";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n200" [
+  "n206" [
     label = "Resource\nPerson\nxmlns.com/foaf/0.1/Person";
     fillcolor = "#ffffff";
     color = "#374151";
     penwidth = 1.5;
     fontcolor = "#0f172a";
   ];
-  "n45" -> "n91" [
+  "n45" -> "n93" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n45" -> "n79" [
+  "n45" -> "n81" [
     label = "dcterms:creator";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -1437,452 +1479,427 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n44" -> "n119" [
+  "n44" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n56" -> "n119" [
+  "n56" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n38" -> "n119" [
+  "n38" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n5" -> "n119" [
+  "n5" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n41" -> "n119" [
+  "n41" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n52" -> "n119" [
+  "n52" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n16" -> "n119" [
+  "n16" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n40" -> "n119" [
+  "n40" -> "n122" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n22" -> "n117" [
+  "n22" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n20" -> "n117" [
+  "n20" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n39" -> "n117" [
+  "n39" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n15" -> "n117" [
+  "n15" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n14" -> "n117" [
+  "n14" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n50" -> "n117" [
+  "n50" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n21" -> "n117" [
+  "n21" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n2" -> "n117" [
+  "n2" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n57" -> "n117" [
+  "n57" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n18" -> "n117" [
+  "n18" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n4" -> "n117" [
+  "n4" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n28" -> "n117" [
+  "n28" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n53" -> "n117" [
+  "n53" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n1" -> "n117" [
+  "n1" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n47" -> "n117" [
+  "n47" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n29" -> "n117" [
+  "n29" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n55" -> "n117" [
+  "n55" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n19" -> "n117" [
+  "n19" -> "n120" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n137" [
+  "n81" -> "n141" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n200" [
+  "n81" -> "n206" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n198" [
+  "n81" -> "n204" [
     label = ":hasPurpose";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n196" [
+  "n81" -> "n202" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n195" [
+  "n81" -> "n201" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n193" [
+  "n81" -> "n199" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n197" [
+  "n81" -> "n203" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n192" [
+  "n81" -> "n198" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n199" [
+  "n81" -> "n205" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n194" [
+  "n81" -> "n200" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n191" [
+  "n81" -> "n197" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n95" [
+  "n81" -> "n97" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n100" [
+  "n81" -> "n102" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n98" [
+  "n81" -> "n100" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n94" [
+  "n81" -> "n96" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n97" [
+  "n81" -> "n99" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n101" [
+  "n81" -> "n103" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n99" [
+  "n81" -> "n101" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n102" [
+  "n81" -> "n104" [
     label = ":practices";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n103" [
+  "n81" -> "n105" [
     label = ":developsThrough";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n96" [
+  "n81" -> "n98" [
     label = ":developsThrough";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n92" [
+  "n81" -> "n94" [
     label = ":developsThrough";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n93" [
+  "n81" -> "n95" [
     label = ":developsThrough";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n68" [
+  "n81" -> "n68" [
     label = ":seeksToReduce";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n66" [
+  "n81" -> "n66" [
     label = ":seeksToReduce";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n62" [
+  "n81" -> "n62" [
     label = ":seeksToReduce";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n72" [
+  "n81" -> "n73" [
     label = ":seeksToReduce";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n111" [
+  "n81" -> "n114" [
     label = ":exploresAsHobby";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n113" [
+  "n81" -> "n116" [
     label = ":exploresAsHobby";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n112" [
+  "n81" -> "n115" [
     label = ":exploresAsHobby";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n106" [
+  "n81" -> "n108" [
     label = ":exploresAsHobby";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n109" [
+  "n81" -> "n112" [
     label = ":exploresAsHobby";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n110" [
+  "n81" -> "n109" [
+    label = ":exploresAsHobby";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n81" -> "n113" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n107" [
+  "n81" -> "n110" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n105" [
+  "n81" -> "n107" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n114" [
+  "n81" -> "n117" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n116" [
+  "n81" -> "n119" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n115" [
+  "n81" -> "n118" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n108" [
+  "n81" -> "n111" [
     label = ":workedOn";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n127" [
+  "n81" -> "n131" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n128" [
+  "n81" -> "n132" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n130" [
+  "n81" -> "n134" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n131" [
+  "n81" -> "n135" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n129" [
+  "n81" -> "n133" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n123" [
+  "n81" -> "n127" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n124" [
+  "n81" -> "n128" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n125" [
+  "n81" -> "n129" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n126" [
+  "n81" -> "n130" [
     label = ":hasCareerRole";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n44" [
+  "n204" -> "n44" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n190" [
+  "n204" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n196" [
+  "n204" -> "n202" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n195" [
+  "n204" -> "n201" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n59" [
+  "n204" -> "n59" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n198" -> "n75" [
+  "n204" -> "n76" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n196" -> "n56" [
+  "n202" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n196" -> "n190" [
+  "n202" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n195" -> "n56" [
+  "n201" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n195" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n193" -> "n56" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n193" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n197" -> "n56" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n197" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n192" -> "n56" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n192" -> "n190" [
+  "n201" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -1892,77 +1909,57 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n199" -> "n190" [
+  "n199" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n194" -> "n56" [
+  "n203" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n194" -> "n190" [
+  "n203" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n191" -> "n56" [
+  "n198" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n191" -> "n190" [
+  "n198" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n95" -> "n38" [
+  "n205" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n95" -> "n190" [
+  "n205" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n95" -> "n198" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n100" -> "n38" [
+  "n200" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n100" -> "n190" [
+  "n200" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n100" -> "n194" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n98" -> "n38" [
+  "n197" -> "n56" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n98" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n94" -> "n38" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n94" -> "n190" [
+  "n197" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -1972,48 +1969,13 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n97" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
   "n97" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n97" -> "n204" [
     label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n101" -> "n38" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n101" -> "n190" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n101" -> "n196" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n101" -> "n193" [
-    label = ":expresses";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n101" -> "n195" [
-    label = ":expresses";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n99" -> "n38" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n99" -> "n190" [
-    label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -2022,17 +1984,22 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n102" -> "n190" [
+  "n102" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n103" -> "n38" [
+  "n102" -> "n200" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n100" -> "n38" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n103" -> "n190" [
+  "n100" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2042,37 +2009,117 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n96" -> "n190" [
+  "n96" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n92" -> "n38" [
+  "n99" -> "n38" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n92" -> "n190" [
+  "n99" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n93" -> "n38" [
+  "n99" -> "n202" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n103" -> "n38" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n93" -> "n190" [
+  "n103" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n73" -> "n16" [
+  "n103" -> "n202" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n103" -> "n199" [
+    label = ":expresses";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n103" -> "n201" [
+    label = ":expresses";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n101" -> "n38" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n76" -> "n16" [
+  "n101" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n104" -> "n38" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n104" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n105" -> "n38" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n105" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n98" -> "n38" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n98" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n94" -> "n38" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n94" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n95" -> "n38" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n95" -> "n196" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n74" -> "n16" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n77" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2087,7 +2134,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n74" -> "n16" [
+  "n75" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2097,7 +2144,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n75" -> "n16" [
+  "n76" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2122,7 +2169,12 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n77" -> "n16" [
+  "n78" -> "n16" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n71" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2132,12 +2184,17 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n69" -> "n16" [
+  "n72" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n71" -> "n16" [
+  "n79" -> "n16" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n69" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2157,12 +2214,77 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n72" -> "n16" [
+  "n73" -> "n16" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n184" -> "n52" [
+  "n190" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n158" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n176" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n187" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n146" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n181" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n182" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n164" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n148" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n150" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n161" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n154" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n159" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n147" -> "n52" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2177,227 +2299,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n181" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n142" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n176" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n177" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n159" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n144" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n145" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n156" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n149" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n154" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n143" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n148" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n166" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n155" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
   "n160" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n152" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n157" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n141" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n146" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n168" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n174" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n175" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n183" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n179" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n161" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n151" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n162" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n172" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n170" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n187" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n188" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n186" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n164" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n158" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n173" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n178" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n169" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n189" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n163" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n147" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n167" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n150" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n185" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n180" -> "n52" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n182" -> "n52" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2407,12 +2309,202 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n87" -> "n136" [
+  "n157" -> "n52" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n88" -> "n136" [
+  "n162" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n145" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n151" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n173" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n179" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n180" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n189" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n184" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n166" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n156" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n167" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n177" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n175" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n193" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n194" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n192" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n169" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n163" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n178" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n183" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n174" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n195" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n168" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n152" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n172" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n155" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n191" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n185" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n188" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n170" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n149" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n186" -> "n52" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n89" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n90" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n87" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n92" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n91" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n88" -> "n140" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n83" -> "n136" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2422,38 +2514,243 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n90" -> "n136" [
+  "n84" -> "n140" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n89" -> "n136" [
+  "n86" -> "n140" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n86" -> "n136" [
+  "n131" -> "n5" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n81" -> "n132" [
+  "n131" -> "n89" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n74" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n77" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n64" [
+    label = ":translates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n74" [
+    label = ":translates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n62" [
+    label = ":accelerates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n190" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n176" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n148" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n187" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n150" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n161" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n154" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n160" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n162" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n145" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n151" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n131" -> "n173" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n5" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n83" -> "n132" [
+  "n132" -> "n90" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n67" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n63" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n60" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n59" [
+    label = ":translates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n60" [
+    label = ":translates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n132" -> "n204" [
+    label = ":accelerates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n5" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n82" -> "n136" [
+  "n134" -> "n92" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n77" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n148" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n187" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n171" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n161" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n134" -> "n147" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n135" -> "n5" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n84" -> "n136" [
+  "n135" -> "n92" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n135" -> "n158" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n135" -> "n181" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n135" -> "n182" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n135" -> "n159" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n133" -> "n5" [
     label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n133" -> "n91" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n133" -> "n181" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n133" -> "n182" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n133" -> "n164" [
+    label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -2462,92 +2759,32 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n127" -> "n87" [
+  "n127" -> "n83" [
     label = ":atOrganization";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n127" -> "n73" [
+  "n127" -> "n84" [
+    label = ":atOrganization";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n127" -> "n65" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n127" -> "n76" [
+  "n127" -> "n61" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n127" -> "n64" [
-    label = ":translates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n73" [
-    label = ":translates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n62" [
-    label = ":accelerates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n184" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n171" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n144" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n181" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n145" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n156" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n149" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n155" [
+  "n127" -> "n165" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
   "n127" -> "n157" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n141" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n146" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n127" -> "n168" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -2562,33 +2799,13 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n128" -> "n67" [
-    label = ":inDomain";
+  "n129" -> "n5" [
+    label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n128" -> "n63" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n128" -> "n60" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n128" -> "n59" [
-    label = ":translates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n128" -> "n60" [
-    label = ":translates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n128" -> "n198" [
-    label = ":accelerates";
+  "n129" -> "n88" [
+    label = ":atOrganization";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -2597,393 +2814,318 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n130" -> "n90" [
+  "n130" -> "n88" [
     label = ":atOrganization";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n130" -> "n76" [
+  "n82" -> "n138" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n82" -> "n61" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n130" -> "n144" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n130" -> "n181" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n130" -> "n166" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n130" -> "n156" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n130" -> "n143" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n90" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n153" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n176" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n177" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n131" -> "n154" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n129" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n129" -> "n89" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n129" -> "n176" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n129" -> "n177" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n129" -> "n159" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n123" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n123" -> "n81" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n123" -> "n82" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n123" -> "n65" [
+  "n82" -> "n65" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n123" -> "n61" [
+  "n80" -> "n138" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n114" -> "n41" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n114" -> "n78" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n123" -> "n160" [
+  "n114" -> "n179" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n123" -> "n152" [
+  "n114" -> "n180" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n124" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n124" -> "n86" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n125" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n125" -> "n86" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n126" -> "n5" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n126" -> "n86" [
-    label = ":atOrganization";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n80" -> "n134" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n80" -> "n61" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n80" -> "n65" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n78" -> "n134" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n111" -> "n41" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n111" -> "n77" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n111" -> "n174" [
+  "n114" -> "n189" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n175" [
+  "n114" -> "n167" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n183" [
+  "n114" -> "n156" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n162" [
+  "n114" -> "n166" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n151" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n111" -> "n161" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n111" -> "n194" [
+  "n114" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n191" [
+  "n114" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n121" [
+  "n114" -> "n125" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n111" -> "n122" [
+  "n114" -> "n126" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n41" [
+  "n116" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n77" [
+  "n116" -> "n78" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n70" [
+  "n116" -> "n71" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n184" [
+  "n116" -> "n190" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n174" [
+  "n116" -> "n179" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n187" [
+  "n116" -> "n193" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n188" [
+  "n116" -> "n194" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n186" [
+  "n116" -> "n192" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n178" [
+  "n116" -> "n183" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n194" [
+  "n116" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n191" [
+  "n116" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n3" [
+  "n116" -> "n3" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n8" [
+  "n116" -> "n8" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n121" [
+  "n116" -> "n125" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n122" [
+  "n116" -> "n126" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n113" -> "n120" [
+  "n116" -> "n124" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n41" [
+  "n108" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n70" [
+  "n108" -> "n71" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n71" [
+  "n108" -> "n72" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n187" [
+  "n108" -> "n193" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n188" [
+  "n108" -> "n194" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n186" [
+  "n108" -> "n192" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n178" [
+  "n108" -> "n183" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n184" [
+  "n108" -> "n190" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n194" [
+  "n108" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n191" [
+  "n108" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n3" [
+  "n108" -> "n3" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n7" [
+  "n108" -> "n7" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n8" [
+  "n108" -> "n8" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n121" [
+  "n108" -> "n125" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n106" -> "n120" [
+  "n108" -> "n124" [
     label = ":usesLearningResource";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n41" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n70" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n78" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n71" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n72" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n177" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n190" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n169" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n178" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n175" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n179" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n200" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n197" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n31" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n115" -> "n42" [
+    label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -2992,12 +3134,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n69" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n112" -> "n77" [
+  "n112" -> "n72" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3012,42 +3149,37 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n172" [
+  "n112" -> "n169" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n184" [
+  "n112" -> "n163" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n164" [
+  "n112" -> "n178" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n173" [
+  "n112" -> "n177" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n170" [
+  "n112" -> "n190" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n174" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n112" -> "n194" [
+  "n112" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n112" -> "n191" [
+  "n112" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3062,12 +3194,32 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
+  "n112" -> "n33" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n112" -> "n125" [
+    label = ":usesLearningResource";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n112" -> "n126" [
+    label = ":usesLearningResource";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n112" -> "n124" [
+    label = ":usesLearningResource";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
   "n109" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n71" [
+  "n109" -> "n79" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3077,148 +3229,183 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n70" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n164" [
+  "n109" -> "n149" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n158" [
+  "n109" -> "n186" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n173" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n172" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n184" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n194" [
+  "n109" -> "n205" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n191" [
+  "n109" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n31" [
+  "n109" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n42" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n33" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n121" [
+  "n109" -> "n123" [
     label = ":usesLearningResource";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n109" -> "n122" [
-    label = ":usesLearningResource";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n109" -> "n120" [
-    label = ":usesLearningResource";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n121" -> "n135" [
+  "n125" -> "n139" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n121" -> "n139" [
+  "n125" -> "n143" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n121" -> "n77" [
+  "n125" -> "n78" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n121" -> "n71" [
+  "n125" -> "n72" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n122" -> "n135" [
+  "n126" -> "n139" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n122" -> "n139" [
+  "n126" -> "n143" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n122" -> "n77" [
+  "n126" -> "n78" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n122" -> "n71" [
+  "n126" -> "n72" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n120" -> "n135" [
+  "n124" -> "n139" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n120" -> "n139" [
+  "n124" -> "n143" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n120" -> "n70" [
+  "n124" -> "n71" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n120" -> "n71" [
+  "n124" -> "n72" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n104" -> "n40" [
+  "n123" -> "n139" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n104" -> "n73" [
+  "n123" -> "n143" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n123" -> "n79" [
+    label = "schema:about";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n123" -> "n69" [
+    label = "schema:about";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n106" -> "n40" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n106" -> "n74" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n104" -> "n76" [
+  "n106" -> "n77" [
     label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n41" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n74" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n77" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n148" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n187" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n150" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n161" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n154" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n176" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n64" [
+    label = ":requires";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n113" -> "n75" [
+    label = ":requires";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -3227,53 +3414,153 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n73" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n110" -> "n76" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
   "n110" -> "n144" [
+    label = "rdfs:seeAlso";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n67" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n63" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n60" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n59" [
+    label = ":inDomain";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n148" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n181" [
+  "n110" -> "n174" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n145" [
+  "n110" -> "n195" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n156" [
+  "n110" -> "n168" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n149" [
+  "n110" -> "n152" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n171" [
+  "n110" -> "n172" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n64" [
-    label = ":requires";
+  "n110" -> "n155" [
+    label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n110" -> "n74" [
-    label = ":requires";
+  "n110" -> "n191" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n177" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n188" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n185" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n170" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n13" [
+    label = ":accelerates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n25" [
+    label = ":accelerates";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n204" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n27" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n34" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n23" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n35" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n30" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n11" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n24" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n49" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n9" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n110" -> "n43" [
+    label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -3282,83 +3569,13 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n107" -> "n140" [
-    label = "rdfs:seeAlso";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n67" [
+  "n107" -> "n65" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n107" -> "n63" [
+  "n107" -> "n61" [
     label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n60" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n59" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n144" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n169" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n189" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n163" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n147" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n167" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n150" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n185" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n172" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n182" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n180" [
-    label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -3367,182 +3584,97 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n107" -> "n13" [
-    label = ":accelerates";
+  "n107" -> "n157" [
+    label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n107" -> "n25" [
-    label = ":accelerates";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n198" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n27" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n34" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n23" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n35" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n30" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n11" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n24" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n49" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n9" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n107" -> "n43" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n105" -> "n41" [
+  "n117" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n105" -> "n65" [
+  "n117" -> "n65" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n105" -> "n61" [
+  "n117" -> "n165" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n117" -> "n157" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n119" -> "n41" [
+    label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n119" -> "n77" [
     label = ":inDomain";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n105" -> "n160" [
+  "n119" -> "n148" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n105" -> "n152" [
+  "n119" -> "n187" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n114" -> "n41" [
+  "n119" -> "n171" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n119" -> "n161" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n119" -> "n147" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n118" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n114" -> "n65" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n114" -> "n160" [
+  "n118" -> "n181" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n114" -> "n152" [
+  "n118" -> "n182" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n116" -> "n41" [
+  "n118" -> "n164" [
+    label = ":builtWith";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n111" -> "n41" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n116" -> "n76" [
-    label = ":inDomain";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n116" -> "n144" [
+  "n111" -> "n158" [
     label = ":builtWith";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n116" -> "n181" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n116" -> "n166" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n116" -> "n156" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n116" -> "n143" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n115" -> "n41" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n115" -> "n176" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n115" -> "n177" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n115" -> "n159" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n108" -> "n41" [
-    label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n108" -> "n153" [
-    label = ":builtWith";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n48" -> "n190" [
+  "n48" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3552,22 +3684,22 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n48" -> "n73" [
-    label = ":requires";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n48" -> "n76" [
-    label = ":requires";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
   "n48" -> "n74" [
     label = ":requires";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n27" -> "n190" [
+  "n48" -> "n77" [
+    label = ":requires";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n48" -> "n75" [
+    label = ":requires";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n27" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3577,7 +3709,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n13" -> "n190" [
+  "n13" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3587,7 +3719,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n30" -> "n190" [
+  "n30" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3597,12 +3729,12 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n30" -> "n198" [
+  "n30" -> "n204" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n11" -> "n190" [
+  "n11" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3617,7 +3749,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n25" -> "n190" [
+  "n25" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3627,7 +3759,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n49" -> "n190" [
+  "n49" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3637,12 +3769,12 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n49" -> "n191" [
+  "n49" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n24" -> "n190" [
+  "n24" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3652,12 +3784,12 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n24" -> "n194" [
+  "n24" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n9" -> "n190" [
+  "n9" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3672,7 +3804,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n43" -> "n190" [
+  "n43" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3682,7 +3814,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n34" -> "n190" [
+  "n34" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3692,7 +3824,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n23" -> "n190" [
+  "n23" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3702,63 +3834,68 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n23" -> "n194" [
+  "n23" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n23" -> "n191" [
+  "n23" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n31" -> "n190" [
+  "n31" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n31" -> "n69" [
+  "n31" -> "n70" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n31" -> "n194" [
+  "n31" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n31" -> "n191" [
+  "n31" -> "n197" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n42" -> "n190" [
+  "n42" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n42" -> "n69" [
+  "n42" -> "n70" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n42" -> "n194" [
+  "n42" -> "n200" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n33" -> "n190" [
+  "n33" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n33" -> "n71" [
+  "n33" -> "n72" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n3" -> "n190" [
+  "n3" -> "n196" [
     label = "rdf:type";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n3" -> "n72" [
+    label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -3767,28 +3904,18 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n3" -> "n70" [
-    label = ":contributesTo";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n7" -> "n190" [
+  "n7" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n7" -> "n70" [
+  "n7" -> "n71" [
     label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n8" -> "n190" [
+  "n8" -> "n196" [
     label = "rdf:type";
-    color = "#94a3b8";
-    fontcolor = "#475569";
-  ];
-  "n8" -> "n70" [
-    label = ":contributesTo";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
@@ -3797,7 +3924,12 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n35" -> "n190" [
+  "n8" -> "n72" [
+    label = ":contributesTo";
+    color = "#94a3b8";
+    fontcolor = "#475569";
+  ];
+  "n35" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3812,7 +3944,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n58" -> "n190" [
+  "n58" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3822,7 +3954,7 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n12" -> "n190" [
+  "n12" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
@@ -3832,112 +3964,112 @@ digraph "RagavSathishRdfGraph" {
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n12" -> "n191" [
+  "n12" -> "n197" [
     label = ":requires";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n12" -> "n194" [
+  "n12" -> "n200" [
     label = ":requires";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n54" -> "n190" [
+  "n54" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n36" -> "n190" [
+  "n36" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n10" -> "n190" [
+  "n10" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n17" -> "n190" [
+  "n17" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n26" -> "n190" [
+  "n26" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n46" -> "n190" [
+  "n46" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n32" -> "n190" [
+  "n32" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n51" -> "n190" [
+  "n51" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n6" -> "n190" [
+  "n6" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n37" -> "n190" [
+  "n37" -> "n196" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n27" [
+  "n81" -> "n27" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n58" [
+  "n81" -> "n58" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n12" [
+  "n81" -> "n12" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n54" [
+  "n81" -> "n54" [
     label = ":guidedBy";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n79" -> "n48" [
+  "n81" -> "n48" [
     label = ":translates";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n118" -> "n133" [
+  "n121" -> "n137" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n118" -> "n79" [
+  "n121" -> "n81" [
     label = "schema:about";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n0" -> "n138" [
+  "n0" -> "n142" [
     label = "rdf:type";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n0" -> "n79" [
+  "n0" -> "n81" [
     label = "schema:mainEntity";
     color = "#94a3b8";
     fontcolor = "#475569";
   ];
-  "n0" -> "n118" [
+  "n0" -> "n121" [
     label = "rdfs:seeAlso";
     color = "#94a3b8";
     fontcolor = "#475569";

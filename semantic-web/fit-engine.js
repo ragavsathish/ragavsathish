@@ -60,6 +60,27 @@ export const fitProfiles = [
     positioning: "Digital health technical lead who can connect AI-enabled self-care, guardrailed chatbot evaluation, offline-first retrieval, and healthcare access mission."
   },
   {
+    id: "domain-driven-architecture",
+    label: "Domain-driven architecture / C4 modeling",
+    keywords: ["domain driven design", "ddd", "c4", "c4 model", "software architecture", "architecture modeling", "architecture visualisation", "architecture visualization", "structurizr", "microservices", "bounded context"],
+    positives: [
+      ["domain:SoftwareArchitecture", 14],
+      ["domain:DomainDrivenDesign", 14],
+      ["project:DomainDrivenArchitectureLearning", 16],
+      ["skill:C4Model", 12],
+      ["skill:Structurizr", 8],
+      ["resource:C4ModelMisconceptionsMisusesMistakes", 10],
+      ["role:MeginSeniorSoftwareDeveloperArchitect", 12],
+      ["project:MEGMapsPlatform", 8],
+      ["skill:Kubernetes", 4]
+    ],
+    gaps: [
+      "Keep DDD and C4 framed as active learning unless tied to shipped architecture case studies.",
+      "Add concrete bounded-context or architecture-decision examples from real projects."
+    ],
+    positioning: "Healthcare software architect learning to communicate domain boundaries and system structure with C4-style architecture models."
+  },
+  {
     id: "cloud-platform",
     label: "Cloud platform / regulated infrastructure architect",
     keywords: ["cloud", "platform", "infrastructure", "devops", "kubernetes", "aws", "terraform", "architect", "gitops"],

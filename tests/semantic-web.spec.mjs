@@ -5,7 +5,7 @@ test.describe("semantic web fit assistant", () => {
     await page.goto("/semantic-web/");
 
     await expect(page.getByRole("heading", { name: "rdf-fit" })).toBeVisible();
-    await expect(page.locator("#rdfStatus")).toHaveText("862 triples");
+    await expect(page.locator("#rdfStatus")).toHaveText("892 triples");
     await expect(page.locator("#wasmStatus")).toHaveText("Available");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Load browser LLM" })).toBeVisible();

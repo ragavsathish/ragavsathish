@@ -46,6 +46,15 @@
     "purpose": "Cloud/platform evidence maps to AWS, Terraform, Kubernetes, and regulated infrastructure."
   },
   {
+    "id": "domain-driven-architecture",
+    "question": "Is Sathish interested in domain-driven design and C4 software architecture modeling?",
+    "mode": "obedient",
+    "category": "architecture-learning",
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Strong fit",
+    "purpose": "DDD/C4 architecture interest should cite the hobby learning project and Simon Brown C4 learning resource without treating it as core professional evidence."
+  },
+  {
     "id": "pure-clinical",
     "question": "Is Sathish a good fit for a pure clinical role?",
     "mode": "drift",

@@ -224,7 +224,8 @@ me:me
         project:RdfFitAssistant,
         project:PromptfooRdfEvalHarness,
         project:BrowserWebGPULLMEngineering,
-        project:LocalLLMEngineering ;
+        project:LocalLLMEngineering,
+        project:DomainDrivenArchitectureLearning ;
     :workedOn
         project:MEGMapsPlatform,
         project:HallaHealth,
@@ -433,6 +434,14 @@ domain:LocalLLMEngineering
     a :Domain ;
     skos:prefLabel "Local LLM Engineering" .
 
+domain:SoftwareArchitecture
+    a :Domain ;
+    skos:prefLabel "Software Architecture" .
+
+domain:DomainDrivenDesign
+    a :Domain ;
+    skos:prefLabel "Domain-Driven Design" .
+
 domain:DisconnectedHealthcareIT
     a :Domain ;
     skos:prefLabel "Disconnected Healthcare IT" ;
@@ -506,6 +515,8 @@ skill:VoiceAI a :Technology ; skos:prefLabel "Voice AI" .
 skill:SQLite a :Technology ; skos:prefLabel "SQLite" .
 skill:ToolCalling a :Technology ; skos:prefLabel "Tool Calling" .
 skill:OnDeviceRAG a :Technology ; skos:prefLabel "On-device RAG" .
+skill:C4Model a :Technology ; skos:prefLabel "C4 Model" .
+skill:Structurizr a :Technology ; skos:prefLabel "Structurizr" .
 
 #################################################################
 # Organizations
@@ -727,6 +738,15 @@ project:LocalLLMEngineering
     :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies, resource:PrivacyFirstClientSideWasmLlms ;
     rdfs:comment "Personal hobby and learning project: local LLM engineering using Ollama/LM Studio-style local model serving, qwen3-coder:30b as a Promptfoo LLM judge, machine-spec-aware model selection, and a prompt feedback loop that improves prompts while checking that answers stay grounded in RDF. This is not modeled as core professional work evidence." .
 
+project:DomainDrivenArchitectureLearning
+    a :Project ;
+    schema:name "Domain-Driven Architecture Learning" ;
+    :inDomain domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
+    :builtWith skill:C4Model, skill:Structurizr ;
+    :contributesTo value:SystemsEmpathy, value:Evidence, value:Accountability ;
+    :usesLearningResource resource:C4ModelMisconceptionsMisusesMistakes ;
+    rdfs:comment "Personal hobby and learning project: studying domain-driven design and architecture visualization practices, including C4 model abstraction levels, notation-independent diagrams, microservice boundaries, shared libraries, and communication of larger software systems. This is not modeled as core professional work evidence." .
+
 resource:RdfAndTheFutureOfLlms
     a schema:LearningResource, schema:VideoObject ;
     schema:name "RDF and the future of LLMs" ;
@@ -750,6 +770,16 @@ resource:PrivacyFirstClientSideWasmLlms
     schema:url <https://youtu.be/AFneOY7QA5Y> ;
     schema:about domain:LocalFirstAI, domain:LocalLLMEngineering ;
     rdfs:comment "LLM-specific learning resource for privacy-first browser applications that run model capability client-side with WebAssembly-style deployment patterns." .
+
+resource:C4ModelMisconceptionsMisusesMistakes
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "The C4 model: misconceptions, misuses and mistakes" ;
+    schema:creator "Simon Brown" ;
+    schema:publisher "Domain-Driven Design Europe" ;
+    schema:url <https://youtu.be/FwG3KGa9-WE> ;
+    schema:datePublished "2025-11-03" ;
+    schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
+    rdfs:comment "Learning resource from DDD Europe 2025 on the C4 model for visualizing software architecture, including system context, container, component, and code abstraction levels; notation independence; microservices; shared libraries; and modeling larger software systems." .
 
 product:MEGMaps
     a :Product ;

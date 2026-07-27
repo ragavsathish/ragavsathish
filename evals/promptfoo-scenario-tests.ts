@@ -36,6 +36,7 @@ const fitTargets: Record<string, string> = {
   "halla-mission-fit": "Health AI product / technology lead",
   "halla-on-device-rag": "Health AI product / technology lead",
   "cloud-architect": "Cloud platform / regulated infrastructure architect",
+  "domain-driven-architecture": "Domain-driven architecture / C4 modeling",
   "pure-clinical": "Pure clinical / licensed care delivery",
   "frontend-brand-design": "Frontend brand / visual design specialist"
 };
@@ -46,6 +47,7 @@ const fitEvidence: Record<string, string[]> = {
   "halla-mission-fit": [":LifeSavingHealthcareAccess", ":CommunitySelfCare", ":HealthDataDiversity", ":SecureHealthWallet"],
   "halla-on-device-rag": [":HealthChatbotGuardrails", ":OnDeviceRetrieval", "skill:ToolCalling", "skill:SQLite"],
   "cloud-architect": ["skill:AWS", "skill:Terraform"],
+  "domain-driven-architecture": ["domain:SoftwareArchitecture", "domain:DomainDrivenDesign", "project:DomainDrivenArchitectureLearning", "skill:C4Model"],
   "pure-clinical": ["The RDF does not show a clinical license or direct care-delivery role."],
   "frontend-brand-design": ["Better fit for product engineering than pure brand or visual design."]
 };
@@ -173,6 +175,7 @@ function promptMarkers(scenario: Scenario): string[] {
     "rdf-proof-medtech": ["Medical Device Software", "Regulated Healthcare"],
     "halla-mission-fit": ["Life-saving Healthcare Access", "Health Data Diversity"],
     "halla-on-device-rag": ["Health Chatbot Guardrails", "On-device Retrieval"],
+    "domain-driven-architecture": ["Keep DDD and C4 framed as active learning", "Healthcare software architect learning to communicate domain boundaries"],
     "medtech-vs-brand": ["Research-to-product healthcare technologist"],
     "hardware-electronics": ["The RDF does not show enough target-specific evidence for this question."]
   };
