@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ask Sathish's RDF Profile</title>
+    <meta name="description" content="A browser-based fit assessment assistant grounded in Sathish Kumar Narayanan's RDF profile.">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/terminal.css@0.7.5/dist/terminal.min.css"
+      integrity="sha256-XjoeDXGz3qtUPU0mAYO0xuCOq7WKOAC6kKfjwKnWAUY="
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="terminal">
+    <main class="shell">
+      <header class="tmux-bar" aria-label="Runtime status">
+        <h1>rdf-fit</h1>
+        <div class="status-strip">
+          <span>rdf:<strong id="rdfStatus">Loading</strong></span>
+          <span>gpu:<strong id="gpuStatus">Checking</strong></span>
+          <span>wasm:<strong id="wasmStatus">Checking</strong></span>
+          <span>llm:<strong id="llmStatus">Optional</strong></span>
+        </div>
+        <button id="loadLlm" type="button">Load browser LLM</button>
+      </header>
+
+      <section class="workspace" aria-label="RDF fit workspace">
+        <section class="ask-panel pane" aria-labelledby="ask-title">
+          <div class="pane-title">
+            <h2 id="ask-title">ask</h2>
+            <span id="llmDetail">Tries WebLLM WebGPU, Transformers.js WebGPU, then WASM CPU.</span>
+          </div>
+          <form id="questionForm">
+            <label for="question">query</label>
+            <div class="input-row">
+              <input
+                id="question"
+                name="question"
+                type="text"
+                aria-label="Role, program, opportunity, or concern"
+                value="Is Sathish suitable for a medtech founder program?"
+                autocomplete="off"
+              >
+              <button type="submit">Assess</button>
+            </div>
+          </form>
+          <div class="chips" aria-label="Example questions">
+            <button type="button" data-question="Is Sathish suitable for a medtech founder program?">medtech</button>
+            <button type="button" data-question="Would Sathish fit a health AI product lead role?">health-ai</button>
+            <button type="button" data-question="Is Sathish suitable for cloud platform architect roles?">cloud</button>
+            <button type="button" data-question="Is Sathish a good fit for a pure clinical role?">clinical</button>
+            <button type="button" data-question="Is Sathish suitable for frontend brand design?">brand</button>
+          </div>
+        </section>
+
+        <section id="answer" class="answer pane" aria-live="polite">
+          <div class="empty-state">
+            <span>awaiting query</span>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

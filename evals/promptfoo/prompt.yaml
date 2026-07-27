@@ -1,0 +1,11 @@
+description: RDF-grounded LLM prompt feedback evals
+# Scenario catalog: evals/rdf-fit-scenarios.json
+
+prompts:
+  - "{{question}}"
+
+providers:
+  - id: file://../../evals/llm-prompt-provider.mjs
+
+tests:
+  - path: file://../../evals/promptfoo-scenario-tests.ts:generatePromptTests

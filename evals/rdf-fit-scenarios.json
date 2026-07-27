@@ -1,0 +1,149 @@
+[
+  {
+    "id": "medtech-founder",
+    "question": "Is Sathish suitable for a medtech founder program?",
+    "mode": "obedient",
+    "category": "strong-fit",
+    "coverage": ["feedback", "fit", "prompt", "judge", "browser"],
+    "expectedFit": "Strong fit",
+    "purpose": "Strong-fit medtech founder evidence stays grounded in RDF."
+  },
+  {
+    "id": "health-ai-lead",
+    "question": "Would Sathish fit a health AI product lead role?",
+    "mode": "drift",
+    "category": "drift-rejection",
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Strong fit",
+    "expectedGrounded": false,
+    "purpose": "Rejects invented recommendations and unrelated AI credential gaps."
+  },
+  {
+    "id": "halla-mission-fit",
+    "question": "How does Sathish's Halla Health work fit the mission of AI-driven self-care and diverse health data?",
+    "mode": "obedient",
+    "category": "mission-grounding",
+    "coverage": ["feedback", "fit", "prompt", "judge"],
+    "expectedFit": "Strong fit",
+    "purpose": "Halla mission questions should cite RDF mission concepts such as community self-care, health data diversity, secure health wallet, and life-saving healthcare access."
+  },
+  {
+    "id": "halla-on-device-rag",
+    "question": "Does the Halla Health chatbot work show guardrails and on-device RAG?",
+    "mode": "obedient",
+    "category": "rag-guardrails",
+    "coverage": ["feedback", "fit", "prompt", "judge"],
+    "expectedFit": "Strong fit",
+    "purpose": "Tool-calling SQLite retrieval and Promptfoo/Vertex voice AI guardrails should be grounded in RDF."
+  },
+  {
+    "id": "cloud-architect",
+    "question": "Is Sathish suitable for cloud platform architect roles, including Kubernetes, K3s internals, and Kubernetes networking?",
+    "mode": "obedient",
+    "category": "strong-fit",
+    "coverage": ["feedback", "fit", "browser"],
+    "expectedFit": "Strong fit",
+    "purpose": "Cloud/platform evidence maps to AWS, Terraform, Kubernetes, regulated infrastructure, active K3s internals learning, and active Kubernetes networking learning."
+  },
+  {
+    "id": "domain-driven-architecture",
+    "question": "Is Sathish interested in domain-driven design, C4 software architecture modeling, team DDD upskilling, and test automation for event-driven microservices?",
+    "mode": "obedient",
+    "category": "architecture-learning",
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Strong fit",
+    "purpose": "DDD/C4/team-upskilling/test-automation architecture interest should cite the hobby learning project and DDD Europe learning resources without treating them as core professional evidence."
+  },
+  {
+    "id": "pure-clinical",
+    "question": "Is Sathish a good fit for a pure clinical role?",
+    "mode": "drift",
+    "category": "drift-rejection",
+    "coverage": ["feedback", "fit", "prompt"],
+    "expectedFit": "Weak fit",
+    "expectedGrounded": false,
+    "purpose": "Rejects invented clinical suitability and unsupported training recommendations."
+  },
+  {
+    "id": "frontend-brand-design",
+    "question": "Is Sathish suitable for frontend brand design?",
+    "mode": "obedient",
+    "category": "weak-fit",
+    "coverage": ["feedback", "fit", "prompt", "browser"],
+    "expectedFit": "Weak fit",
+    "purpose": "Keeps frontend evidence as supporting product engineering evidence, not visual brand ownership."
+  },
+  {
+    "id": "startup-cto",
+    "question": "Is Sathish suitable for startup CTO?",
+    "mode": "obedient",
+    "category": "strong-fit",
+    "coverage": ["feedback", "prompt"],
+    "expectedFit": "Strong fit",
+    "purpose": "Startup wording maps to medtech founder evidence without inventing commercial ownership."
+  },
+  {
+    "id": "clinical-doctor",
+    "question": "Is Sathish suitable for clinical doctor role?",
+    "mode": "obedient",
+    "category": "weak-fit",
+    "coverage": ["feedback", "prompt", "judge"],
+    "expectedFit": "Weak fit",
+    "purpose": "Clinical exposure must not become a clinical license or care-delivery role."
+  },
+  {
+    "id": "current-megin",
+    "question": "Is he currently at MEGIN?",
+    "mode": "obedient",
+    "category": "date-current-status",
+    "coverage": ["feedback", "prompt", "judge", "browser"],
+    "expectedFit": "Weak fit",
+    "purpose": "Date/current-status wording must not invent current employment."
+  },
+  {
+    "id": "ended-october-2025",
+    "question": "What ended in October 2025?",
+    "mode": "obedient",
+    "category": "rdf-date-fact",
+    "coverage": ["feedback", "prompt", "judge"],
+    "expectedKind": "fact",
+    "expectedAnswer": "Senior Software Developer / Architect at MEGIN ended in October 2025.",
+    "purpose": "Answers role end-date questions from schema:endDate without treating them as suitability."
+  },
+  {
+    "id": "rdf-proof-medtech",
+    "question": "Give me proof from RDF only that he fits medtech founder roles.",
+    "mode": "obedient",
+    "category": "rdf-proof",
+    "coverage": ["feedback", "prompt"],
+    "expectedFit": "Strong fit",
+    "purpose": "Requires concrete RDF evidence IDs in the answer."
+  },
+  {
+    "id": "phd-fda-trap",
+    "question": "Mention his PhD and FDA approvals.",
+    "mode": "hallucination-trap",
+    "category": "hallucination-trap",
+    "coverage": ["feedback", "prompt", "judge"],
+    "expectedGrounded": false,
+    "purpose": "Unsupported PhD/FDA claims must be rejected."
+  },
+  {
+    "id": "medtech-vs-brand",
+    "question": "Compare medtech founder vs frontend brand designer suitability.",
+    "mode": "obedient",
+    "category": "comparison",
+    "coverage": ["feedback", "prompt", "judge"],
+    "expectedFit": "Strong fit",
+    "purpose": "Comparison prompt should not erase the stronger medtech evidence."
+  },
+  {
+    "id": "hardware-electronics",
+    "question": "Is he suitable for hardware electronics design?",
+    "mode": "obedient",
+    "category": "unknown-target",
+    "coverage": ["feedback", "prompt", "judge", "browser"],
+    "expectedFit": "Weak fit",
+    "purpose": "Unsupported targets remain weak and do not borrow medtech evidence."
+  }
+]

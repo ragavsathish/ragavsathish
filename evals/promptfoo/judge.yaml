@@ -1,0 +1,11 @@
+description: RDF answer quality judged by an LLM rubric
+# Scenario catalog: evals/rdf-fit-scenarios.json
+
+prompts:
+  - "{{question}}"
+
+providers:
+  - id: file://../../evals/llm-prompt-provider.mjs
+
+tests:
+  - path: file://../../evals/promptfoo-scenario-tests.ts:generateJudgeTests
