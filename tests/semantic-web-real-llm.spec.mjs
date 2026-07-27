@@ -37,7 +37,7 @@ test.describe("semantic web fit assistant real LLM path", () => {
     await expect(answer).toContainText("AI-enabled Healthcare (domain:AIEnabledHealthcare)");
     await expect(answer).toContainText("Digital health technical lead who can connect AI-enabled self-care, guardrailed chatbot evaluation, offline-first retrieval, and healthcare access mission.");
     await expect(answer).toContainText("Browser-local LLM rendering");
-    await expect(answer).toContainText(/Runtime: (WebGPU \+ WebAssembly|WebAssembly CPU)/);
+    await expect(answer).toContainText(/Runtime: (WebGPU \+ WebAssembly|WebGPU via Transformers\.js|WebAssembly CPU)/);
     await expect(answer).not.toContainText("RDF-derived facts:");
   });
 });

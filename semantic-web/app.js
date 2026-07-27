@@ -13,7 +13,7 @@ const NS = {
 };
 
 const webGpuModelId = "SmolLM2-1.7B-Instruct-q4f16_1-MLC";
-const wasmModelId = "onnx-community/SmolLM2-135M-Instruct-ONNX-MHA";
+const transformersModelId = "onnx-community/SmolLM2-135M-Instruct-ONNX-MHA";
 let store;
 let engine;
 let rdfFacts;
@@ -84,16 +84,25 @@ loadLlm.addEventListener("click", async () => {
     return;
   } catch (error) {
     const webGpuError = formatError(error);
-    llmDetail.textContent = `WebGPU failed: ${webGpuError}. Trying WASM edge model.`;
+    llmDetail.textContent = `WebLLM WebGPU failed: ${webGpuError}. Trying Transformers.js WebGPU.`;
   }
 
   try {
-    engine = await loadWasmEngine();
+    engine = await loadTransformersEngine("webgpu");
     llmStatus.textContent = "Ready";
-    llmDetail.textContent += ` Loaded WASM model ${wasmModelId}.`;
+    llmDetail.textContent += ` Loaded Transformers.js WebGPU model ${transformersModelId}.`;
+    return;
+  } catch (error) {
+    llmDetail.textContent += ` Transformers.js WebGPU failed: ${formatError(error)}. Trying WASM CPU.`;
+  }
+
+  try {
+    engine = await loadTransformersEngine("wasm");
+    llmStatus.textContent = "Ready";
+    llmDetail.textContent += ` Loaded Transformers.js WASM model ${transformersModelId}.`;
   } catch (error) {
     llmStatus.textContent = "Unavailable";
-    llmDetail.textContent += ` WASM failed: ${formatError(error)}.`;
+    llmDetail.textContent += ` Transformers.js WASM failed: ${formatError(error)}.`;
     loadLlm.disabled = false;
   }
 });
@@ -256,24 +265,27 @@ async function loadWebGpuEngine() {
   };
 }
 
-async function loadWasmEngine() {
+async function loadTransformersEngine(device) {
   const transformers = await import("https://esm.run/@huggingface/transformers");
-  const generator = await transformers.pipeline("text-generation", wasmModelId, {
+  const isWebGpu = device === "webgpu";
+  const generator = await transformers.pipeline("text-generation", transformersModelId, {
+    device,
     dtype: "q4",
     progress_callback: (progress) => {
       const loaded = progress?.loaded || 0;
       const total = progress?.total || 0;
+      const label = isWebGpu ? "Transformers WebGPU" : "WASM";
       if (loaded && total) {
-        llmStatus.textContent = `WASM ${Math.round((loaded / total) * 100)}%`;
+        llmStatus.textContent = `${label} ${Math.round((loaded / total) * 100)}%`;
       } else {
-        llmStatus.textContent = "Loading WASM";
+        llmStatus.textContent = `Loading ${label}`;
       }
     }
   });
 
   return {
-    modelId: wasmModelId,
-    runtime: "WebAssembly CPU",
+    modelId: transformersModelId,
+    runtime: isWebGpu ? "WebGPU via Transformers.js" : "WebAssembly CPU",
     backend: "Transformers.js",
     network: "model fetch only",
     async summarize(question, result) {
