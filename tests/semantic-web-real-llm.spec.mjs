@@ -13,8 +13,9 @@ test.describe("semantic web fit assistant real LLM path", () => {
   test("downloads the WebGPU LLM and keeps the RDF answer authoritative", async ({ page }) => {
     await page.goto("/semantic-web/");
 
-    await expect(page.locator("#rdfStatus")).toHaveText("574 triples");
+    await expect(page.locator("#rdfStatus")).toHaveText("862 triples");
     await expect(page.locator("#gpuStatus")).toHaveText("Available");
+    await expect(page.locator("#wasmStatus")).toHaveText("Available");
 
     await page.getByRole("button", { name: "Load WebGPU LLM" }).click();
     await expect.poll(
@@ -35,6 +36,7 @@ test.describe("semantic web fit assistant real LLM path", () => {
     await expect(answer).toContainText("Strong fit");
     await expect(answer).toContainText("AI-enabled Healthcare (domain:AIEnabledHealthcare)");
     await expect(answer).toContainText("Digital health technical lead who can connect AI-enabled product direction with privacy-aware architecture and healthcare purpose.");
-    await expect(answer).toContainText(/Local LLM (answer|guard)/);
+    await expect(answer).toContainText("Browser-local LLM rendering");
+    await expect(answer).toContainText("Runtime: WebGPU + WebAssembly");
   });
 });

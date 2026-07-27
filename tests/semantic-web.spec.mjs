@@ -6,6 +6,7 @@ test.describe("semantic web fit assistant", () => {
 
     await expect(page.getByRole("heading", { name: "Ask where Sathish fits, and where he does not." })).toBeVisible();
     await expect(page.locator("#rdfStatus")).toHaveText("862 triples");
+    await expect(page.locator("#wasmStatus")).toHaveText("Available");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Load WebGPU LLM" })).toBeVisible();
   });
@@ -95,6 +96,53 @@ test.describe("semantic web fit assistant", () => {
     await expect(page.locator("#answer")).toContainText("Cloud platform / regulated infrastructure architect");
     await expect(page.locator("#answer")).toContainText("AWS (skill:AWS)");
     await expect(page.locator("#answer")).toContainText("Terraform (skill:Terraform)");
+  });
+
+  test("renders browser-local LLM output with runtime metadata when WebLLM is loaded", async ({ page }) => {
+    await page.route("https://esm.run/@mlc-ai/web-llm", async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: `
+          export async function CreateMLCEngine(modelId, options) {
+            options?.initProgressCallback?.({ progress: 1 });
+            return {
+              chat: {
+                completions: {
+                  async create() {
+                    return {
+                      choices: [{
+                        message: {
+                          content: [
+                            "Fit: Strong fit",
+                            "Why: Medical Device Software (domain:MedicalDeviceSoftware) and Regulated Healthcare (domain:RegulatedHealthcare) support the fit.",
+                            "Gaps: Make commercial ownership and founder-level accountability explicit. | Add concrete clinical discovery stories, not only platform achievements.",
+                            "Positioning: Research-to-product healthcare technologist with regulated medical software, digital health, and clinical workflow exposure."
+                          ].join("\\n")
+                        }
+                      }]
+                    };
+                  }
+                }
+              }
+            };
+          }
+        `
+      });
+    });
+
+    await page.goto("/semantic-web/");
+    await page.getByRole("button", { name: "Load WebGPU LLM" }).click();
+    await expect(page.locator("#llmStatus")).toHaveText("Ready");
+
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("Browser-local LLM rendering");
+    await expect(answer).toContainText("Guard passed");
+    await expect(answer).toContainText("Model: SmolLM2-1.7B-Instruct-q4f16_1-MLC");
+    await expect(answer).toContainText("Runtime: WebGPU + WebAssembly");
+    await expect(answer).toContainText("Network: model fetch only");
+    await expect(answer).toContainText("Fit: Strong fit");
   });
 
   test("does not load the browser LLM during deterministic smoke tests", async ({ page }) => {

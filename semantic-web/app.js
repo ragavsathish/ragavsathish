@@ -19,6 +19,7 @@ let rdfFacts;
 
 const rdfStatus = document.querySelector("#rdfStatus");
 const gpuStatus = document.querySelector("#gpuStatus");
+const wasmStatus = document.querySelector("#wasmStatus");
 const llmStatus = document.querySelector("#llmStatus");
 const loadLlm = document.querySelector("#loadLlm");
 const answer = document.querySelector("#answer");
@@ -53,6 +54,7 @@ init();
 
 async function init() {
   gpuStatus.textContent = "gpu" in navigator ? "Available" : "Unavailable";
+  wasmStatus.textContent = "WebAssembly" in window ? "Available" : "Unavailable";
   loadLlm.disabled = !("gpu" in navigator);
 
   try {
@@ -102,7 +104,10 @@ document.querySelectorAll("[data-question]").forEach((button) => {
 
 async function assess(question) {
   const result = assessFit(question, rdfFacts);
-  renderAssessment(result, "Drafting grounded assessment...");
+  renderAssessment(result, {
+    llmText: "Drafting grounded assessment...",
+    llmState: "drafting"
+  });
 
   if (!engine) {
     renderAssessment(result);
@@ -112,10 +117,16 @@ async function assess(question) {
   try {
     const llmText = await summarizeWithLlm(question, result);
     if (!isGroundedLlmText(llmText, result)) {
-      renderAssessment(result, "", "The local LLM draft was rejected because it did not preserve the RDF-grounded facts exactly.");
+      renderAssessment(result, {
+        llmNotice: "The browser-local LLM draft was rejected because it did not preserve the RDF-grounded facts exactly.",
+        llmState: "rejected"
+      });
       return;
     }
-    renderAssessment(result, llmText);
+    renderAssessment(result, {
+      llmText,
+      llmState: "accepted"
+    });
   } catch {
     renderAssessment(result);
   }
@@ -194,7 +205,8 @@ function shorten(value) {
     .replace("https://ragavsathish.github.io/practice/", "practice:")
     .replace("https://ragavsathish.github.io/skill/", "skill:")
     .replace("https://ragavsathish.github.io/domain/", "domain:")
-    .replace("https://ragavsathish.github.io/product/", "product:");
+    .replace("https://ragavsathish.github.io/product/", "product:")
+    .replace("https://ragavsathish.github.io/resource/", "resource:");
 }
 
 async function summarizeWithLlm(question, result) {
@@ -215,9 +227,9 @@ async function summarizeWithLlm(question, result) {
   return completion.choices?.[0]?.message?.content || "";
 }
 
-function renderAssessment(result, llmText = "", llmNotice = "") {
+function renderAssessment(result, llmRender = {}) {
   if (result.kind === "fact") {
-    renderFactAnswer(result, llmText, llmNotice);
+    renderFactAnswer(result, llmRender);
     return;
   }
 
@@ -232,19 +244,18 @@ function renderAssessment(result, llmText = "", llmNotice = "") {
         <span class="fit ${fitClass}">${escapeHtml(result.fit)} fit</span>
       </header>
       <div class="answer-body">
-        ${llmText ? section("Local LLM answer", `<div class="llm-answer">${escapeHtml(llmText)}</div>`, true) : ""}
-        ${llmNotice ? section("Local LLM guard", `<p>${escapeHtml(llmNotice)}</p>`, true) : ""}
+        ${renderLlmSection(llmRender)}
         ${section("Grounded evidence", list(result.evidence))}
         ${section("Gaps", list(result.gaps))}
         ${section("Positioning", `<p>${escapeHtml(result.positioning)}</p>`)}
         ${section("Related fits", list(result.related))}
-        ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. The LLM, when loaded, only rewrites RDF-derived results.</p>`, true)}
+        ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. Browser LLM rendering is accepted only after the grounding guard preserves RDF-derived facts.</p>`, true)}
       </div>
     </article>
   `;
 }
 
-function renderFactAnswer(result, llmText = "", llmNotice = "") {
+function renderFactAnswer(result, llmRender = {}) {
   answer.innerHTML = `
     <article class="answer-card">
       <header class="answer-header">
@@ -255,14 +266,36 @@ function renderFactAnswer(result, llmText = "", llmNotice = "") {
         <span class="fit strong">RDF fact</span>
       </header>
       <div class="answer-body">
-        ${llmText ? section("Local LLM answer", `<div class="llm-answer">${escapeHtml(llmText)}</div>`, true) : ""}
-        ${llmNotice ? section("Local LLM guard", `<p>${escapeHtml(llmNotice)}</p>`, true) : ""}
+        ${renderLlmSection(llmRender)}
         ${section("Answer", `<p>${escapeHtml(result.answer)}</p>`, true)}
         ${section("Grounded evidence", list(result.evidence))}
-        ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. The LLM, when loaded, only rewrites RDF-derived results.</p>`, true)}
+        ${section("Source", `<p class="source">All evidence comes from <code>rdf/ragavsathish-ontology.ttl</code>. Browser LLM rendering is accepted only after the grounding guard preserves RDF-derived facts.</p>`, true)}
       </div>
     </article>
   `;
+}
+
+function renderLlmSection({ llmText = "", llmNotice = "", llmState = "" } = {}) {
+  if (!llmText && !llmNotice) return "";
+
+  const statusByState = {
+    drafting: "Drafting in browser",
+    accepted: "Guard passed",
+    rejected: "Guard rejected"
+  };
+  const status = statusByState[llmState] || "Browser-local";
+  const body = `
+    <div class="llm-runtime">
+      <span>${escapeHtml(status)}</span>
+      <span>Model: ${escapeHtml(modelId)}</span>
+      <span>Runtime: WebGPU + WebAssembly</span>
+      <span>Network: model fetch only</span>
+    </div>
+    ${llmText ? `<div class="llm-answer">${escapeHtml(llmText)}</div>` : ""}
+    ${llmNotice ? `<p class="llm-notice">${escapeHtml(llmNotice)}</p>` : ""}
+  `;
+
+  return section("Browser-local LLM rendering", body, true);
 }
 
 function section(title, body, full = false) {
