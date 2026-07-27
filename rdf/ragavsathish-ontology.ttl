@@ -491,6 +491,7 @@ skill:Promptfoo a :Technology ; skos:prefLabel "Promptfoo" .
 skill:Playwright a :Technology ; skos:prefLabel "Playwright" .
 skill:WebGPU a :Technology ; skos:prefLabel "WebGPU" .
 skill:WebLLM a :Technology ; skos:prefLabel "WebLLM" .
+skill:WebAssembly a :Technology ; skos:prefLabel "WebAssembly" .
 skill:Ollama a :Technology ; skos:prefLabel "Ollama" .
 skill:LMStudio a :Technology ; skos:prefLabel "LM Studio" .
 skill:Qwen3Coder30B a :Technology ; skos:prefLabel "qwen3-coder:30b" .
@@ -695,18 +696,18 @@ project:RdfFitAssistant
     a :Project ;
     schema:name "Browser-based RDF Fit Assistant" ;
     :inDomain domain:SemanticWeb, domain:LocalFirstAI ;
-    :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:SmolLM2 ;
-    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution ;
-    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies ;
+    :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:WebAssembly, skill:SmolLM2 ;
+    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution, :ClientSideWasmLLMApps ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies, resource:PrivacyFirstClientSideWasmLlms ;
     rdfs:comment "Personal hobby and learning project: a browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative. This is not modeled as core professional work evidence." .
 
 project:BrowserWebGPULLMEngineering
     a :Project ;
     schema:name "Browser WebGPU LLM Engineering" ;
     :inDomain domain:LocalFirstAI, domain:LocalLLMEngineering ;
-    :builtWith skill:WebGPU, skill:WebLLM, skill:SmolLM2, skill:TypeScript ;
-    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution, :ClientSideModelLoading ;
-    :usesLearningResource resource:RdfAndTheFutureOfLlms ;
+    :builtWith skill:WebGPU, skill:WebLLM, skill:WebAssembly, skill:SmolLM2, skill:TypeScript ;
+    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution, :ClientSideModelLoading, :ClientSideWasmLLMApps ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:PrivacyFirstClientSideWasmLlms ;
     rdfs:comment "Personal hobby and learning project: browser-based LLM experimentation using WebGPU, WebLLM, and SmolLM2 loaded from the internet and cached by the browser, while deterministic RDF logic remains authoritative. This is not modeled as core professional work evidence." .
 
 project:PromptfooRdfEvalHarness
@@ -723,7 +724,7 @@ project:LocalLLMEngineering
     :inDomain domain:LocalLLMEngineering, domain:LLMEvaluation, domain:LocalFirstAI ;
     :builtWith skill:Ollama, skill:LMStudio, skill:Qwen3Coder30B, skill:Promptfoo, skill:TypeScript ;
     :contributesTo value:Evidence, value:Accountability, :LocalLLMJudgeEvaluation, :PromptFeedbackLoop, :ModelSelectionForLocalHardware ;
-    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies, resource:PrivacyFirstClientSideWasmLlms ;
     rdfs:comment "Personal hobby and learning project: local LLM engineering using Ollama/LM Studio-style local model serving, qwen3-coder:30b as a Promptfoo LLM judge, machine-spec-aware model selection, and a prompt feedback loop that improves prompts while checking that answers stay grounded in RDF. This is not modeled as core professional work evidence." .
 
 resource:RdfAndTheFutureOfLlms
@@ -741,6 +742,14 @@ resource:WhyAgenticSystemsNeedOntologies
     schema:url <https://youtu.be/Sir59K8ZDPU> ;
     schema:about domain:SemanticWeb, domain:LocalLLMEngineering ;
     rdfs:comment "Learning resource for ontology-grounded agentic systems in the personal semantic web and LLM hobby layer." .
+
+resource:PrivacyFirstClientSideWasmLlms
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "Privacy First: Building LLM-Powered Web Apps with client side WASM" ;
+    schema:creator "Shivay Lamba and Saiyam Pathak" ;
+    schema:url <https://youtu.be/AFneOY7QA5Y> ;
+    schema:about domain:LocalFirstAI, domain:LocalLLMEngineering ;
+    rdfs:comment "LLM-specific learning resource for privacy-first browser applications that run model capability client-side with WebAssembly-style deployment patterns." .
 
 product:MEGMaps
     a :Product ;
@@ -920,6 +929,12 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Client-side Model Loading" ;
     :contributesTo domain:LocalFirstAI ;
     rdfs:comment "Loading a browser-compatible model from the internet and relying on browser caching for repeated local use." .
+
+:ClientSideWasmLLMApps
+    a skos:Concept ;
+    skos:prefLabel "Client-side WASM LLM Apps" ;
+    :contributesTo domain:LocalFirstAI, domain:LocalLLMEngineering ;
+    rdfs:comment "Building privacy-first LLM-powered web applications where model execution or runtime support happens in the browser through client-side WebAssembly-style deployment." .
 
 :OnDeviceRetrieval
     a skos:Concept ;
