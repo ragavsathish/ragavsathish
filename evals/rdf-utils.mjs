@@ -13,7 +13,8 @@ const prefixes = [
   ["https://ragavsathish.github.io/practice/", "practice:"],
   ["https://ragavsathish.github.io/skill/", "skill:"],
   ["https://ragavsathish.github.io/domain/", "domain:"],
-  ["https://ragavsathish.github.io/product/", "product:"]
+  ["https://ragavsathish.github.io/product/", "product:"],
+  ["https://ragavsathish.github.io/resource/", "resource:"]
 ];
 
 const NS = {

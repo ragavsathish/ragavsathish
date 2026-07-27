@@ -47,12 +47,12 @@
   },
   {
     "id": "domain-driven-architecture",
-    "question": "Is Sathish interested in domain-driven design and C4 software architecture modeling?",
+    "question": "Is Sathish interested in domain-driven design, C4 software architecture modeling, and team DDD upskilling?",
     "mode": "obedient",
     "category": "architecture-learning",
     "coverage": ["feedback", "fit", "prompt"],
     "expectedFit": "Strong fit",
-    "purpose": "DDD/C4 architecture interest should cite the hobby learning project and Simon Brown C4 learning resource without treating it as core professional evidence."
+    "purpose": "DDD/C4/team-upskilling architecture interest should cite the hobby learning project and DDD Europe learning resources without treating them as core professional evidence."
   },
   {
     "id": "pure-clinical",

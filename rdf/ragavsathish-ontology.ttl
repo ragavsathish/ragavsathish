@@ -517,6 +517,9 @@ skill:ToolCalling a :Technology ; skos:prefLabel "Tool Calling" .
 skill:OnDeviceRAG a :Technology ; skos:prefLabel "On-device RAG" .
 skill:C4Model a :Technology ; skos:prefLabel "C4 Model" .
 skill:Structurizr a :Technology ; skos:prefLabel "Structurizr" .
+skill:EventStorming a :Technology ; skos:prefLabel "Event Storming" .
+skill:TeamUpskilling a :Technology ; skos:prefLabel "Team Upskilling" .
+skill:CollaborativeDomainDiscovery a :Technology ; skos:prefLabel "Collaborative Domain Discovery" .
 
 #################################################################
 # Organizations
@@ -742,10 +745,10 @@ project:DomainDrivenArchitectureLearning
     a :Project ;
     schema:name "Domain-Driven Architecture Learning" ;
     :inDomain domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
-    :builtWith skill:C4Model, skill:Structurizr ;
+    :builtWith skill:C4Model, skill:Structurizr, skill:EventStorming, skill:TeamUpskilling, skill:CollaborativeDomainDiscovery ;
     :contributesTo value:SystemsEmpathy, value:Evidence, value:Accountability ;
-    :usesLearningResource resource:C4ModelMisconceptionsMisusesMistakes ;
-    rdfs:comment "Personal hobby and learning project: studying domain-driven design and architecture visualization practices, including C4 model abstraction levels, notation-independent diagrams, microservice boundaries, shared libraries, and communication of larger software systems. This is not modeled as core professional work evidence." .
+    :usesLearningResource resource:C4ModelMisconceptionsMisusesMistakes, resource:UpskillingYourTeamInDDD ;
+    rdfs:comment "Personal hobby and learning project: studying domain-driven design and architecture visualization practices, including C4 model abstraction levels, notation-independent diagrams, team upskilling workshops, event storming, collaborative domain discovery, microservice boundaries, shared libraries, and communication of larger software systems. This is not modeled as core professional work evidence." .
 
 resource:RdfAndTheFutureOfLlms
     a schema:LearningResource, schema:VideoObject ;
@@ -780,6 +783,16 @@ resource:C4ModelMisconceptionsMisusesMistakes
     schema:datePublished "2025-11-03" ;
     schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
     rdfs:comment "Learning resource from DDD Europe 2025 on the C4 model for visualizing software architecture, including system context, container, component, and code abstraction levels; notation independence; microservices; shared libraries; and modeling larger software systems." .
+
+resource:UpskillingYourTeamInDDD
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "Upskilling your Team in DDD" ;
+    schema:creator "Craig McCallum" ;
+    schema:publisher "Domain-Driven Design Europe" ;
+    schema:url <https://youtu.be/g0047beVND4> ;
+    schema:datePublished "2025-03-10" ;
+    schema:about domain:SoftwareArchitecture, domain:DomainDrivenDesign ;
+    rdfs:comment "Learning resource from DDD Europe 2025 on building and running an in-house DDD upskilling workshop, including strategic and tactical DDD, event storming to code, practical team exercises, collaborative domain discovery, and making domain modeling accessible for remote teams." .
 
 product:MEGMaps
     a :Product ;

@@ -105,9 +105,9 @@ Sathish Kumar Narayanan (me:me)
     learning resources: Privacy First: Building LLM-Powered Web Apps with client side WASM (resource:PrivacyFirstClientSideWasmLlms), RDF and the future of LLMs (resource:RdfAndTheFutureOfLlms), Why Agentic Systems Need Ontologies (resource:WhyAgenticSystemsNeedOntologies)
     - Domain-Driven Architecture Learning (project:DomainDrivenArchitectureLearning)
     domains: Domain-Driven Design (domain:DomainDrivenDesign), Software Architecture (domain:SoftwareArchitecture)
-    built with: C4 Model (skill:C4Model), Structurizr (skill:Structurizr)
+    built with: C4 Model (skill:C4Model), Collaborative Domain Discovery (skill:CollaborativeDomainDiscovery), Event Storming (skill:EventStorming), Structurizr (skill:Structurizr), Team Upskilling (skill:TeamUpskilling)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Systems Empathy (value:SystemsEmpathy)
-    learning resources: The C4 model: misconceptions, misuses and mistakes (resource:C4ModelMisconceptionsMisusesMistakes)
+    learning resources: The C4 model: misconceptions, misuses and mistakes (resource:C4ModelMisconceptionsMisusesMistakes), Upskilling your Team in DDD (resource:UpskillingYourTeamInDDD)
     - Local LLM Engineering (project:LocalLLMEngineering)
     domains: LLM Evaluation (domain:LLMEvaluation), Local LLM Engineering (domain:LocalLLMEngineering), Local-first AI (domain:LocalFirstAI)
     built with: LM Studio (skill:LMStudio), Ollama (skill:Ollama), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), TypeScript (skill:TypeScript)
@@ -123,4 +123,4 @@ Sathish Kumar Narayanan (me:me)
     built with: Ollama (skill:Ollama), Playwright (skill:Playwright), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), RDF (skill:RDF), TypeScript (skill:TypeScript)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Local LLM Judge Evaluation (:LocalLLMJudgeEvaluation), Prompt Feedback Loop (:PromptFeedbackLoop)
 
-Graph focus: 207 nodes, 522 edges
+Graph focus: 211 nodes, 533 edges

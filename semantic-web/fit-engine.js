@@ -62,7 +62,7 @@ export const fitProfiles = [
   {
     id: "domain-driven-architecture",
     label: "Domain-driven architecture / C4 modeling",
-    keywords: ["domain driven design", "ddd", "c4", "c4 model", "software architecture", "architecture modeling", "architecture visualisation", "architecture visualization", "structurizr", "microservices", "bounded context"],
+    keywords: ["domain driven design", "ddd", "c4", "c4 model", "software architecture", "architecture modeling", "architecture visualisation", "architecture visualization", "structurizr", "microservices", "bounded context", "event storming", "team upskilling", "domain discovery"],
     positives: [
       ["domain:SoftwareArchitecture", 14],
       ["domain:DomainDrivenDesign", 14],
@@ -70,15 +70,19 @@ export const fitProfiles = [
       ["skill:C4Model", 12],
       ["skill:Structurizr", 8],
       ["resource:C4ModelMisconceptionsMisusesMistakes", 10],
+      ["resource:UpskillingYourTeamInDDD", 10],
+      ["skill:EventStorming", 8],
+      ["skill:CollaborativeDomainDiscovery", 8],
+      ["skill:TeamUpskilling", 6],
       ["role:MeginSeniorSoftwareDeveloperArchitect", 12],
       ["project:MEGMapsPlatform", 8],
       ["skill:Kubernetes", 4]
     ],
     gaps: [
       "Keep DDD and C4 framed as active learning unless tied to shipped architecture case studies.",
-      "Add concrete bounded-context or architecture-decision examples from real projects."
+      "Add concrete bounded-context, event-storming, or architecture-decision examples from real projects."
     ],
-    positioning: "Healthcare software architect learning to communicate domain boundaries and system structure with C4-style architecture models."
+    positioning: "Healthcare software architect learning to communicate domain boundaries, team discovery practices, and system structure with DDD/C4-style models."
   },
   {
     id: "cloud-platform",
