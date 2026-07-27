@@ -1,0 +1,138 @@
+{
+  "threshold": 0.8,
+  "notes": "Understanding coverage is a merge gate for the learning map: each concept must point to RDF evidence and at least one eval scenario. Human understanding still needs explicit review before merge.",
+  "concepts": [
+    {
+      "id": "rdf-source-of-truth",
+      "label": "RDF as source of truth",
+      "evidence": ["project:PersonalSemanticWebProfile", "project:RdfFitAssistant", "skill:RDF", "skill:RDFS"],
+      "scenarios": ["rdf-proof-medtech"]
+    },
+    {
+      "id": "grounded-fit-answering",
+      "label": "Grounded fit answering",
+      "evidence": ["project:RdfFitAssistant", "project:PromptfooRdfEvalHarness"],
+      "scenarios": ["medtech-founder", "rdf-proof-medtech", "medtech-vs-brand"]
+    },
+    {
+      "id": "hallucination-rejection",
+      "label": "Unsupported claims are rejected",
+      "evidence": ["project:PromptfooRdfEvalHarness", "value:Accountability"],
+      "scenarios": ["phd-fda-trap", "current-megin"]
+    },
+    {
+      "id": "role-date-grounding",
+      "label": "Timeline facts come from RDF role dates",
+      "evidence": ["role:MeginSeniorSoftwareDeveloperArchitect", "role:ScopeImpactTechnologyLead"],
+      "scenarios": ["ended-october-2025", "current-megin"]
+    },
+    {
+      "id": "medtech-founder-fit",
+      "label": "Medtech founder fit evidence",
+      "evidence": ["domain:MedicalDeviceSoftware", "domain:RegulatedHealthcare", "role:ScopeImpactTechnologyLead", "project:MEGMapsPlatform"],
+      "scenarios": ["medtech-founder", "rdf-proof-medtech", "medtech-vs-brand"]
+    },
+    {
+      "id": "health-ai-product-fit",
+      "label": "Health AI product lead fit evidence",
+      "evidence": ["domain:AIEnabledHealthcare", "domain:DigitalHealth", "project:HallaHealth"],
+      "scenarios": ["health-ai-lead", "halla-mission-fit", "halla-on-device-rag"]
+    },
+    {
+      "id": "halla-mission",
+      "label": "Halla Health mission grounding",
+      "evidence": [":LifeSavingHealthcareAccess", ":CommunitySelfCare", ":HealthDataDiversity", ":SecureHealthWallet"],
+      "scenarios": ["halla-mission-fit"]
+    },
+    {
+      "id": "on-device-rag",
+      "label": "On-device SQLite retrieval as RAG",
+      "evidence": [":OnDeviceRetrieval", "skill:SQLite", "skill:ToolCalling", "skill:OnDeviceRAG"],
+      "scenarios": ["halla-on-device-rag"]
+    },
+    {
+      "id": "chatbot-guardrails",
+      "label": "Promptfoo guardrails for health chatbot work",
+      "evidence": [":HealthChatbotGuardrails", "skill:Promptfoo", "skill:GoogleVertexAI", "skill:VoiceAI"],
+      "scenarios": ["halla-on-device-rag"]
+    },
+    {
+      "id": "cloud-platform-fit",
+      "label": "Cloud platform architect fit",
+      "evidence": ["skill:AWS", "skill:Terraform", "skill:Kubernetes", "project:SignantCloudMigration", "project:MEGMapsPlatform"],
+      "scenarios": ["cloud-architect"]
+    },
+    {
+      "id": "browser-llm-engineering",
+      "label": "Browser WebGPU/WebLLM engineering hobby",
+      "evidence": ["project:BrowserWebGPULLMEngineering", "skill:WebGPU", "skill:WebLLM", "skill:SmolLM2"],
+      "scenarios": ["cloud-architect", "medtech-founder"]
+    },
+    {
+      "id": "local-llm-eval",
+      "label": "Local LLM judge and prompt feedback loop",
+      "evidence": ["project:LocalLLMEngineering", "project:PromptfooRdfEvalHarness", "skill:Ollama", "skill:Qwen3Coder30B"],
+      "scenarios": ["phd-fda-trap", "clinical-doctor", "medtech-vs-brand"]
+    },
+    {
+      "id": "semantic-web-learning",
+      "label": "Semantic web and ontology learning resources",
+      "evidence": ["domain:SemanticWeb", "resource:RdfAndTheFutureOfLlms", "resource:WhyAgenticSystemsNeedOntologies"],
+      "scenarios": ["rdf-proof-medtech"]
+    },
+    {
+      "id": "local-first-wasm-llms",
+      "label": "Local-first WASM/browser LLM learning",
+      "evidence": ["domain:LocalFirstAI", "skill:WebAssembly", "resource:PrivacyFirstClientSideWasmLlms"],
+      "scenarios": ["cloud-architect"]
+    },
+    {
+      "id": "ddd-c4-modeling",
+      "label": "DDD and C4 architecture modeling hobby",
+      "evidence": ["project:DomainDrivenArchitectureLearning", "skill:C4Model", "skill:Structurizr", "resource:C4ModelMisconceptionsMisusesMistakes"],
+      "scenarios": ["domain-driven-architecture"]
+    },
+    {
+      "id": "ddd-team-upskilling",
+      "label": "DDD team upskilling and collaborative discovery",
+      "evidence": ["skill:TeamUpskilling", "skill:CollaborativeDomainDiscovery", "skill:EventStorming", "resource:UpskillingYourTeamInDDD"],
+      "scenarios": ["domain-driven-architecture"]
+    },
+    {
+      "id": "test-automation-learning",
+      "label": "Developer-owned test automation learning",
+      "evidence": ["skill:TestAutomation", "skill:UnitTesting", "skill:ExploratoryTesting", "resource:EffectiveTestAutomationForDevelopers"],
+      "scenarios": ["domain-driven-architecture"]
+    },
+    {
+      "id": "event-driven-microservice-testing",
+      "label": "Testing event-driven microservices",
+      "evidence": ["skill:EventDrivenMicroservices", "resource:EffectiveTestAutomationForDevelopers"],
+      "scenarios": ["domain-driven-architecture"]
+    },
+    {
+      "id": "lightweight-kubernetes",
+      "label": "Lightweight Kubernetes learning",
+      "evidence": ["project:LightweightKubernetesLearning", "domain:EdgeKubernetes", "skill:K3s"],
+      "scenarios": ["cloud-architect"]
+    },
+    {
+      "id": "k3s-internals",
+      "label": "K3s internals learning",
+      "evidence": ["resource:K3sInternalsCrazyThings", "skill:Rancher", "skill:Etcd", "skill:CoreDNS"],
+      "scenarios": ["cloud-architect"]
+    },
+    {
+      "id": "kubernetes-networking",
+      "label": "Kubernetes networking learning",
+      "evidence": ["resource:UnderstandingKubernetesNetworking", "skill:KubernetesNetworking", "skill:Iptables", "skill:NetworkPolicy", "skill:CNINetworking"],
+      "scenarios": ["cloud-architect"]
+    },
+    {
+      "id": "weak-fit-boundaries",
+      "label": "Weak-fit boundaries stay explicit",
+      "evidence": ["domain:MedicalDeviceSoftware", "practice:ClinicalObservation", "skill:React"],
+      "scenarios": ["pure-clinical", "clinical-doctor", "frontend-brand-design", "hardware-electronics"]
+    }
+  ]
+}

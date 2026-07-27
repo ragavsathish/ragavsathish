@@ -44,8 +44,11 @@ The fit engine has deterministic Promptfoo evals:
 - `npm run eval`
 - `npm run eval:prompt`
 - `npm run eval:judge` with Ollama serving `qwen3-coder:30b` on `localhost:11434`
+- `npm run understanding:coverage`
 - `npm run prompt:feedback`
 - [Promptfoo RDF eval skill](docs/promptfoo-eval-skill.md)
+
+Understanding coverage is treated like code coverage for this profile: the learning map must stay above 80% coverage before merge, with every covered concept linked to RDF evidence and at least one eval scenario. The generated report lives at [evals/understanding-coverage-report.json](evals/understanding-coverage-report.json); human understanding review is still required before merge.
 
 ## CV
 

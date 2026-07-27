@@ -6,10 +6,11 @@
     "eval": "promptfoo eval -c evals/promptfoo/fit.yaml --no-cache",
     "eval:prompt": "promptfoo eval -c evals/promptfoo/prompt.yaml --no-cache",
     "eval:judge": "promptfoo eval -c evals/promptfoo/judge.yaml --no-cache --grader ${JUDGE_PROVIDER:-ollama:chat:qwen3-coder:30b}",
+    "understanding:coverage": "node scripts/understanding-coverage.mjs",
     "prompt:feedback": "node scripts/prompt-feedback-loop.mjs",
     "test:e2e": "playwright test",
     "test:e2e:real": "RUN_REAL_LLM=1 playwright test tests/semantic-web-real-llm.spec.mjs",
-    "dry": "npm run generate:rdf-graph && npm run check:app && npm run prompt:feedback && npm run eval && npm run eval:prompt && npm run test:e2e && git diff --check"
+    "dry": "npm run generate:rdf-graph && npm run check:app && npm run understanding:coverage && npm run prompt:feedback && npm run eval && npm run eval:prompt && npm run test:e2e && git diff --check"
   },
   "dependencies": {
     "@hpcc-js/wasm": "^2.35.0",
