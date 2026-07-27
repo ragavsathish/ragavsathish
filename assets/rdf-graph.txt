@@ -93,10 +93,14 @@ Sathish Kumar Narayanan (me:me)
     built with: Argo CD (skill:ArgoCD), AWS (skill:AWS), Kubernetes (skill:Kubernetes), OpenShift (skill:OpenShift), Terraform (skill:Terraform)
 
   explores as hobby
+    - Browser WebGPU LLM Engineering (project:BrowserWebGPULLMEngineering)
+    domains: Local LLM Engineering (domain:LocalLLMEngineering), Local-first AI (domain:LocalFirstAI)
+    built with: SmolLM2 (skill:SmolLM2), TypeScript (skill:TypeScript), WebGPU (skill:WebGPU), WebLLM (skill:WebLLM)
+    contributes to: Accountability (value:Accountability), Browser WebGPU Model Execution (:BrowserWebGPUModelExecution), Client-side Model Loading (:ClientSideModelLoading), Evidence (value:Evidence)
     - Browser-based RDF Fit Assistant (project:RdfFitAssistant)
     domains: Local-first AI (domain:LocalFirstAI), Semantic Web (domain:SemanticWeb)
     built with: RDF (skill:RDF), SmolLM2 (skill:SmolLM2), TypeScript (skill:TypeScript), WebGPU (skill:WebGPU), WebLLM (skill:WebLLM)
-    contributes to: Accountability (value:Accountability), Evidence (value:Evidence)
+    contributes to: Accountability (value:Accountability), Browser WebGPU Model Execution (:BrowserWebGPUModelExecution), Evidence (value:Evidence)
     - Local LLM Engineering (project:LocalLLMEngineering)
     domains: LLM Evaluation (domain:LLMEvaluation), Local LLM Engineering (domain:LocalLLMEngineering), Local-first AI (domain:LocalFirstAI)
     built with: LM Studio (skill:LMStudio), Ollama (skill:Ollama), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), TypeScript (skill:TypeScript)
@@ -110,4 +114,4 @@ Sathish Kumar Narayanan (me:me)
     built with: Ollama (skill:Ollama), Playwright (skill:Playwright), Promptfoo (skill:Promptfoo), qwen3-coder:30b (skill:Qwen3Coder30B), RDF (skill:RDF), TypeScript (skill:TypeScript)
     contributes to: Accountability (value:Accountability), Evidence (value:Evidence), Local LLM Judge Evaluation (:LocalLLMJudgeEvaluation), Prompt Feedback Loop (:PromptFeedbackLoop)
 
-Graph focus: 190 nodes, 455 edges
+Graph focus: 193 nodes, 473 edges

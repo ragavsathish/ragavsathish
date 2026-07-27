@@ -217,6 +217,7 @@ me:me
         project:PersonalSemanticWebProfile,
         project:RdfFitAssistant,
         project:PromptfooRdfEvalHarness,
+        project:BrowserWebGPULLMEngineering,
         project:LocalLLMEngineering ;
     :workedOn
         project:MEGMapsPlatform,
@@ -688,8 +689,16 @@ project:RdfFitAssistant
     schema:name "Browser-based RDF Fit Assistant" ;
     :inDomain domain:SemanticWeb, domain:LocalFirstAI ;
     :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:SmolLM2 ;
-    :contributesTo value:Evidence, value:Accountability ;
+    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution ;
     rdfs:comment "Personal hobby and learning project: a browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative. This is not modeled as core professional work evidence." .
+
+project:BrowserWebGPULLMEngineering
+    a :Project ;
+    schema:name "Browser WebGPU LLM Engineering" ;
+    :inDomain domain:LocalFirstAI, domain:LocalLLMEngineering ;
+    :builtWith skill:WebGPU, skill:WebLLM, skill:SmolLM2, skill:TypeScript ;
+    :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution, :ClientSideModelLoading ;
+    rdfs:comment "Personal hobby and learning project: browser-based LLM experimentation using WebGPU, WebLLM, and SmolLM2 loaded from the internet and cached by the browser, while deterministic RDF logic remains authoritative. This is not modeled as core professional work evidence." .
 
 project:PromptfooRdfEvalHarness
     a :Project ;
@@ -873,6 +882,18 @@ project:InfosysAutomatedGrading
     skos:prefLabel "Model Selection for Local Hardware" ;
     :contributesTo domain:LocalLLMEngineering ;
     rdfs:comment "Choosing local models based on the current machine's CPU, memory, GPU availability, and practical eval latency." .
+
+:BrowserWebGPUModelExecution
+    a skos:Concept ;
+    skos:prefLabel "Browser WebGPU Model Execution" ;
+    :contributesTo domain:LocalLLMEngineering, domain:LocalFirstAI ;
+    rdfs:comment "Running small language models directly in the browser with WebGPU acceleration so local or client-side interaction can avoid a server round trip." .
+
+:ClientSideModelLoading
+    a skos:Concept ;
+    skos:prefLabel "Client-side Model Loading" ;
+    :contributesTo domain:LocalFirstAI ;
+    rdfs:comment "Loading a browser-compatible model from the internet and relying on browser caching for repeated local use." .
 
 :OnDeviceRetrieval
     a skos:Concept ;
