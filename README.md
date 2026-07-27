@@ -50,6 +50,8 @@ The fit engine has deterministic Promptfoo evals:
 
 Understanding coverage is treated like code coverage for this profile: the learning map must stay above 80% coverage before merge, with every covered concept linked to RDF evidence and at least one eval scenario. The generated report lives at [evals/understanding-coverage-report.json](evals/understanding-coverage-report.json); human understanding review is still required before merge.
 
+For PR review, use the diff-based [PR understanding review](docs/pr-understanding-review.md). Nothing should merge to `main` unless the merger proves they understand more than 80% of the PR changes.
+
 ## CV
 
 The human-readable CV lives in LaTeX:
