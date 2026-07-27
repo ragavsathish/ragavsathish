@@ -48,22 +48,39 @@ The important design choice is that LLMs do not become the source of truth. They
 - `npm run test:e2e`: runs Playwright browser tests, including LLM fallback behavior with deterministic stubs.
 - `RUN_REAL_LLM=1 npm run test:e2e:real`: opt-in real browser LLM test.
 
-## Merger Quiz
+## Understanding Ladder
 
 Answer these in a PR comment before merging. Passing requires at least 10 of 12 correct.
 
-1. What file is the source of truth for profile facts, and why should README/CV not duplicate those facts manually?
-2. What changed in the MEGIN and Scope Impact timeline, and what user-provided evidence motivated it?
-3. What is the difference between RDF evidence, generated graph assets, and README prose in this PR?
-4. How does the browser fit assistant decide whether a role is a strong or weak fit?
-5. What must happen before browser LLM text is shown to the user?
-6. Why does the assistant include WebLLM WebGPU, Transformers.js WebGPU, and Transformers.js WASM CPU paths?
-7. What scenario catches unsupported claims such as PhD or FDA approvals?
-8. Why were Promptfoo scenario tests generated from `evals/rdf-fit-scenarios.json`?
-9. What is the purpose of `npm run prompt:feedback`?
-10. What does `npm run understanding:coverage` prove, and what does it not prove?
-11. Which test path is deterministic by default, and which path downloads/runs a real browser LLM?
-12. If the RDF says a claim is unsupported but an LLM writes it anyway, what should the system do?
+### History
+
+1. What problem was this PR solving for the profile: duplicated human-readable facts, unverifiable LLM answers, weak visualization, incorrect timeline, or all of these?
+2. What user-provided history changed the profile timeline, and what are the corrected MEGIN and Scope Impact dates?
+
+### Specification
+
+3. Which specs/formats does the source-of-truth layer use, and what role do RDF, RDFS-style vocabulary, Turtle, Schema.org, FOAF, and SKOS play here?
+4. Which browser/runtime standards or libraries are relied on for local LLM execution, and why are WebGPU, WebAssembly/WASM, WebLLM, and Transformers.js separate concerns?
+
+### Architecture
+
+5. Why is the project split into RDF facts, generated graph assets, browser assistant modules, eval providers, Promptfoo configs, Playwright tests, and README/CV surfaces?
+6. Why is RDF deterministic assessment kept authoritative while browser/local LLMs are only allowed to rewrite or judge under guardrails?
+
+### Data Structures
+
+7. Why is the profile represented as triples/quads instead of prose-only README text, and what does that make easier to query or validate?
+8. Why is `evals/rdf-fit-scenarios.json` a scenario catalog instead of repeating scenarios directly across Promptfoo YAML, prompt feedback, and tests?
+
+### Algorithms
+
+9. How does the fit engine turn a user question into a strong/weak/answered result using RDF evidence, gaps, date facts, and unsupported-claim handling?
+10. How does the browser LLM loading path choose between WebLLM WebGPU, Transformers.js WebGPU, and Transformers.js WASM CPU fallback?
+
+### Trade-offs
+
+11. Why keep generated SVG/DOT/Mermaid/ASCII graph files in the repo instead of requiring every reader to regenerate them locally?
+12. What does `npm run understanding:coverage` prove, what does it not prove, and why does the merger still need to explain more than 80% of the PR changes before merging to `main`?
 
 ## Passing Evidence
 
