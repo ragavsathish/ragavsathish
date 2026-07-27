@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { assessFit } from "../semantic-web/fit-engine.js";
-import { buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "../semantic-web/llm-prompt.js";
+import { buildGroundedLlmDraft, buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "../semantic-web/llm-prompt.js";
 import { loadFacts } from "../evals/rdf-utils.mjs";
 
 const scenarios = JSON.parse(fs.readFileSync("evals/rdf-fit-scenarios.json", "utf8"));
@@ -37,7 +37,7 @@ function scoreVariant(variant) {
 
   for (const question of cases) {
     const result = assessFit(question, facts);
-    const obedient = obedientDraft(result);
+    const obedient = buildGroundedLlmDraft(result);
     const drift = driftedDraft(result);
     const hallucinated = hallucinatedDraft(result);
     const obedientGrounded = isGroundedLlmText(obedient, result);
@@ -72,26 +72,6 @@ function scoreVariant(variant) {
     maxScore: cases.length * 8,
     details
   };
-}
-
-function obedientDraft(result) {
-  if (result.kind === "fact") {
-    return [
-      `Answer: ${result.answer}`,
-      `Evidence: ${result.evidence.join(" | ")}`
-    ].join("\n");
-  }
-
-  const why = result.evidence.length
-    ? result.evidence.slice(0, 3).join("; ")
-    : "The RDF does not show target-specific evidence";
-
-  return [
-    `Fit: ${result.fit} fit`,
-    `Why: ${why}.`,
-    `Gaps: ${result.gaps.join(" | ")}`,
-    `Positioning: ${result.positioning}`
-  ].join("\n");
 }
 
 function driftedDraft(result) {

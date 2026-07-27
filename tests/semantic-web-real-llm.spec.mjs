@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 test.use({
+  channel: "chrome",
   launchOptions: {
-    args: ["--enable-unsafe-webgpu", "--enable-features=Vulkan"]
+    args: ["--enable-unsafe-webgpu", "--enable-dawn-features=allow_unsafe_apis"]
   }
 });
 
@@ -34,7 +35,9 @@ test.describe("semantic web fit assistant real LLM path", () => {
     const answer = page.locator("#answer");
     await expect(answer).toContainText("Health AI product / technology lead", { timeout: 90_000 });
     await expect(answer).toContainText("Strong fit");
+    await expect(answer).toContainText("Guard passed");
     await expect(answer).toContainText("AI-enabled Healthcare (domain:AIEnabledHealthcare)");
+    await expect(answer).toContainText("Why: AI-enabled Healthcare (domain:AIEnabledHealthcare); Digital Health (domain:DigitalHealth); Climate and Health (domain:ClimateHealth).");
     await expect(answer).toContainText("Digital health technical lead who can connect AI-enabled self-care, guardrailed chatbot evaluation, offline-first retrieval, and healthcare access mission.");
     await expect(answer).toContainText("Browser-local LLM rendering");
     await expect(answer).toContainText(/Runtime: (WebGPU \+ WebAssembly|WebGPU via Transformers\.js|WebAssembly CPU)/);

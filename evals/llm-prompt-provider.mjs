@@ -1,5 +1,5 @@
 import { assessFit } from "../semantic-web/fit-engine.js";
-import { buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "../semantic-web/llm-prompt.js";
+import { buildGroundedLlmDraft, buildLlmUserPrompt, isGroundedLlmText, llmSystemPrompt } from "../semantic-web/llm-prompt.js";
 import { loadFacts } from "./rdf-utils.mjs";
 
 export default class LlmPromptProvider {
@@ -41,27 +41,7 @@ export default class LlmPromptProvider {
 function draftForMode(mode, result) {
   if (mode === "drift") return driftedDraft(result);
   if (mode === "hallucination-trap") return hallucinatedDraft(result);
-  return obedientDraft(result);
-}
-
-function obedientDraft(result) {
-  if (result.kind === "fact") {
-    return [
-      `Answer: ${result.answer}`,
-      `Evidence: ${result.evidence.join(" | ")}`
-    ].join("\n");
-  }
-
-  const why = result.evidence.length
-    ? result.evidence.slice(0, 3).join("; ")
-    : "The RDF does not show target-specific evidence";
-
-  return [
-    `Fit: ${result.fit} fit`,
-    `Why: ${why}.`,
-    `Gaps: ${result.gaps.join(" | ")}`,
-    `Positioning: ${result.positioning}`
-  ].join("\n");
+  return buildGroundedLlmDraft(result);
 }
 
 function driftedDraft(result) {

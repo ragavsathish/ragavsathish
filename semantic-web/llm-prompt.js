@@ -3,13 +3,15 @@ export const llmSystemPrompt = [
   "The RDF engine has already decided the fit, evidence, gaps, and positioning.",
   "Use only the provided RDF-derived facts.",
   "Do not add roles, companies, dates, credentials, recommendations, training needs, or new gaps.",
-  "Preserve the exact fit label.",
-  "Copy every supplied gap exactly.",
-  "Copy the supplied positioning exactly.",
+  "Return only the requested lines, with no markdown, preface, or extra explanation.",
+  "Copy required lines exactly when the prompt says copy exactly.",
+  "Keep the Why line short and use only exact evidence labels from the prompt.",
   "If evidence is missing, say the RDF does not show it."
 ].join(" ");
 
 export function buildLlmUserPrompt(question, result) {
+  const groundedDraft = buildGroundedLlmDraft(result);
+
   if (result.kind === "fact") {
     return `Question: ${question}
 
@@ -17,9 +19,8 @@ RDF-derived facts:
 Answer: ${result.answer}
 Evidence: ${result.evidence.join("; ")}
 
-Return exactly this structure:
-Answer: ${result.answer}
-Evidence: ${result.evidence.join(" | ")}`;
+Return only these RDF-grounded lines. Copy them exactly:
+${groundedDraft}`;
   }
 
   return `Question: ${question}
@@ -32,11 +33,28 @@ Evidence: ${result.evidence.join("; ")}
 Gaps: ${result.gaps.join("; ")}
 Positioning: ${result.positioning}
 
-Return exactly this structure:
-Fit: ${result.fit} fit
-Why: one sentence using only the evidence list above.
-Gaps: ${result.gaps.join(" | ")}
-Positioning: ${result.positioning}`;
+Return only these RDF-grounded lines. Copy them exactly:
+${groundedDraft}`;
+}
+
+export function buildGroundedLlmDraft(result) {
+  if (result.kind === "fact") {
+    return [
+      `Answer: ${result.answer}`,
+      `Evidence: ${result.evidence.join(" | ")}`
+    ].join("\n");
+  }
+
+  const why = result.evidence.length
+    ? `${result.evidence.slice(0, 3).join("; ")}.`
+    : "The RDF does not show target-specific evidence.";
+
+  return [
+    `Fit: ${result.fit} fit`,
+    `Why: ${why}`,
+    `Gaps: ${result.gaps.join(" | ")}`,
+    `Positioning: ${result.positioning}`
+  ].join("\n");
 }
 
 export function isGroundedLlmText(text, result) {
@@ -69,6 +87,8 @@ function hasPromptEcho(text) {
   return [
     "rdf-derived facts:",
     "return exactly this structure",
-    "one sentence using only the evidence list above"
+    "return only these rdf-grounded lines",
+    "one sentence using only the evidence list above",
+    "one short sentence using only exact evidence labels"
   ].some((claim) => normalized.includes(claim));
 }

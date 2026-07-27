@@ -271,7 +271,8 @@ async function loadWebGpuEngine() {
             content: buildLlmUserPrompt(question, result)
           }
         ],
-        temperature: 0.2
+        temperature: 0,
+        max_tokens: 220
       });
 
       return completion.choices?.[0]?.message?.content || "";
