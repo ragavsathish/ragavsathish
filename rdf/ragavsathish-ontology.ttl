@@ -8,6 +8,7 @@
 @prefix skill: <https://ragavsathish.github.io/skill/> .
 @prefix domain: <https://ragavsathish.github.io/domain/> .
 @prefix product: <https://ragavsathish.github.io/product/> .
+@prefix resource: <https://ragavsathish.github.io/resource/> .
 @prefix schema: <https://schema.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -164,6 +165,11 @@
 :learnedFrom
     a rdf:Property ;
     rdfs:label "learned from" .
+
+:usesLearningResource
+    a rdf:Property ;
+    rdfs:label "uses learning resource" ;
+    rdfs:range schema:CreativeWork .
 
 :expresses
     a rdf:Property ;
@@ -682,6 +688,7 @@ project:PersonalSemanticWebProfile
     :inDomain domain:SemanticWeb ;
     :builtWith skill:RDF, skill:RDFS, skill:Turtle, skill:N3, skill:Graphviz, skill:Mermaid ;
     :contributesTo value:Evidence, value:Accountability ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies ;
     rdfs:comment "Personal hobby and learning project: an ontology and knowledge graph that keeps RDF/Turtle as the source of truth for profile facts, generated visualization artifacts, and linked data publication. This is not modeled as core professional work evidence." .
 
 project:RdfFitAssistant
@@ -690,6 +697,7 @@ project:RdfFitAssistant
     :inDomain domain:SemanticWeb, domain:LocalFirstAI ;
     :builtWith skill:TypeScript, skill:RDF, skill:WebGPU, skill:WebLLM, skill:SmolLM2 ;
     :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies ;
     rdfs:comment "Personal hobby and learning project: a browser-based assistant that answers suitability and timeline questions from RDF-derived facts, with optional WebGPU/WebLLM wording while RDF remains authoritative. This is not modeled as core professional work evidence." .
 
 project:BrowserWebGPULLMEngineering
@@ -698,6 +706,7 @@ project:BrowserWebGPULLMEngineering
     :inDomain domain:LocalFirstAI, domain:LocalLLMEngineering ;
     :builtWith skill:WebGPU, skill:WebLLM, skill:SmolLM2, skill:TypeScript ;
     :contributesTo value:Evidence, value:Accountability, :BrowserWebGPUModelExecution, :ClientSideModelLoading ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms ;
     rdfs:comment "Personal hobby and learning project: browser-based LLM experimentation using WebGPU, WebLLM, and SmolLM2 loaded from the internet and cached by the browser, while deterministic RDF logic remains authoritative. This is not modeled as core professional work evidence." .
 
 project:PromptfooRdfEvalHarness
@@ -714,7 +723,24 @@ project:LocalLLMEngineering
     :inDomain domain:LocalLLMEngineering, domain:LLMEvaluation, domain:LocalFirstAI ;
     :builtWith skill:Ollama, skill:LMStudio, skill:Qwen3Coder30B, skill:Promptfoo, skill:TypeScript ;
     :contributesTo value:Evidence, value:Accountability, :LocalLLMJudgeEvaluation, :PromptFeedbackLoop, :ModelSelectionForLocalHardware ;
+    :usesLearningResource resource:RdfAndTheFutureOfLlms, resource:WhyAgenticSystemsNeedOntologies ;
     rdfs:comment "Personal hobby and learning project: local LLM engineering using Ollama/LM Studio-style local model serving, qwen3-coder:30b as a Promptfoo LLM judge, machine-spec-aware model selection, and a prompt feedback loop that improves prompts while checking that answers stay grounded in RDF. This is not modeled as core professional work evidence." .
+
+resource:RdfAndTheFutureOfLlms
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "RDF and the future of LLMs" ;
+    schema:creator "Luke VanderHart" ;
+    schema:url <https://youtu.be/OxzUjpihIH4> ;
+    schema:about domain:SemanticWeb, domain:LocalLLMEngineering ;
+    rdfs:comment "Learning resource for the personal semantic web and LLM hobby layer." .
+
+resource:WhyAgenticSystemsNeedOntologies
+    a schema:LearningResource, schema:VideoObject ;
+    schema:name "Why Agentic Systems Need Ontologies" ;
+    schema:creator "Frank Coyle, UC Berkeley" ;
+    schema:url <https://youtu.be/Sir59K8ZDPU> ;
+    schema:about domain:SemanticWeb, domain:LocalLLMEngineering ;
+    rdfs:comment "Learning resource for ontology-grounded agentic systems in the personal semantic web and LLM hobby layer." .
 
 product:MEGMaps
     a :Product ;

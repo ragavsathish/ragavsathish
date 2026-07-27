@@ -26,6 +26,7 @@ const prefixes = [
   ["https://ragavsathish.github.io/skill/", "skill:"],
   ["https://ragavsathish.github.io/domain/", "domain:"],
   ["https://ragavsathish.github.io/product/", "product:"],
+  ["https://ragavsathish.github.io/resource/", "resource:"],
   ["https://schema.org/", "schema:"],
   ["http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:"],
   ["http://www.w3.org/2000/01/rdf-schema#", "rdfs:"],
@@ -64,6 +65,7 @@ const focusPredicates = new Set([
   "https://ragavsathish.github.io/ontology#accelerates",
   "https://ragavsathish.github.io/ontology#requires",
   "https://ragavsathish.github.io/ontology#contributesTo",
+  "https://ragavsathish.github.io/ontology#usesLearningResource",
   "https://ragavsathish.github.io/ontology#expresses"
 ]);
 
@@ -76,6 +78,8 @@ const kindByType = new Map([
   ["https://ragavsathish.github.io/ontology#Technology", "Technology"],
   ["https://ragavsathish.github.io/ontology#Domain", "Domain"],
   ["https://ragavsathish.github.io/ontology#Product", "Product"],
+  ["https://schema.org/LearningResource", "LearningResource"],
+  ["https://schema.org/VideoObject", "LearningResource"],
   ["https://schema.org/Organization", "Organization"],
   ["https://schema.org/CollegeOrUniversity", "Organization"],
   ["https://schema.org/Person", "Person"],
@@ -98,6 +102,7 @@ const colorByKind = {
   Domain: "#334155",
   Technology: "#4338ca",
   Vocabulary: "#6b7280",
+  LearningResource: "#86198f",
   Resource: "#374151"
 };
 
@@ -145,6 +150,7 @@ function nodeKind(iri) {
   if (iri.includes("/practice/")) return "Practice";
   if (iri.includes("/domain/")) return "Domain";
   if (iri.includes("/skill/")) return "Technology";
+  if (iri.includes("/resource/")) return "LearningResource";
   return "Resource";
 }
 
@@ -266,7 +272,8 @@ function makeAscii() {
     atOrganization: "https://ragavsathish.github.io/ontology#atOrganization",
     inDomain: "https://ragavsathish.github.io/ontology#inDomain",
     builtWith: "https://ragavsathish.github.io/ontology#builtWith",
-    contributesTo: "https://ragavsathish.github.io/ontology#contributesTo"
+    contributesTo: "https://ragavsathish.github.io/ontology#contributesTo",
+    usesLearningResource: "https://ragavsathish.github.io/ontology#usesLearningResource"
   };
 
   const lines = [
@@ -306,6 +313,7 @@ function makeAscii() {
     lines.push(...relationLine(project, predicates.inDomain, "domains"));
     lines.push(...relationLine(project, predicates.builtWith, "built with"));
     lines.push(...relationLine(project, predicates.contributesTo, "contributes to"));
+    lines.push(...relationLine(project, predicates.usesLearningResource, "learning resources"));
   }
 
   lines.push("", "  explores as hobby");
@@ -314,6 +322,7 @@ function makeAscii() {
     lines.push(...relationLine(project, predicates.inDomain, "domains"));
     lines.push(...relationLine(project, predicates.builtWith, "built with"));
     lines.push(...relationLine(project, predicates.contributesTo, "contributes to"));
+    lines.push(...relationLine(project, predicates.usesLearningResource, "learning resources"));
   }
 
   lines.push("", `Graph focus: ${nodes.length} nodes, ${selectedEdges.length} edges`);
