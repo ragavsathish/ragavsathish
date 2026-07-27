@@ -9,7 +9,7 @@ test.describe("semantic web fit assistant", () => {
     await expect(page.locator("#wasmStatus")).toHaveText("Available");
     await expect(page.getByRole("button", { name: "Assess" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Load browser LLM" })).toBeVisible();
-    await expect(page.locator("#llmDetail")).toContainText("Tries WebGPU first");
+    await expect(page.locator("#llmDetail")).toContainText("Tries WebLLM WebGPU, Transformers.js WebGPU, then WASM CPU.");
   });
 
   test("assesses medtech founder fit from RDF evidence", async ({ page }) => {
@@ -254,6 +254,62 @@ test.describe("semantic web fit assistant", () => {
     await expect(answer).toContainText("Model: onnx-community/SmolLM2-135M-Instruct-ONNX-MHA");
     await expect(answer).toContainText("Runtime: WebAssembly CPU");
     await expect(answer).toContainText("Fit: Strong fit");
+  });
+
+  test("falls back to WASM generation when Transformers.js WebGPU generation stalls", async ({ page }) => {
+    await page.addInitScript(() => {
+      window.__BROWSER_LLM_TIMEOUT_MS__ = 50;
+    });
+    await page.route("https://esm.run/@mlc-ai/web-llm", async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: `
+          export async function CreateMLCEngine() {
+            const error = new Error("This model requires WebGPU extension shader-f16.");
+            error.name = "ShaderF16SupportError";
+            throw error;
+          }
+        `
+      });
+    });
+    await page.route("https://esm.run/@huggingface/transformers", async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: `
+          export async function pipeline(task, modelId, options) {
+            options?.progress_callback?.({ loaded: 1, total: 1 });
+            if (options?.device === "webgpu") {
+              return async function generate() {
+                return new Promise(() => {});
+              };
+            }
+            return async function generate() {
+              return [{
+                generated_text: [
+                  "Fit: Strong fit",
+                  "Why: Medical Device Software (domain:MedicalDeviceSoftware) and Regulated Healthcare (domain:RegulatedHealthcare) support the fit.",
+                  "Gaps: Make commercial ownership and founder-level accountability explicit. | Add concrete clinical discovery stories, not only platform achievements.",
+                  "Positioning: Research-to-product healthcare technologist with regulated medical software, digital health, and clinical workflow exposure."
+                ].join("\\n")
+              }];
+            };
+          }
+        `
+      });
+    });
+
+    await page.goto("/semantic-web/");
+    await page.getByRole("button", { name: "Load browser LLM" }).click();
+    await expect(page.locator("#llmStatus")).toHaveText("Ready");
+    await expect(page.locator("#llmDetail")).toContainText("Loaded Transformers.js WebGPU model");
+
+    await page.getByRole("button", { name: "Assess" }).click();
+
+    const answer = page.locator("#answer");
+    await expect(answer).toContainText("Guard passed");
+    await expect(answer).toContainText("Runtime: WebAssembly CPU");
+    await expect(page.locator("#llmDetail")).toContainText("Transformers.js WebGPU via Transformers.js generation timed out");
+    await expect(page.locator("#llmDetail")).toContainText("Falling back to Transformers.js WASM CPU for generation");
   });
 
   test("does not load the browser LLM during deterministic smoke tests", async ({ page }) => {

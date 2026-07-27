@@ -14,6 +14,7 @@ const NS = {
 
 const webGpuModelId = "SmolLM2-1.7B-Instruct-q4f16_1-MLC";
 const transformersModelId = "onnx-community/SmolLM2-135M-Instruct-ONNX-MHA";
+const generationTimeoutMs = Number(globalThis.__BROWSER_LLM_TIMEOUT_MS__) || 60_000;
 let store;
 let engine;
 let rdfFacts;
@@ -145,8 +146,11 @@ async function assess(question) {
       llmText,
       llmState: "accepted"
     });
-  } catch {
-    renderAssessment(result);
+  } catch (error) {
+    renderAssessment(result, {
+      llmNotice: `The browser-local LLM did not produce grounded wording in time: ${formatError(error)}.`,
+      llmState: "rejected"
+    });
   }
 }
 
@@ -228,7 +232,16 @@ function shorten(value) {
 }
 
 async function summarizeWithLlm(question, result) {
-  return engine.summarize(question, result);
+  try {
+    return await withTimeout(engine.summarize(question, result), generationTimeoutMs, `${engine.backend} ${engine.runtime} generation timed out`);
+  } catch (error) {
+    if (!engine?.accelerated) throw error;
+    llmDetail.textContent += ` ${formatError(error)}. Falling back to Transformers.js WASM CPU for generation.`;
+    engine = await loadTransformersEngine("wasm");
+    llmStatus.textContent = "Ready";
+    llmDetail.textContent += ` Loaded Transformers.js WASM model ${transformersModelId}.`;
+    return withTimeout(engine.summarize(question, result), generationTimeoutMs, "Transformers.js WASM generation timed out");
+  }
 }
 
 async function loadWebGpuEngine() {
@@ -244,6 +257,7 @@ async function loadWebGpuEngine() {
     modelId: webGpuModelId,
     runtime: "WebGPU + WebAssembly",
     backend: "WebLLM",
+    accelerated: true,
     network: "model fetch only",
     async summarize(question, result) {
       const completion = await webGpuEngine.chat.completions.create({
@@ -287,6 +301,7 @@ async function loadTransformersEngine(device) {
     modelId: transformersModelId,
     runtime: isWebGpu ? "WebGPU via Transformers.js" : "WebAssembly CPU",
     backend: "Transformers.js",
+    accelerated: isWebGpu,
     network: "model fetch only",
     async summarize(question, result) {
       const prompt = `${llmSystemPrompt}\n\n${buildLlmUserPrompt(question, result)}`;
@@ -303,6 +318,15 @@ async function loadTransformersEngine(device) {
 function extractGeneratedText(output) {
   const first = Array.isArray(output) ? output[0] : output;
   return first?.generated_text || first?.[0]?.generated_text || "";
+}
+
+function withTimeout(promise, timeoutMs, message) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      setTimeout(() => reject(new Error(message)), timeoutMs);
+    })
+  ]);
 }
 
 function formatError(error) {
